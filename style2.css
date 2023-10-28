@@ -1,0 +1,195 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+
+header {
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    padding: 30px 0;
+    text-align: center;
+}
+
+header h1 {
+    color: rgb(7, 134, 49);
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: rgb(7, 134, 49);
+    text-decoration: none;
+}
+
+#seco {
+    background-image: url('bgo1.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    color: rgb(253, 253, 253);
+}
+a{
+    color: white;
+}
+button {
+	background-color: rgb(7, 134, 49);
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+h2{
+    color: #fff;
+}
+h3{
+    color: #fff;
+}
+#seci {
+    background-color: rgb(5, 5, 5);
+    padding: 50px 0;
+    text-align: center;
+    color: rgb(7, 134, 49);
+}
+
+#secii {
+    background-color: rgb(10, 10, 10);
+    padding: 50px 0;
+    text-align: center;
+    color: rgb(7, 134, 49);
+}
+
+#seciii {
+    background-color: rgb(15, 15, 15);
+  
+    padding: 50px 0;
+    text-align: center;
+    color: rgb(7, 134, 49);
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+footer {
+    background-color:rgb(20, 20, 20);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+
+header {
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    padding: 30px 0;
+    text-align: center;
+}
+
+header h1 {
+    color: rgb(7, 134, 49);
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: rgb(7, 134, 49);
+    text-decoration: none;
+}
+
+#seco {
+    background-image: url('bgo1.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    color: rgb(253, 253, 253);
+}
+a{
+    color: white;
+}
+button {
+	background-color: rgb(7, 134, 49);
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+h2{
+    color: #fff;
+}
+h3{
+    color: #fff;
+}
+#seci {
+    background-color: rgb(5, 5, 5);
+    padding: 50px 0;
+    text-align: center;
+    color: rgb(7, 134, 49);
+}
+
+#secii {
+    background-color: rgb(10, 10, 10);
+    padding: 50px 0;
+    text-align: center;
+    color: rgb(7, 134, 49);
+}
+
+#seciii {
+    background-color: rgb(15, 15, 15);
+  
+    padding: 50px 0;
+    text-align: center;
+    color: rgb(7, 134, 49);
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+footer {
+    background-color:rgb(20, 20, 20);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+}
