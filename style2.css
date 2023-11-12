@@ -13,8 +13,13 @@ header {
     text-align: center;
 }
 
+h1 {
+    font-family: 'Monomaniac One';
+    
+}
 header h1 {
     color: rgb(7, 134, 49);
+
     margin: 0;
 }
 
@@ -111,7 +116,10 @@ header {
     padding: 30px 0;
     text-align: center;
 }
-
+h1 {
+    font-family: 'Monomaniac One';
+    
+}
 header h1 {
     color: rgb(7, 134, 49);
     margin: 0;
@@ -163,7 +171,13 @@ h3{
     padding: 50px 0;
     text-align: center;
     color: rgb(7, 134, 49);
+    
 }
+#img{
+    width:767px;
+    height: auto;
+}
+
 
 #secii {
     background-color: rgb(10, 10, 10);
