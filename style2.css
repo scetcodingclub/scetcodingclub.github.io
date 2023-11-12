@@ -58,6 +58,10 @@ button {
 	border-radius: 5px;
 	cursor: pointer;
 }
+h2 {
+    letter-spacing: 3px;
+    font-family: 'Monomaniac One';
+}
 h2{
     color: #fff;
 }
@@ -117,8 +121,13 @@ header {
     text-align: center;
 }
 h1 {
+    letter-spacing: 3px;
     font-family: 'Monomaniac One';
     
+}
+h2 {
+    letter-spacing: 3px;
+    font-family: 'Monomaniac One';
 }
 header h1 {
     color: rgb(7, 134, 49);
