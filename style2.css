@@ -140,7 +140,10 @@ nav a {
     color: rgb(7, 134, 49);
     text-decoration: none;
 }
-
+#img {
+    width:auto;
+    height: auto;
+}
 #seco {
     background-image: url('bgo1.jpg');
     background-size: cover;
@@ -173,10 +176,7 @@ h3{
     color: rgb(7, 134, 49);
     
 }
-#img {
-    width:cover;
-    height: auto;
-}
+
 
 
 #secii {
