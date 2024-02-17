@@ -74,13 +74,16 @@ nav a {
     text-align: center;
     color: rgb(253, 253, 253);
 }
+/*#seco h2{
+    color: rgb(7, 134, 49); 
+}*/
 #sec0 {
     background-image: url('coll.jpg');
     background-size: cover;
     background-position: center;
     background-color: #000;
     padding: 200px 0;
-    text-align: center;
+    text-align:center;
     color: rgb(253, 253, 253);
 }
 a{
@@ -117,7 +120,8 @@ h3{
     text-align: center;
     color: #fff;
 }
-p { padding-left: 50px;
+p { text-align: justify;
+    padding-left: 50px;
     padding-right: 50px;
     color: #fff;
 }
@@ -195,7 +199,7 @@ background-color: #000;
     }
   
     header {
-      padding: 50px; /* Reduce padding for header on smaller screens */
+      padding: 60px; /* Reduce padding for header on smaller screens */
     }
     #nam{
         display: block;
@@ -218,7 +222,7 @@ background-color: #000;
   
     .boxarea {
       display: block; /* Change display to block for better stacking of elements */
-      text-align: center; /* Center align elements within boxarea */
+      text-align: justify; /* Center align elements within boxarea */
     }
   
     #seco,
@@ -226,9 +230,12 @@ background-color: #000;
     #seci,
     #secii,
     #seciii {
-      padding: 80px 0; /* Adjust padding for sections on smaller screens */
+      padding: 80px 0;
+      text-align:center; /* Adjust padding for sections on smaller screens */
     }
-  
+    #seco h2{
+        color: rgb(7, 134, 49); 
+    }
     #wp,
     #csp {
       width: 100%; /* Full width for elements with IDs wp and csp */
