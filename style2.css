@@ -1,20 +1,24 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: rgb(7, 134, 49);
     font-family: Arial, sans-serif;
-    color: #000;
+  font-size: 21px;
 }
 
 header {
     background-color: #000;
     background-size: cover;
     background-position: center;
-    padding: 30px 0;
-    text-align: center;
+    padding: 40px;
+    margin: 0px;
+    text-align:left;
+    color: rgb(7, 134, 49) ;
 }
 
 h1 {
     font-family: 'Monomaniac One';
+    color:rgb(7, 134, 49);
     
 }
 header h1 {
@@ -22,7 +26,21 @@ header h1 {
 
     margin: 0;
 }
-
+#nam {
+    display: inline-block;
+	text-decoration: none;
+    background-color: transparent;
+    position: absolute;
+    padding-left: 5px;
+    top: 20px;
+    left: 0px;
+  }
+#link {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 5px;
+  }
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -38,12 +56,30 @@ nav a {
     color: rgb(7, 134, 49);
     text-decoration: none;
 }
-
+#menu-toggle  {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+.boxarea{
+    display:inline-block;
+    justify-content:end;
+}
 #seco {
     background-image: url('bgo1.jpg');
     background-size: cover;
     background-position: center;
+    background-color: #000;
     padding: 100px 0;
+    text-align: center;
+    color: rgb(253, 253, 253);
+}
+#sec0 {
+    background-image: url('coll.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #000;
+    padding: 200px 0;
     text-align: center;
     color: rgb(253, 253, 253);
 }
@@ -68,57 +104,109 @@ h2{
 h3{
     color: #fff;
 }
+
 #seci {
-    background-color: rgb(5, 5, 5);
-    padding: 50px 0;
-    text-align: center;
-    color: rgb(7, 134, 49);
-}
+    margin-bottom: 40px;
+    padding: 20px;
+    padding-top: 100px;
+  background:linear-gradient(#000,rgb(7, 134, 49));
 
+    text-align: center;
+    color:#000;
+}#seciii{ padding: 50px 0;
+    text-align: center;
+    color: #fff;
+}
+p { padding-left: 50px;
+    padding-right: 50px;
+    color: #fff;
+}
+#wi {
+    display: inline-block;
+  }
+  #wp {
+    display: inline-block;
+    width: 600px;
+    height: 370px;
+    font-size: 21px;
+  }
+  
+  #csp {
+    display: inline-block;
+    text-align: end;
+    width: 600px;
+    height: 380px;
+    font-size: 21px;
+  }
+  #csi {
+    display: inline-block;}
 #secii {
-    background-color: rgb(10, 10, 10);
-    padding: 50px 0;
-    text-align: center;
-    color: rgb(7, 134, 49);
-}
-
-#seciii {
-    background-color: rgb(15, 15, 15);
   
     padding: 50px 0;
     text-align: center;
-    color: rgb(7, 134, 49);
-}
-
-form {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    color: #fff;
+    background-image: linear-gradient(0deg,#000 , rgb(7, 134, 49))
 }
 
 footer {
-    background-color:rgb(20, 20, 20);
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
+background-color: #000;
+	padding: 40px 0;
+	display: flex;
+	justify-content: space-around; /* Adjust horizontal positioning as needed */
+	flex-wrap: wrap; /* Enable wrapping for smaller screens */
+  }
+  
+  .footer-inner {
+	display: flex;
+	justify-content: space-between;
+	width: 80%;
+	margin: 0 ;
+  }
+  
 
+  .club-info, #contact-info, .copyright {
+	flex: 2; /* Divide space equally among sections */
+	text-align:left; /* Adjust alignment as needed */
+	position: relative;
+  }
+  a {
+	color: #fff; /* Adjust link color */
+	text-decoration: none;
+  }
+  
+  a:hover {
+	text-decoration: underline;
+  }
+  
+  .contact-info p {
+	margin-bottom: 0;
+  }
+  #copyright{
+    background-color: #000;
+	font-size: 0.8em;
+	color: #777;
+	text-align: center;
+    margin: 0px;
+    padding: 10px;
+  }
 
 
 @media only screen and (max-width: 767px) {
 body {
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
     font-family: Arial, sans-serif;
     color: #000;
 }
 
 header {
     background-color: #000;
+    width: 767px;
     background-size: cover;
     background-position: center;
     padding: 30px 0;
-    text-align: center;
+    text-align: right;
 }
 h1 {
     letter-spacing: 3px;
@@ -133,7 +221,47 @@ header h1 {
     color: rgb(7, 134, 49);
     margin: 0;
 }
+#sidenav {
+    width: 250px;
+    height: 100vh;
+    background-color: #f1f1f1;
+    position: fixed;
+    top: 0;
+    left: -100%; /* Initially hidden off-screen */
+    transition: 0.3s ease-in-out;
+    z-index: 100;
+  }
+  
+  #sidenav a {
+    display: block;
+    padding: 50px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  #sidenav a:hover {
+    background-color: #ddd;
 
+  }
+  
+  #menu-toggle {
+    visibility: visible ;
+  position: relative;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  /* Show the navigation when the button is clicked */
+  #sidenav.open {
+    left: 0;
+    right: 500;
+  }
+  
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -165,6 +293,7 @@ a{
     color: white;
 }
 button {
+    
 	background-color: rgb(7, 134, 49);
 	color: #fff;
 	border: none;
@@ -202,17 +331,31 @@ h3{
     text-align: center;
     color: rgb(7, 134, 49);
 }
-
-form {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+footer{
+    width: 767px;
+    padding: 50px 0;
+    background-color: #777;
 }
-
-footer {
-    background-color:rgb(20, 20, 20);
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+.footer-inner{
+    display:block;
+   
+}#copyright{
+    width: 767px;  
 }
+}
+@media only screen and (max-width: 767px) {
+    footer{
+        width: 600px;
+        padding: 50px 0;
+        background-color: #777;
+    }
+    .footer-inner{
+        display:block;
+       
+    }#copyright{
+        width: 600px;  
+    } 
+    header {
+        width: 600px;
+    }
 }
