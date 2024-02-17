@@ -189,173 +189,62 @@ background-color: #000;
     margin: 0px;
     padding: 10px;
   }
-
-
-@media only screen and (max-width: 767px) {
-body {
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    font-family: Arial, sans-serif;
-    color: #000;
-}
-
-header {
-    background-color: #000;
-    width: 767px;
-    background-size: cover;
-    background-position: center;
-    padding: 30px 0;
-    text-align: right;
-}
-h1 {
-    letter-spacing: 3px;
-    font-family: 'Monomaniac One';
-    
-}
-h2 {
-    letter-spacing: 3px;
-    font-family: 'Monomaniac One';
-}
-header h1 {
-    color: rgb(7, 134, 49);
-    margin: 0;
-}
-#sidenav {
-    width: 250px;
-    height: 100vh;
-    background-color: #f1f1f1;
-    position: fixed;
-    top: 0;
-    left: -100%; /* Initially hidden off-screen */
-    transition: 0.3s ease-in-out;
-    z-index: 100;
-  }
-  
-  #sidenav a {
-    display: block;
-    padding: 50px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  #sidenav a:hover {
-    background-color: #ddd;
-
-  }
-  
-  #menu-toggle {
-    visibility: visible ;
-  position: relative;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    padding: 10px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-  }
-  
-  /* Show the navigation when the button is clicked */
-  #sidenav.open {
-    left: 0;
-    right: 500;
-  }
-  
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav li {
-    margin: 0 10px;
-}
-
-nav a {
-    color: rgb(7, 134, 49);
-    text-decoration: none;
-}
-#img {
-    width:auto;
-    height: auto;
-}
-#seco {
-    background-image: url('bgo1.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 100px 0;
-    text-align: center;
-    color: rgb(253, 253, 253);
-}
-a{
-    color: white;
-}
-button {
-    
-	background-color: rgb(7, 134, 49);
-	color: #fff;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 5px;
-	cursor: pointer;
-}
-h2{
-    color: #fff;
-}
-h3{
-    color: #fff;
-}
-#seci {
-    background-color: rgb(5, 5, 5);
-    padding: 50px 0;
-    text-align: center;
-    color: rgb(7, 134, 49);
-    
-}
-
-
-
-#secii {
-    background-color: rgb(10, 10, 10);
-    padding: 50px 0;
-    text-align: center;
-    color: rgb(7, 134, 49);
-}
-
-#seciii {
-    background-color: rgb(15, 15, 15);
-  
-    padding: 50px 0;
-    text-align: center;
-    color: rgb(7, 134, 49);
-}
-footer{
-    width: 767px;
-    padding: 50px 0;
-    background-color: #777;
-}
-.footer-inner{
-    display:block;
-   
-}#copyright{
-    width: 767px;  
-}
-}
-@media only screen and (max-width: 767px) {
-    footer{
-        width: 600px;
-        padding: 50px 0;
-        background-color: #777;
+@media only screen and (max-width: 600px) {
+    body {
+      font-size: 18px; /* Adjust font size for better readability on smaller screens */
     }
-    .footer-inner{
-        display:block;
-       
-    }#copyright{
-        width: 600px;  
-    } 
+  
     header {
-        width: 600px;
+      padding: 50px; /* Reduce padding for header on smaller screens */
     }
-}
+    #nam{
+        display: block;
+    }
+    #link {
+        padding-top: 30px;
+        display: block;
+    }
+    h1 {
+      font-size: 24px; /* Adjust font size for better readability on smaller screens */
+    }
+  
+    nav ul{
+      justify-content: space-around; /* Adjust spacing for navigation items */
+    }
+  
+    nav li,#sidenav {
+      margin: 0 5px; /* Reduce margin for navigation items */
+    }
+  
+    .boxarea {
+      display: block; /* Change display to block for better stacking of elements */
+      text-align: center; /* Center align elements within boxarea */
+    }
+  
+    #seco,
+    #sec0,
+    #seci,
+    #secii,
+    #seciii {
+      padding: 80px 0; /* Adjust padding for sections on smaller screens */
+    }
+  
+    #wp,
+    #csp {
+      width: 100%; /* Full width for elements with IDs wp and csp */
+      height: auto; /* Auto height for responsive images */
+    }
+  
+    #contact-info {
+      order: 3; /* Reorder contact-info section for better mobile layout */
+    }
+  
+    footer {
+      padding: 20px 0; /* Reduce padding for footer on smaller screens */
+    }
+  
+    .footer-inner {
+      width: 100%; /* Full width for footer inner container on smaller screens */
+    }
+  }
+  
