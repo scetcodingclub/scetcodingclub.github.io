@@ -8,10 +8,16 @@ body {
 
 .container {
     text-align: center;
-    max-width: 50%; /* Adjust max width as needed */
 }
 
 img {
-    max-width: 50%;
-    height:50%;
+    width: 50%;
+    
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  img {
+    width: 30%; /* Adjust max-width as needed */
+  }
 }
