@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+header {
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    margin: 0px;
+    text-align:left;
+    color: rgb(7, 134, 49) ;
+}
+
+h1 {
+    font-family: 'Monomaniac One';
+    color:rgb(7, 134, 49);
+    
+}
+header h1 {
+    color: rgb(7, 134, 49);
+
+    margin: 0;
+}
+#nam {
+    display: inline-block;
+	text-decoration: none;
+    background-color: transparent;
+    position: absolute;
+    padding-left: 5px;
+    top: 20px;
+    left: 0px;
+  }
+#nam img{
+ 
+  width: 200px;
+  height: auto;
+}
+#link {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 5px;
+  }
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: end;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: rgb(7, 134, 49);
+    text-decoration: none;
+}
+
+main {
+    padding: 40px;
+}
+
+main h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+main p {
+    margin-bottom: 10px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    padding-top: 200px;
+}
