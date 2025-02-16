@@ -3,7 +3,7 @@ body {
     padding: 0;
     background-color: rgb(0, 0, 0);
     font-family: __Space_Grotesk_2a89ca, sans-serif, sans-serif;
-  font-size: 21px;
+    font-size: 21px;
 }
 
 header {
@@ -12,44 +12,43 @@ header {
     background-position: center;
     padding: 0px;
     margin: 0px;
-   position: sticky;
-    text-align:left;
-    
-    
+    position: sticky;
+    text-align: left;
 }
 
 h1 {
-    
-    color:rgb(255, 255, 255);
-    
+    color: rgb(255, 255, 255);
 }
+
 header h1 {
     color: rgb(7, 134, 49);
-
     margin: 0;
 }
+
 #nam {
     display: inline-block;
-	text-decoration: none;
+    text-decoration: none;
     background-color: transparent;
     position: absolute;
     padding-left: 5px;
     top: 20px;
     left: 0px;
     z-index: 2;
-  }
-#nam img{
- 
-  width: 200px;
-  height: auto;
 }
+
+#nam img {
+    width: 200px;
+    height: auto;
+}
+
 #link {
     display: inline-block;
     position: absolute;
     top: 20px;
     right: 5px;
     z-index: 2;
-  }
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -65,340 +64,218 @@ nav a {
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
-#menu-toggle  {
+
+#menu-toggle {
     height: 0;
     width: 0;
     visibility: hidden;
 }
-.se1{
+
+.se1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 100px 50px;
     background-color: #000;
 }
-#ha{
+
+#ha {
     font-size: 3rem;
-    padding-top: 120px; 
+    padding-top: 120px;
 }
-.h1{
-   
-    color:#fff;
+
+.h1 {
+    color: #fff;
     max-width: 600px;
 }
 
 
-.but1{
-    
+.but1 {
     padding: 10px 30px;
     background-color: #ffffff;
-  
+
     border: none;
     cursor: pointer;
-   
+
     font-size: 1.2rem;
     border-radius: 5px;
 }
-.but1 a{
+
+.but1 a {
     color: #000000;
     text-decoration: none;
 }
-.img1{
+
+.img1 {
     margin-top: 10px;
 }
-.se2{
-    display: flex;
 
+.se2 {
+    display: flex;
 }
-.he2{
+
+.he2 {
     text-align: center;
-  position: relative;
+    position: relative;
     gap: 20px;
     width: 50%;
     margin: 0 auto;
-    
 }
-#hb{
+
+#hb {
     font-size: 42px;
-    
 }
-#o{
+
+#o {
     margin: 0;
     padding: 0;
     color: #fff;
 }
 
-p{
+p {
     font-size: 18px;
     color: #ffffff99;
-    
 }
-.se3{
+
+.se3 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 100px 50px;
     background-color: #000;
 }
-.img2{
+
+.img2 {
     margin: 0px;
     padding: 0px;
     padding-left: 0px;
 }
-#ti{
+
+#ti {
     font-size: 50px;
 }
-.he3{
-padding-left: 30px;
-text-align: center;
+
+.he3 {
+    padding-left: 30px;
+    text-align: center;
 }
-#info{
+
+#info {
     font-size: 18px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 50px;
 }
-.se4{
+
+.se4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 100px 50px;
     background-color: #000;
-
 }
-h2{
-    color:#fff;
+
+h2 {
+    color: #fff;
     max-width: 600px;
     font-size: 42px;
 }
-.eventdetails{
+
+.eventdetails {
     padding-left: 30px;
     text-align: center;
     width: 600px;
 }
-.elgeible{
+
+.elgeible {
     padding-right: 50px;
     text-align: center;
     width: 300px;
 }
-#inf{
+
+#inf {
     padding-top: 30px;
 }
-.se5{
+
+.se5 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 100px 50px;
     background-color: #000;
 }
-.img3{
-    background-image: url('spark2.jpg');
+
+.img3 {
+    background-image: url('assets/spark2.jpg');
     background-size: cover;
     width: 500px;
     height: 600px;
 }
-.gra{
+
+.gra {
     padding-top: 250px;
     padding-left: 30px;
     font-size: 240px;
     color: #fff;
     border: #000;
 }
-.reg{
+
+.reg {
     text-align: left;
     padding-left: 0%;
     margin-left: 0%;
     display: inline;
 }
-.se6{
+
+.se6 {
     padding-left: 5px;
     margin-left: 30px;
 }
-.fqa{
+
+.fqa {
     padding-left: 5px;
     margin-left: 15px;
 }
-h6{
+
+h6 {
     color: #fff;
 }
-.box{
+
+.box {
     margin-top: 0px;
     height: 100px;
     width: 250px;
-    background-color:  #000000;
-    justify-self:auto;
-    
+    background-color: #000000;
+    justify-self: auto;
 }
-#img4{
+
+#img3 {
     margin-left: 25px;
     padding-top: 15px;
     height: 50px;
     width: 100%;
 }
 
-.panel2{
+.panel2 {
     font-size: 1.7rem;
     margin-top: -50px;
-    
     height: 200px;
-    
     display: flex;
-    
     color: white;
     padding-bottom: 10px;
- }
-ul a{
-    
+}
+
+ul a {
+
     display: block;
     margin-top: 10px;
     font-size: 1.5rem;
-    
     align-items: center;
     text-decoration: none;
     color: white;
 }
-footer a{
+
+footer a {
     font-size: 1.25rem;
     margin-left: 70px;
-}
-
-
-
-
-/* Mobile styles */
-@media screen and (max-width: 768px) {
-
-    body {
-        font-size: 18px;
-        padding: 0;
-        margin: 0;
-    }
-
-    header {
-        padding: 10px;
-        text-align: center;
-        position: fixed;
-        width: 100%;
-        z-index: 1000;
-    }
-
-    #nam {
-        position: relative;
-        display: flex;
-        justify-content: start;
-        padding: 10px 0;
-    }
-
-    #nam img {
-        width: 150px;
-    }
-
-    #link {
-        position: absolute;
-        top: 20px;
-        right: 15px;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: black;
-        position: absolute;
-        right: 0;
-        width: 100%;
-        top: 50px;
-        text-align: center;
-    }
-
-    nav ul li {
-        padding: 10px 0;
-    }
-
-    #menu-toggle {
-        visibility: visible;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 2rem;
-        cursor: pointer;
-    }
-
-    #menu-toggle:focus + nav ul {
-        display: flex;
-    }
-
-    .se1, .se2, .se3, .se4, .se5, .se6 {
-        flex-direction: column;
-        align-items: center;
-        padding: 50px 20px;
-    }
-
-    #ha {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .but1 {
-        font-size: 1rem;
-        padding: 8px 20px;
-    }
-
-    .img1 img, .img2 img {
-        width: 100%;
-        height: auto;
-    }
-
-    .eventdetails, .elgeible {
-        width: 100%;
-        text-align: center;
-    }
-    #inf{
-        margin-left: 10px;
-        text-align: center;
-    }
-
-    .img3 {
-        width: 100%;
-        height: 400px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .gra {
-        font-size: 3rem;
-        padding-top: 150px;
-        text-align: center;
-    }
-
-    .faq {
-        padding: 10px;
-    }
-
-    .box {
-        width: 100%;
-        text-align: center;
-        
-    }
-    #img4{
-        width: 150px;
-       
-        align-self: auto;
-    }
-
-    .panel2 {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-    }
-
-    ul a {
-        margin-left: 0;
-        font-size: 1rem;
-    }
-
-    footer a {
-        margin-left: 0;
-        font-size: 1rem;
-    }
 }
