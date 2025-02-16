@@ -279,3 +279,149 @@ footer a {
     font-size: 1.25rem;
     margin-left: 70px;
 }
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 18px;
+        padding: 0;
+        margin: 0;
+    }
+
+    header {
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    #nam {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        padding: 10px 0;
+    }
+
+    #nam img {
+        width: 150px;
+    }
+
+    #link {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        right: 0;
+        width: 100%;
+        top: 50px;
+        text-align: center;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+
+    #menu-toggle {
+        visibility: visible;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    #menu-toggle:focus+nav ul {
+        display: flex;
+    }
+
+    .se1,
+    .se2,
+    .se3,
+    .se4,
+    .se5,
+    .se6 {
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+    #ha {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .but1 {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    .img1 img,
+    .img2 img {
+        width: 100%;
+        height: auto;
+    }
+
+    .eventdetails,
+    .elgeible {
+        width: 100%;
+        text-align: center;
+    }
+
+    #inf {
+        margin-left: 10px;
+        text-align: center;
+    }
+
+    .img3 {
+        width: 100%;
+        height: 400px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .gra {
+        font-size: 3rem;
+        padding-top: 150px;
+        text-align: center;
+    }
+
+    .faq {
+        padding: 10px;
+    }
+
+    .box {
+        width: 100%;
+        text-align: center;
+
+    }
+
+    #img4 {
+        width: 150px;
+
+        align-self: auto;
+    }
+
+    .panel2 {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    ul a {
+        margin-left: 0;
+        font-size: 1rem;
+    }
+
+    footer a {
+        margin-left: 0;
+        font-size: 1rem;
+    }
+}
