@@ -260,29 +260,77 @@ footer a {
     margin-left: 70px;
 }
 
-/* Media query for devices with a maximum width of 768px */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     body {
-        font-size: 18px; /* Reduce font size */
+        font-size: 18px;
+        padding: 0;
+        margin: 0;
     }
 
     header {
         padding: 10px;
-        text-align: center; /* Center text on mobile */
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
     }
 
-    .se1, .se3, .se4, .se5 {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        padding: 20px;
-    }
-
-    h1, h2, #hb, #ti {
-        font-size: 1.5rem; /* Reduce heading font sizes */
+    #nam {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        padding: 10px 0;
     }
 
     .imgl, .imglo {
-        height: 50px; /* Scale down images */
+        width:auto;
+        height:25px;
+    }
+
+    #link {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        right: 0;
+        width: 100%;
+        top: 50px;
+        text-align: center;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+
+    #menu-toggle {
+        visibility: visible;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    #menu-toggle:focus + nav ul {
+        display: flex;
+    }
+
+    .se1, .se2, .se3, .se4, .se5, .se6 {
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+    #ha {
+        font-size: 2rem;
+        text-align: center;
     }
 
     .but1 {
@@ -290,23 +338,62 @@ footer a {
         padding: 8px 20px;
     }
 
-    .img1, .img2, .img3 {
-        width: 100%; /* Make images take full width */
+    .img1 img, .img2 img {
+        width: 100%;
         height: auto;
     }
 
-    .he2, .eventdetails, .elgeible {
-        width: 100%; /* Set full width for content */
-        text-align: left; /* Align text to the left */
+    .eventdetails, .elgeible {
+        width: 100%;
+        text-align: center;
+    }
+    #inf{
+        margin-left: 10px;
+        text-align: center;
+    }
+
+    .img3 {
+        width: 100%;
+        height: 400px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .gra {
+        font-size: 3rem;
+        padding-top: 150px;
+        text-align: center;
+    }
+
+    .faq {
         padding: 10px;
     }
 
     .box {
         width: 100%;
+        text-align: center;
+        
+    }
+    #img4{
+        width: 150px;
+       
+        align-self: auto;
+    }
+
+    .panel2 {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    ul a {
+        margin-left: 0;
+        font-size: 1rem;
     }
 
     footer a {
-        font-size: 1rem;
         margin-left: 0;
+        font-size: 1rem;
     }
 }
