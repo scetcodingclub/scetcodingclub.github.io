@@ -343,15 +343,11 @@ footer a {
         height: auto;
     }
 
-    .eventdetails,  {
+    .eventdetails,.elgeible {
         width: 100%;
         text-align: center;
     }
-    .elgeible {
-        width: 100%;
-        text-align: center;
-        padding-left: 10px;
-    }
+
     #inf{
         margin-left: 10px;
         text-align: center;
