@@ -1,0 +1,24 @@
+{
+  "name": "scetcodingclub.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/scetcodingclub/scetcodingclub.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/scetcodingclub/scetcodingclub.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scetcodingclub/scetcodingclub.github.io.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx @tailwindcss/cli -i ./public/styles/input.css -o ./public/styles/tailwind.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.10",
+    "tailwindcss": "^4.1.10"
+  }
+}
