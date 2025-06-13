@@ -1,20 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/tailwind.css">
-    <title>Nexus Home Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/tailwind.css">
+  <title>Nexus Home Page</title>
 </head>
-<body class="bg-black text-(--colorgreen) w-full h-full text-center p-20">
-    <div class="text-7xl text-center font-medium">
+
+<body class="bg-black text-white">
+  <header>
+
+    <nav class="flex justify-between items-center px-4 py-1 h-15 fixed top-0 left-0 right-0 z-50 bg-black">
+      <img src="./assets/ShadanFillLogo.png" alt="Shadan Logo" class="h-full">
+      <button onclick="toggleMenu()" class="text-3xl">
+        ☰
+      </button>
+    </nav>
+
+    <div id="dropdown-menu"
+      class="select-none w-50 fixed top-15 right-0 h-full p-2 z-40 flex justify-center translate-x-full transition-transform bg-green-950">
+      <ul class="space-y-3 text-center">
+        <li><a href="/">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Workshop</a></li>
+        <li><a href="#contact">Event</a></li>
+        <li><a href="#contact">Team</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ul>
+    </div>
+  </header>
+  <img src="./assets/NEXUS Hero.png" alt="Nexus Hero">
+  <main class="h-fit">
+    <section id="vision" class="p-10 flex align-end">
+      <img src="/assets/team.jpg" alt="Team image" class="absolute inset-0 z-0">
+      <div class="relative z-10">
+        <p>
+          At the heart of Nexus Coding Club lies a commitment to becoming a premier skill development body within
+          our
+          college. We
+          continuously foster an environment where students can excel in their technical endeavors, ensuring they
+          are
+          well-prepared for the plethora of opportunities in the tech world.
+        </p>
+      </div>
+    </section>
+
+    <section id="what_We_do">
+      asdkjabskdashkjdashkjdash kdjash dkjash dkjashdkas dklas
+    </section>
+
+    <section id="">
+    </section>
+
+    <section></section>
+  </main>
+  <footer>
+
+  </footer>
+  <!-- <div class="text-7xl text-center font-medium">
         Welcome To<br>
         Nexus Coding Club Website!
     </div>
     <div class="text-center text-red-500 m-10">
         This website is currently under maintainence :(
-    </div>
+    </div> -->
 
-    <script src="/js/index.js"></script>
+  <script src="/js/index.js"></script>
 </body>
+
 </html>
