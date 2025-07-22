@@ -1,3 +1,4 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap'); */
 @import "tailwindcss";
 
 :root{
@@ -8,11 +9,14 @@
     .what-we-do-card {
         @apply flex flex-col-reverse md:flex-row items-center justify-between p-4 gap-4 md:gap-32;
     }
+    .what-we-do-card-rev {
+        @apply md:flex-row-reverse md:text-right;
+    }
     .what-we-do-card p {
         @apply text-wrap wrap-normal text-center md:text-left;
     }
     .what-we-do-card .img-container {
-        @apply aspect-square w-60 h-60 md:w-80 md:h-80 overflow-hidden flex-shrink-0;
+        @apply aspect-square w-60 h-60 md:w-80 md:h-80 overflow-hidden flex-shrink-0 rounded;
     }
     .what-we-do-card .img-container img {
         @apply w-full h-full object-cover;
@@ -23,6 +27,7 @@
     }
     .activity_card .img-container {
         @apply aspect-square w-30 h-30 md:w-50 md:h-50 overflow-hidden flex-shrink-0 rounded-2xl;
+        /* @apply h-30 md:h-50 overflow-hidden flex-shrink-0 rounded-2xl; */
     }
     .activity_card .img-container img {
         @apply w-full h-full object-cover;

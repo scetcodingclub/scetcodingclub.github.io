@@ -5,13 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/tailwind.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
   <title>Nexus Home Page</title>
 </head>
 
-<body class="bg-black text-white text-2xl">
+<body class="bg-black text-white text-2xl" style="font-family: 'Yeseva One', serif">
   <header>
 
-    <nav class="flex justify-between items-center px-4 py-1 h-15 fixed top-0 left-0 right-0 z-50 bg-black">
+    <nav class="flex justify-between items-center px-4 py-1 h-20 fixed top-0 left-0 right-0 z-50 bg-black">
       <img src="/assets/ShadanFillLogo.png" alt="Shadan Logo" class="h-full">
       <button onclick="toggleMenu()" class="text-3xl cursor-pointer">
         ☰
@@ -19,7 +22,7 @@
     </nav>
 
     <div id="dropdown-menu"
-      class="select-none w-50 fixed top-15 right-0 h-full p-2 z-40 flex justify-center translate-x-full transition-transform bg-green-950">
+      class="select-none w-50 fixed top-20 right-0 h-full p-2 z-40 flex justify-center translate-x-full transition-transform bg-green-950">
       <ul class="space-y-3 text-center">
         <li><a href="/">Home</a></li>
         <li><a href="#about">About Us</a></li>
@@ -29,8 +32,11 @@
         <li><a href="#contact">Contact us</a></li>
       </ul>
     </div>
+
   </header>
+  
   <img src="/assets/NEXUS Hero.webp" alt="Nexus Hero">
+
   <main class="h-fit">
 
     <section id="vision" class="flex flex-col">
@@ -48,7 +54,7 @@
         </div>
       </div>
 
-      <div class="bg-linear-180 from-black to-(--colorgreen) flex justify-center py-8">
+      <div class="bg-black flex justify-center py-8">
         <p class="text-center p-0 md:p-6 w-4/5 md:w-2/3">
           “To create a vibrant and inclusive community where students grow beyond classrooms by learning, building,
           and leading through technology. Nexus envisions becoming the core platform in our college that empowers
@@ -59,41 +65,48 @@
       </div>
     </section>
 
-    <section id="what_We_do" class="h-full bg-(--colorgreen) py-8">
-      <h1 class="text-black text-center text-5xl font-bold mb-8">What We Do</h1>
+    <section id="what_We_do" class="h-full bg-black py-8">
+      <h1 class="text-center text-5xl font-bold mb-8">What We Do</h1>
 
-      <div class="flex flex-col gap-8">
+      <div class="flex flex-col gap-8 w-[85%] mx-auto">
 
         <div class="what-we-do-card">
-          <p><b>We create</b> ideas that challenge the ordinary sparking innovation through curiosity, collaboration, and bold thinking.</p>
+          <p><b>We code</b> those ideas into reality—translating logic into solutions, and imagination into impactful
+            technology.</p>
           <div class="img-container">
             <img src="/assets/portrait-sample.jpg" alt="">
           </div>
         </div>
 
-        <div class="what-we-do-card md:flex-row-reverse md:text-right">
-          <p><b>We code</b> those ideas into reality—translating logic into solutions, and imagination into impactful technology.</p>
+        <div class="what-we-do-card what-we-do-card-rev">
+          <p><b>We create</b> ideas that challenge the ordinary sparking innovation through curiosity, collaboration,
+            and bold thinking.</p>
           <div class="img-container">
-            <img src="/assets/portrait-sample.jpg" alt="">
+            <img src="/assets/c-logo-making.jpg" alt="">
           </div>
         </div>
 
         <div class="what-we-do-card">
-          <p><b>We complete</b> what we start—with discipline, teamwork, and a passion to finish strong, ensuring every project tells a story of growth and purpose.</p>
+          <p><b>We compete</b> to push out limits—tesing our skills, sharpening our minds, and proving our passion
+            through challenges that demand excellence and resilience.</p>
           <div class="img-container">
-            <img src="/assets/portrait-sample.jpg" alt="">
+            <img src="/assets/datanyx-gh.jpg" alt="">
           </div>
         </div>
 
       </div>
     </section>
 
-    <section id="about_us" class="bg-linear-180 from-(--colorgreen) to-black py-8">
-      <h1 class="text-black text-center text-5xl font-bold mb-8">About Us</h1>
+    <section id="about_us" class="bg-black py-8">
+      <h1 class="text-center text-5xl font-bold mb-8">About Us</h1>
       <div class="text-center w-4/5 mx-auto">
-        <p>Nexus is the official coding club of Shadan College of Engineering and Technology driven by students, powered by passion, and built on the belief that learning happens best when it's shared.</p>
-        <p>We are a vibrant community of thinkers, builders, and explorers who believe in the power of technology to shape the future. At Nexus, we don't just write code we bring ideas to life, solve real-world problems, and collaborate to grow as a team.</p>
-        <p>From workshops, hackathons, and peer-to-peer sessions to full-scale project expos, Nexus is the place where students of all levels come together to learn, lead, and launch their journey into tech.</p>
+        <p>Nexus is the official coding club of Shadan College of Engineering and Technology driven by students, powered
+          by passion, and built on the belief that learning happens best when it's shared.</p>
+        <p>We are a vibrant community of thinkers, builders, and explorers who believe in the power of technology to
+          shape the future. At Nexus, we don't just write code we bring ideas to life, solve real-world problems, and
+          collaborate to grow as a team.</p>
+        <p>From workshops, hackathons, and peer-to-peer sessions to full-scale project expos, Nexus is the place where
+          students of all levels come together to learn, lead, and launch their journey into tech.</p>
       </div>
     </section>
 
@@ -103,16 +116,44 @@
       <div class="flex flex-col items-center w-full gap-8">
 
         <div class="activity_card">
-          <p>Text hi hekjhakd jsd</p>
+          <p>Expogen 1.0</p>
+          <div class="img-container">
+            <img src="/assets/activities/expogen1.0.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="activity_card">
+          <p>Frontend Web-Dev Bootcamp</p>
           <div class="img-container">
             <img src="/assets/portrait-sample.jpg" alt="">
           </div>
         </div>
-        
+
         <div class="activity_card">
-          <p>Text hi hekjhakd jsd</p>
+          <p>Sparkquest</p>
           <div class="img-container">
-            <img src="/assets/portrait-sample.jpg" alt="">
+            <img src="/assets/activities/sparkquest.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="activity_card">
+          <p>Cybersecurity Day</p>
+          <div class="img-container">
+            <img src="/assets/activities/cybersec.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="activity_card">
+          <p>C Bootcamp</p>
+          <div class="img-container">
+            <img src="/assets/activities/c_bootcamp.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="activity_card">
+          <p>C Workshop</p>
+          <div class="img-container">
+            <img src="/assets/activities/c_workshop.jpg" alt="">
           </div>
         </div>
 
