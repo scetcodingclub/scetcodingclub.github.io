@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Coding Club - SCET</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ffffff',
+                        accent: '#139a43',
+                        dark: '#000000',
+                        light: '#e0e0e0',
+                        lighter: '#a0a0a0',
+                        card: '#1e1e1e',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-dark text-light font-sans min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-dark/90 backdrop-blur-md z-50 shadow-lg border-b border-accent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="asset/NEXUS Hero.png" height="100" width="150" alt="NEXUS">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home"
+                            class="relative px-3 py-2 text-sm font-medium text-light hover:text-accent transition-colors duration-300 group">
+                            <span>Home</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#about"
+                            class="relative px-3 py-2 text-sm font-medium text-light hover:text-accent transition-colors duration-300 group">
+                            <span>About Us</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#workshop"
+                            class="relative px-3 py-2 text-sm font-medium text-light hover:text-accent transition-colors duration-300 group">
+                            <span>Workshop</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#events"
+                            class="relative px-3 py-2 text-sm font-medium text-light hover:text-accent transition-colors duration-300 group">
+                            <span>Events</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#team"
+                            class="relative px-3 py-2 text-sm font-medium text-light hover:text-accent transition-colors duration-300 group">
+                            <span>Team</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#contact"
+                            class="relative px-3 py-2 text-sm font-medium text-light hover:text-accent transition-colors duration-300 group">
+                            <span>Contact</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                        <a href="#join"
+                            class="ml-4 px-6 py-2 bg-accent text-dark font-medium rounded-full hover:bg-white transition-colors duration-300">
+                            Join Us
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-light hover:text-accent focus:outline-none"
+                        id="mobile-menu-button">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card/95 backdrop-blur-sm">
+                <a href="#home"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-light hover:bg-accent/10 hover:text-accent">Home</a>
+                <a href="#about"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-light hover:bg-accent/10 hover:text-accent">About
+                    Us</a>
+                <a href="#workshop"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-light hover:bg-accent/10 hover:text-accent">Workshop</a>
+                <a href="#events"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-light hover:bg-accent/10 hover:text-accent">Events</a>
+                <a href="#team"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-light hover:bg-accent/10 hover:text-accent">Team</a>
+                <a href="#contact"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-light hover:bg-accent/10 hover:text-accent">Contact</a>
+                <a href="#join"
+                    class="block px-3 py-2 mt-2 rounded-md text-center font-medium bg-accent text-dark hover:bg-white">Join
+                    Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Add padding to account for fixed navbar -->
+    <div class="pt-20">
+
+        <!-- Hero Section -->
+        <header id="home"
+            class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-dark to-card/50">
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0 overflow-hidden opacity-20">
+                <div
+                    class="absolute top-1/4 -left-4 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-xl animate-blob">
+                </div>
+                <div
+                    class="absolute top-1/3 -right-4 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000">
+                </div>
+                <div
+                    class="absolute -bottom-8 left-20 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000">
+                </div>
+            </div>
+
+            <div class="container relative z-10 px-4 mx-auto text-center">
+                <h1
+                    class="text-5xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">
+                    Welcome to <span class="text-accent">Nexus</span> Coding Club
+                </h1>
+                <p class="text-xl md:text-2xl text-light mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Empowering students through technology, innovation, and collaborative learning in a vibrant
+                    community of creators and problem-solvers.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#about"
+                        class="px-8 py-4 bg-accent text-dark font-semibold rounded-full hover:bg-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/30">
+                        Explore More
+                    </a>
+                    <a href="#contact"
+                        class="px-8 py-4 border-2 border-accent text-accent font-semibold rounded-full hover:bg-accent/10 transition-all duration-300 transform hover:-translate-y-1">
+                        Join Our Community
+                    </a>
+                </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-card/30 relative overflow-hidden">
+            <!-- Decorative elements -->
+            <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-accent/10 blur-3xl"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-accent/5 blur-3xl"></div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Who Are <span class="text-accent"> we ? </span></h2>
+                    <div class="w-20 h-1 bg-accent mx-auto mb-8"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Left Column - Image -->
+                <div class="relative group" data-aos="fade-right">
+                    <div class="absolute -inset-4 rounded-2xl transform rotate-1 group-hover:rotate-0 transition duration-500">
+                    </div>
+                    <div class="relative bg-card p-1 rounded-2xl">
+                        <img src="asset/Team.jpg" alt="Nexus Coding Club Members" class="w-full h-auto rounded-xl">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent rounded-xl"></div>
+                        <div class="absolute bottom-0 left-0 p-3 md:p-6 text-white">
+                            <p
+                                class="italic text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-base leading-tight md:leading-normal">
+                                " To create a vibrant and inclusive community where students grow beyond classrooms by learning,
+                                building, and leading through technology. Nexus envisions becoming the core platform in our college that
+                                empowers students to explore real-world problems, ignite innovation, and nurture peer-driven learning in
+                                an ever-evolving tech landscape. "
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- Right Column - Content -->
+                    <div class="space-y-8" data-aos="fade-left">
+                        <div
+                            class="bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-[#139a43] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 text-accent text-xl">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4">Our Story</h3>
+                            <p class="text-light/90 mb-4">Nexus is the official coding club of Shadan College of
+                                Engineering and Technology, driven by students, powered by passion, and built on the
+                                belief that learning happens best when it's shared.</p>
+                            <p class="text-light/90">We are a vibrant community of thinkers, builders, and explorers who
+                                believe in the power of technology to shape the future and create meaningful impact.</p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Vision -->
+                            <div
+                                class="bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-[#139a43] transition-all duration-300">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 text-accent group-hover:bg-accent group-hover:text-dark transition-colors">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-3">Our Vision</h3>
+                                <p class="text-light/80 text-sm">To create a vibrant and inclusive community where
+                                    students grow beyond classrooms by learning, building, and leading through
+                                    technology.</p>
+                            </div>
+
+                            <!-- Mission -->
+                            <div
+                                class="bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-[#139a43] transition-all duration-300">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 text-accent group-hover:bg-accent group-hover:text-dark transition-colors">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-3">Our Mission</h3>
+                                <p class="text-light/80 text-sm">To become the core platform in our college that
+                                    empowers students to explore real-world problems, ignite innovation, and nurture
+                                    peer-driven learning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-accent mb-2">500+</div>
+                        <div class="text-sm uppercase tracking-wider text-light">Members Reach</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-accent mb-2">25+</div>
+                        <div class="text-sm uppercase tracking-wider text-light">Activities</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-accent mb-2">32+</div>
+                        <div class="text-sm uppercase tracking-wider text-light">Projects</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-accent mb-2">31,000+</div>
+                        <div class="text-sm uppercase tracking-wider text-light">Lines of Code</div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="py-20 bg-dark/95 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-5">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-accent/20 blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-accent/10 blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">What We <span class="text-accent">Do ?</span></h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-8"></div>
+                <p class="text-xl text-light/80 max-w-3xl mx-auto">We empower students with the skills and knowledge
+                    to excel in the world of technology through hands-on learning and real-world projects.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-border/50"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="absolute -right-10 -top-10 w-40 h-40 bg-accent/5 rounded-full group-hover:scale-150 transition-transform duration-700">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 mb-6 rounded-xl bg-accent/10 flex items-center justify-center text-2xl text-accent group-hover:bg-accent group-hover:text-dark transition-colors duration-300">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">We Code</h3>
+                        <p class="text-light/80 mb-6">We transform ideas into reality through clean, efficient, and
+                            innovative code. Our members build solutions that make a difference.</p>
+                        <ul class="space-y-2 text-light/70 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Daily Coding Session</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Problem Solving</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Open Source Contributions</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-border/50"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="absolute -right-10 -top-10 w-40 h-40 bg-accent/5 rounded-full group-hover:scale-150 transition-transform duration-700">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 mb-6 rounded-xl bg-accent/10 flex items-center justify-center text-2xl text-accent group-hover:bg-accent group-hover:text-dark transition-colors duration-300">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">We Create</h3>
+                        <p class="text-light/80 mb-6">We foster creativity and innovation through collaborative
+                            projects, hackathons, and design thinking workshops.</p>
+                        <ul class="space-y-2 text-light/70 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Project Development</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Brain - Storming</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Prototyping</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-border/50"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="absolute -right-10 -top-10 w-40 h-40 bg-accent/5 rounded-full group-hover:scale-150 transition-transform duration-700">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-16 h-16 mb-6 rounded-xl bg-accent/10 flex items-center justify-center text-2xl text-accent group-hover:bg-accent group-hover:text-dark transition-colors duration-300">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">We Compete</h3>
+                        <p class="text-light/80 mb-6">We participate in coding competitions and challenges to test
+                            our skills, learn from others, and push our boundaries.</p>
+                        <ul class="space-y-2 text-light/70 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Coding Competitions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Hackathons</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Challenges</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="events" class="py-20 bg-card/30 relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Our <span class="text-accent">Activities</span></h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-8"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- C Workshop Card 1 -->
+                <div class="group relative bg-card p-8 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl overflow-hidden"
+                    data-aos="fade-up">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-bold mb-4 text-accent">C WORKSHOP</h3>
+                        <p class="text-light/80 mb-6">Master the fundamentals of C programming with our intensive
+                            workshop designed for beginners and intermediate learners.</p>
+                        <ul class="space-y-2 text-light/70 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span></span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>70+ Registration - 50 Members Attened</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Prototyping</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center text-accent font-medium group">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="group relative bg-card p-8 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl overflow-hidden"
+                    data-aos="fade-up">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-bold mb-4 text-accent">C WORKSHOP</h3>
+                        <p class="text-light/80 mb-6">Master the fundamentals of C programming with our intensive
+                            workshop designed for beginners and intermediate learners.</p>
+                        <ul class="space-y-2 text-light/70 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span></span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>70+ Registration - 50 Members Attened</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Prototyping</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center text-accent font-medium group">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="group relative bg-card p-8 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl overflow-hidden"
+                    data-aos="fade-up">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-bold mb-4 text-accent">C WORKSHOP</h3>
+                        <p class="text-light/80 mb-6">Master the fundamentals of C programming with our intensive
+                            workshop designed for beginners and intermediate learners.</p>
+                        <ul class="space-y-2 text-light/70 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span></span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>70+ Registration - 50 Members Attened</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>Prototyping</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center text-accent font-medium group">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- C Workshop Card 2 -->
+                <div class="group relative bg-card p-8 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-bold mb-4 text-accent">C WORKSHOP</h3>
+                        <p class="text-light/80 mb-6">Advanced C programming concepts including pointers, memory
+                            management, and data structures for experienced coders.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Advanced</span>
+                            <span
+                                class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Project-based</span>
+                            <span
+                                class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Certification</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-accent font-medium group">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark/95 relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <span
+                    class="inline-block px-4 py-1 mb-4 text-sm font-semibold text-accent bg-accent/10 rounded-full">Get
+                    In Touch</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Contact <span class="text-accent">Us</span></h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-8"></div>
+                <p class="text-xl text-light/80 max-w-3xl mx-auto">Have questions or want to collaborate? Reach out
+                    to us and we'll get back to you as soon as possible.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info -->
+                <div class="space-y-8" data-aos="fade-right">
+                    <div class="bg-card p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-6">Our Information</h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium mb-1">Email</h4>
+                                    <p class="text-light/80">nexus@scet.ac.in</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium mb-1">Location</h4>
+                                    <p class="text-light/80">Shadan College of Engineering & Technology, Hyderabad
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium mb-1">Club Hours</h4>
+                                    <p class="text-light/80">Monday - Friday: 3:00 PM - 6:00 PM</p>
+                                    <p class="text-light/80">Saturday: 10:00 AM - 2:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-lg font-medium mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-light hover:bg-accent hover:text-dark transition-colors">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-light hover:bg-accent hover:text-dark transition-colors">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-light hover:bg-accent hover:text-dark transition-colors">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-light hover:bg-accent hover:text-dark transition-colors">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-card p-8 rounded-2xl" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-light/80 mb-2">Your Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-3 bg-dark border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                                placeholder="Enter your name" required>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-light/80 mb-2">Your
+                                Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-3 bg-dark border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                                placeholder="Enter your email" required>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-light/80 mb-2">Subject</label>
+                            <input type="text" id="subject"
+                                class="w-full px-4 py-3 bg-dark border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                                placeholder="What's this about?">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-light/80 mb-2">Your
+                                Message</label>
+                            <textarea id="message" rows="5"
+                                class="w-full px-4 py-3 bg-dark border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                                placeholder="Write your message here..." required></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full px-6 py-3 bg-accent text-dark font-semibold rounded-lg hover:bg-white transition-colors duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-card py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-accent">Nexus</a>
+                    <p class="text-light/60 mt-2">The official coding club of SCET</p>
+                </div>
+
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="#home" class="text-light/60 hover:text-accent transition-colors">Home</a>
+                        <a href="#about" class="text-light/60 hover:text-accent transition-colors">About</a>
+                        <a href="#events" class="text-light/60 hover:text-accent transition-colors">Events</a>
+                        <a href="#contact" class="text-light/60 hover:text-accent transition-colors">Contact</a>
+                    </div>
+                    <p class="text-light/60 text-sm">&copy; 2025 Nexus Coding Club. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>
