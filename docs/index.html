@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus Coding Club - SCET</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="/styles/tailwind.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/styles/tailwind.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -37,9 +39,11 @@
             }
         }
     </script>
+
 </head>
 
 <body class="bg-dark text-light font-sans min-h-screen">
+
     <!-- Navigation -->
     <nav class="fixed w-full bg-dark/90 backdrop-blur-md z-50 shadow-lg border-b border-accent/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,34 +102,48 @@
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
                     <button type="button"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-light hover:text-accent focus:outline-none"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-light hover:text-accent focus:outline-none transition-transform duration-300"
                         id="mobile-menu-button">
                         <span class="sr-only">Open main menu</span>
-                        <i class="fas fa-bars text-2xl"></i>
+                        <i class="fas fa-bars text-2xl transition-all duration-300" id="menu-icon"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile menu -->
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card/95 backdrop-blur-sm">
-                <a href="#home"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-light hover:bg-accent/10 hover:text-accent">Home</a>
-                <a href="#about"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-light hover:bg-accent/10 hover:text-accent">About
-                    Us</a>
-                <a href="#workshop"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-light hover:bg-accent/10 hover:text-accent">Workshop</a>
-                <a href="#events"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-light hover:bg-accent/10 hover:text-accent">Events</a>
-                <a href="#team"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-light hover:bg-accent/10 hover:text-accent">Team</a>
-                <a href="#contact"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-light hover:bg-accent/10 hover:text-accent">Contact</a>
-                <a href="#join"
-                    class="block px-3 py-2 mt-2 rounded-md text-center font-medium bg-accent text-dark hover:bg-white">Join
-                    Us</a>
+        <!-- Mobile menu with animations -->
+        <div class="md:hidden hidden fixed inset-0 z-50" id="mobile-menu">
+            <!-- Overlay for the entire screen -->
+            <div class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0"
+                id="menu-overlay"></div>
+
+            <!-- Menu content -->
+            <div class="fixed right-0 top-0 h-full w-4/5 max-w-sm bg-gradient-to-b from-dark to-card shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50"
+                id="menu-content">
+                <div class="flex justify-end p-4 bg-dark/50">
+                    <button class="p-2 text-light hover:text-accent transition-colors" id="close-menu-button">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <div class="px-6 pt-2 pb-8 space-y-4">
+                    <!-- Menu items -->
+                    <a href="#home"
+                        class="block px-4 py-3 rounded-lg text-lg font-medium text-light hover:bg-accent/20 hover:text-accent transition-all duration-200 transform -translate-x-8 opacity-0">Home</a>
+                    <a href="#about"
+                        class="block px-4 py-3 rounded-lg text-lg font-medium text-light hover:bg-accent/20 hover:text-accent transition-all duration-200 transform -translate-x-8 opacity-0">About
+                        Us</a>
+                    <a href="#workshop"
+                        class="block px-4 py-3 rounded-lg text-lg font-medium text-light hover:bg-accent/20 hover:text-accent transition-all duration-200 transform -translate-x-8 opacity-0">Workshop</a>
+                    <a href="#events"
+                        class="block px-4 py-3 rounded-lg text-lg font-medium text-light hover:bg-accent/20 hover:text-accent transition-all duration-200 transform -translate-x-8 opacity-0">Events</a>
+                    <a href="#team"
+                        class="block px-4 py-3 rounded-lg text-lg font-medium text-light hover:bg-accent/20 hover:text-accent transition-all duration-200 transform -translate-x-8 opacity-0">Team</a>
+                    <a href="#contact"
+                        class="block px-4 py-3 rounded-lg text-lg font-medium text-light hover:bg-accent/20 hover:text-accent transition-all duration-200 transform -translate-x-8 opacity-0">Contact</a>
+                    <a href="#join"
+                        class="block px-4 py-3 mt-6 rounded-lg text-center text-lg font-medium bg-accent/90 hover:bg-accent text-dark hover:bg-white transition-colors duration-300 transform -translate-x-8 opacity-0">Join
+                        Us</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -184,23 +202,27 @@
 
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <!-- Left Column - Image -->
-                <div class="relative group" data-aos="fade-right">
-                    <div class="absolute -inset-4 rounded-2xl transform rotate-1 group-hover:rotate-0 transition duration-500">
-                    </div>
-                    <div class="relative bg-card p-1 rounded-2xl">
-                        <img src="asset/Team.jpg" alt="Nexus Coding Club Members" class="w-full h-auto rounded-xl">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent rounded-xl"></div>
-                        <div class="absolute bottom-0 left-0 p-3 md:p-6 text-white">
-                            <p
-                                class="italic text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-base leading-tight md:leading-normal">
-                                " To create a vibrant and inclusive community where students grow beyond classrooms by learning,
-                                building, and leading through technology. Nexus envisions becoming the core platform in our college that
-                                empowers students to explore real-world problems, ignite innovation, and nurture peer-driven learning in
-                                an ever-evolving tech landscape. "
-                            </p>
+                    <div class="relative group" data-aos="fade-right">
+                        <div
+                            class="absolute -inset-4 rounded-2xl transform rotate-1 group-hover:rotate-0 transition duration-500">
+                        </div>
+                        <div class="relative bg-card p-1 rounded-2xl">
+                            <img src="asset/Team.jpg" alt="Nexus Coding Club Members" class="w-full h-auto rounded-xl">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent rounded-xl"></div>
+                            <div class="absolute bottom-0 left-0 p-3 md:p-6 text-white">
+                                <p
+                                    class="italic text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-base leading-tight md:leading-normal text-center ">
+                                    " To create a vibrant and inclusive community where students grow beyond classrooms
+                                    by learning,
+                                    building, and leading through technology. Nexus envisions becoming the core platform
+                                    in our college that
+                                    empowers students to explore real-world problems, ignite innovation, and nurture
+                                    peer-driven learning in
+                                    an ever-evolving tech landscape. "
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
                     <!-- Right Column - Content -->
                     <div class="space-y-8" data-aos="fade-left">
@@ -251,19 +273,23 @@
                 <!-- Stats -->
                 <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
                     <div class="text-center">
-                        <div class="text-4xl font-bold text-accent mb-2">500+</div>
+                        <div class="text-4xl font-bold text-accent mb-2"><span class="counter"
+                                data-target="500">0</span>+</div>
                         <div class="text-sm uppercase tracking-wider text-light">Members Reach</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl font-bold text-accent mb-2">25+</div>
+                        <div class="text-4xl font-bold text-accent mb-2"><span class="counter"
+                                data-target="25">0</span>+</div>
                         <div class="text-sm uppercase tracking-wider text-light">Activities</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl font-bold text-accent mb-2">32+</div>
+                        <div class="text-4xl font-bold text-accent mb-2"><span class="counter"
+                                data-target="32">0</span>+</div>
                         <div class="text-sm uppercase tracking-wider text-light">Projects</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl font-bold text-accent mb-2">31,000+</div>
+                        <div class="text-4xl font-bold text-accent mb-2"><span class="counter"
+                                data-target="31000">0</span>+</div>
                         <div class="text-sm uppercase tracking-wider text-light">Lines of Code</div>
                     </div>
                 </div>
@@ -291,15 +317,38 @@
                 <!-- Card 1 -->
                 <div class="group relative bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-border/50"
                     data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="absolute -right-10 -top-10 w-40 h-40 bg-accent/5 rounded-full group-hover:scale-150 transition-transform duration-700">
-                    </div>
-                    <div class="relative z-10">
-                        <div
-                            class="w-16 h-16 mb-6 rounded-xl bg-accent/10 flex items-center justify-center text-2xl text-accent group-hover:bg-accent group-hover:text-dark transition-colors duration-300">
-                            <i class="fas fa-code"></i>
+                    <div class="relative overflow-hidden rounded-lg mb-6 w-4/5 mx-auto aspect-[4/3]">
+                        <div class="carousel-slide-1 flex transition-transform duration-500 ease-in-out w-full h-full">
+                            <div class="min-w-full h-full flex-shrink-0 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Coding" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                            </div>
+                            <div class="min-w-full h-full flex-shrink-0 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Coding" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                            </div>
+                            <div class="min-w-full h-full flex-shrink-0 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Coding" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">We Code</h3>
+                        <button
+                            class="carousel-prev-1 absolute left-1 top-1/2 -translate-y-1/2 bg-black/60 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-accent transition-all duration-300 transform hover:scale-110">
+                            &lt;
+                        </button>
+                        <button
+                            class="carousel-next-1 absolute right-1 top-1/2 -translate-y-1/2 bg-black/60 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-accent transition-all duration-300 transform hover:scale-110">
+                            &gt;
+                        </button>
+                    </div>
+                    <div class="relative z-10 mt-6">
+                        <h3 class="text-2xl font-bold mb-4 text-center">We Code</h3>
                         <p class="text-light/80 mb-6">We transform ideas into reality through clean, efficient, and
                             innovative code. Our members build solutions that make a difference.</p>
                         <ul class="space-y-2 text-light/70 text-sm">
@@ -322,15 +371,38 @@
                 <!-- Card 2 -->
                 <div class="group relative bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-border/50"
                     data-aos="fade-up" data-aos-delay="200">
-                    <div
-                        class="absolute -right-10 -top-10 w-40 h-40 bg-accent/5 rounded-full group-hover:scale-150 transition-transform duration-700">
-                    </div>
-                    <div class="relative z-10">
-                        <div
-                            class="w-16 h-16 mb-6 rounded-xl bg-accent/10 flex items-center justify-center text-2xl text-accent group-hover:bg-accent group-hover:text-dark transition-colors duration-300">
-                            <i class="fas fa-lightbulb"></i>
+                    <div class="relative overflow-hidden rounded-lg mb-6 w-4/5 mx-auto aspect-[4/3]">
+                        <div class="carousel-slide-2 flex transition-transform duration-500 ease-in-out w-full h-full">
+                            <div class="min-w-full h-full flex-shrink-0 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Creativity" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                            </div>
+                            <div class="min-w-full h-full flex-shrink-0 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Creativity" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                            </div>
+                            <div class="min-w-full h-full flex-shrink-0 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Creativity" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">We Create</h3>
+                        <button
+                            class="carousel-prev-2 absolute left-1 top-1/2 -translate-y-1/2 bg-black/60 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-accent transition-all duration-300 transform hover:scale-110">
+                            &lt;
+                        </button>
+                        <button
+                            class="carousel-next-2 absolute right-1 top-1/2 -translate-y-1/2 bg-black/60 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-accent transition-all duration-300 transform hover:scale-110">
+                            &gt;
+                        </button>
+                    </div>
+                    <div class="relative z-10 mt-6">
+                        <h3 class="text-2xl font-bold mb-4 text-center">We Create</h3>
                         <p class="text-light/80 mb-6">We foster creativity and innovation through collaborative
                             projects, hackathons, and design thinking workshops.</p>
                         <ul class="space-y-2 text-light/70 text-sm">
@@ -353,15 +425,38 @@
                 <!-- Card 3 -->
                 <div class="group relative bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-border/50"
                     data-aos="fade-up" data-aos-delay="300">
-                    <div
-                        class="absolute -right-10 -top-10 w-40 h-40 bg-accent/5 rounded-full group-hover:scale-150 transition-transform duration-700">
-                    </div>
-                    <div class="relative z-10">
-                        <div
-                            class="w-16 h-16 mb-6 rounded-xl bg-accent/10 flex items-center justify-center text-2xl text-accent group-hover:bg-accent group-hover:text-dark transition-colors duration-300">
-                            <i class="fas fa-trophy"></i>
+                    <div class="relative overflow-hidden rounded-lg mb-6 w-4/5 mx-auto aspect-[4/3]">
+                        <div class="carousel-slide-3 flex transition-transform duration-500 ease-in-out w-full h-full">
+                            <div class="min-w-full h-full flex-shrink-0 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Competition" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                            </div>
+                            <div class="min-w-full h-full flex-shrink-0 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80"
+                                        alt="Competition" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                            </div>
+                            <div class="min-w-full h-full flex-shrink-0 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Competition" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">We Compete</h3>
+                        <button
+                            class="carousel-prev-3 absolute left-1 top-1/2 -translate-y-1/2 bg-black/60 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-accent transition-all duration-300 transform hover:scale-110">
+                            &lt;
+                        </button>
+                        <button
+                            class="carousel-next-3 absolute right-1 top-1/2 -translate-y-1/2 bg-black/60 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-accent transition-all duration-300 transform hover:scale-110">
+                            &gt;
+                        </button>
+                    </div>
+                    <div class="relative z-10 mt-6">
+                        <h3 class="text-2xl font-bold mb-4 text-center">We Compete</h3>
                         <p class="text-light/80 mb-6">We participate in coding competitions and challenges to test
                             our skills, learn from others, and push our boundaries.</p>
                         <ul class="space-y-2 text-light/70 text-sm">
@@ -406,15 +501,11 @@
                         <ul class="space-y-2 text-light/70 text-sm">
                             <li class="flex items-center">
                                 <i class="fas fa-check-circle text-accent mr-2"></i>
-                                <span></span>
+                                <span>12th and 13th September 2024</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check-circle text-accent mr-2"></i>
                                 <span>70+ Registration - 50 Members Attened</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-accent mr-2"></i>
-                                <span>Prototyping</span>
                             </li>
                         </ul>
                         <a href="#" class="inline-flex items-center text-accent font-medium group">
@@ -423,28 +514,24 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="group relative bg-card p-8 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl overflow-hidden"
                     data-aos="fade-up">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
                     <div class="relative z-10">
-                        <h3 class="text-3xl font-bold mb-4 text-accent">C WORKSHOP</h3>
+                        <h3 class="text-3xl font-bold mb-4 text-accent">C BOOTCAMP</h3>
                         <p class="text-light/80 mb-6">Master the fundamentals of C programming with our intensive
                             workshop designed for beginners and intermediate learners.</p>
                         <ul class="space-y-2 text-light/70 text-sm">
                             <li class="flex items-center">
                                 <i class="fas fa-check-circle text-accent mr-2"></i>
-                                <span></span>
+                                <span>19th to 22nd November 2024</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check-circle text-accent mr-2"></i>
-                                <span>70+ Registration - 50 Members Attened</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-accent mr-2"></i>
-                                <span>Prototyping</span>
+                                <span>140+ Registration - 80 Members Attened</span>
                             </li>
                         </ul>
                         <a href="#" class="inline-flex items-center text-accent font-medium group">
@@ -459,21 +546,17 @@
                         class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
                     <div class="relative z-10">
-                        <h3 class="text-3xl font-bold mb-4 text-accent">C WORKSHOP</h3>
+                        <h3 class="text-3xl font-bold mb-4 text-accent">Screening Event - Data Privacy Day</h3>
                         <p class="text-light/80 mb-6">Master the fundamentals of C programming with our intensive
                             workshop designed for beginners and intermediate learners.</p>
                         <ul class="space-y-2 text-light/70 text-sm">
                             <li class="flex items-center">
                                 <i class="fas fa-check-circle text-accent mr-2"></i>
-                                <span></span>
+                                <span>30th January 2025</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check-circle text-accent mr-2"></i>
-                                <span>70+ Registration - 50 Members Attened</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-accent mr-2"></i>
-                                <span>Prototyping</span>
+                                <span>120+ Registration - 60 Members Attened</span>
                             </li>
                         </ul>
                         <a href="#" class="inline-flex items-center text-accent font-medium group">
@@ -482,24 +565,83 @@
                         </a>
                     </div>
                 </div>
-                <!-- C Workshop Card 2 -->
                 <div class="group relative bg-card p-8 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl overflow-hidden"
-                    data-aos="fade-up" data-aos-delay="100">
+                    data-aos="fade-up">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
                     <div class="relative z-10">
-                        <h3 class="text-3xl font-bold mb-4 text-accent">C WORKSHOP</h3>
-                        <p class="text-light/80 mb-6">Advanced C programming concepts including pointers, memory
-                            management, and data structures for experienced coders.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span
-                                class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Advanced</span>
-                            <span
-                                class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Project-based</span>
-                            <span
-                                class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Certification</span>
-                        </div>
+                        <h3 class="text-3xl font-bold mb-4 text-accent">FRONTEND WEB - DEV BOOTCAMP</h3>
+                        <p class="text-light/80 mb-6">Master the fundamentals of C programming with our intensive
+                            workshop designed for beginners and intermediate learners.</p>
+                        <ul class="space-y-2 text-light/70 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>10th to 15th February 2025</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>160+ Registration - 90 Members Attened</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center text-accent font-medium group">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="group relative bg-card p-8 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl overflow-hidden"
+                    data-aos="fade-up">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-bold mb-4 text-accent">SPARKQUEST'25 - IDEA HACKATHON </h3>
+                        <p class="text-light/80 mb-6">Master the fundamentals of C programming with our intensive
+                            workshop designed for beginners and intermediate learners.</p>
+                        <ul class="space-y-2 text-light/70 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>27th and 28th February 2025</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>20+ Idea Registered - 15 Idea Approved</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>25+ Participants Attened - 100+ Visitor's Attened</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center text-accent font-medium group">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="group relative bg-card p-8 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl overflow-hidden"
+                    data-aos="fade-up">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-bold mb-4 text-accent">EXPOGEN1.0 - PROJECT </h3>
+                        <p class="text-light/80 mb-6">Master the fundamentals of C programming with our intensive
+                            workshop designed for beginners and intermediate learners.</p>
+                        <ul class="space-y-2 text-light/70 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>6th May 2025</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>120+ Project Registered - 110+ Projects confirmed</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-2"></i>
+                                <span>200+ Participants Attened - 70+ Visitor's Attened</span>
+                            </li>
+                        </ul>
                         <a href="#" class="inline-flex items-center text-accent font-medium group">
                             Learn More
                             <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
@@ -537,7 +679,7 @@
                                 </div>
                                 <div class="ml-4">
                                     <h4 class="text-lg font-medium mb-1">Email</h4>
-                                    <p class="text-light/80">nexus@scet.ac.in</p>
+                                    <p class="text-light/80">nexuscodingclub@gmail.com</p>
                                 </div>
                             </div>
 
@@ -548,8 +690,8 @@
                                 </div>
                                 <div class="ml-4">
                                     <h4 class="text-lg font-medium mb-1">Location</h4>
-                                    <p class="text-light/80">Shadan College of Engineering & Technology, Hyderabad
-                                    </p>
+                                    <p class="text-light/80">Shadan College of Engineering & Technology (MBA -
+                                        Block)<br>Himayat Sagar Rd, Hyderabad, Telangana</p>
                                 </div>
                             </div>
 
@@ -560,8 +702,8 @@
                                 </div>
                                 <div class="ml-4">
                                     <h4 class="text-lg font-medium mb-1">Club Hours</h4>
-                                    <p class="text-light/80">Monday - Friday: 3:00 PM - 6:00 PM</p>
-                                    <p class="text-light/80">Saturday: 10:00 AM - 2:00 PM</p>
+                                    <p class="text-light/80">Monday - Saturday: 2:00 PM - 5:00 PM</p>
+                                    <!-- <p class="text-light/80">Sunday: Closed</p> -->
                                 </div>
                             </div>
                         </div>
@@ -569,20 +711,32 @@
                         <div class="mt-8">
                             <h4 class="text-lg font-medium mb-4">Follow Us</h4>
                             <div class="flex space-x-4">
-                                <a href="#"
-                                    class="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-light hover:bg-accent hover:text-dark transition-colors">
+                                <a href="https://github.com/SCET-CODING-CLUB" target="_blank" rel="noopener noreferrer"
+                                    class="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-light hover:bg-gray-800 hover:text-white transition-colors"
+                                    title="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="#"
-                                    class="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-light hover:bg-accent hover:text-dark transition-colors">
+                                <a href="https://www.linkedin.com/company/nexus-coding-club/" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-light hover:bg-[#0A66C2] hover:text-white transition-colors"
+                                    title="LinkedIn">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="#"
-                                    class="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-light hover:bg-accent hover:text-dark transition-colors">
-                                    <i class="fab fa-twitter"></i>
+                                <a href="https://discord.gg/HSpkhtUXth" target="_blank" rel="noopener noreferrer"
+                                    class="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-light hover:bg-[#5865F2] hover:text-white transition-colors"
+                                    title="Discord">
+                                    <i class="fab fa-discord"></i>
                                 </a>
-                                <a href="#"
-                                    class="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-light hover:bg-accent hover:text-dark transition-colors">
+                                <a href="https://whatsapp.com/channel/0029Vapn8RwEquiQfi5Pth45" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-light hover:bg-[#25D366] hover:text-white transition-colors"
+                                    title="WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://www.instagram.com/nexuscodingclub?igsh=ODhzcGVpbmJkMjR4"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-light hover:bg-gradient-to-r from-purple-500 to-pink-500 hover:text-white transition-colors"
+                                    title="Instagram">
                                     <i class="fab fa-instagram"></i>
                                 </a>
                             </div>
@@ -596,7 +750,7 @@
                     <form class="space-y-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-light/80 mb-2">Your Name</label>
-                            <input type="text" id="name"
+                            <input type="text" id="name" name="name" r
                                 class="w-full px-4 py-3 bg-dark border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                                 placeholder="Enter your name" required>
                         </div>
@@ -604,24 +758,24 @@
                         <div>
                             <label for="email" class="block text-sm font-medium text-light/80 mb-2">Your
                                 Email</label>
-                            <input type="email" id="email"
+                            <input type="email" id="email" name="email"
                                 class="w-full px-4 py-3 bg-dark border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                                 placeholder="Enter your email" required>
                         </div>
 
                         <div>
                             <label for="subject" class="block text-sm font-medium text-light/80 mb-2">Subject</label>
-                            <input type="text" id="subject"
+                            <input type="text" id="subject" name="subject"
                                 class="w-full px-4 py-3 bg-dark border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-                                placeholder="What's this about?">
+                                placeholder="Enter subject" required>
                         </div>
 
                         <div>
                             <label for="message" class="block text-sm font-medium text-light/80 mb-2">Your
                                 Message</label>
-                            <textarea id="message" rows="5"
+                            <textarea id="message" name="message" rows="4"
                                 class="w-full px-4 py-3 bg-dark border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-                                placeholder="Write your message here..." required></textarea>
+                                placeholder="Enter your message" required></textarea>
                         </div>
 
                         <button type="submit"
@@ -635,47 +789,31 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-card py-12">
+    <footer class="bg-card py-8">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <a href="#" class="text-2xl font-bold text-accent">Nexus</a>
-                    <p class="text-light/60 mt-2">The official coding club of SCET</p>
-                </div>
-
-                <div class="flex flex-col items-center md:items-end">
-                    <div class="flex space-x-6 mb-4">
-                        <a href="#home" class="text-light/60 hover:text-accent transition-colors">Home</a>
-                        <a href="#about" class="text-light/60 hover:text-accent transition-colors">About</a>
-                        <a href="#events" class="text-light/60 hover:text-accent transition-colors">Events</a>
-                        <a href="#contact" class="text-light/60 hover:text-accent transition-colors">Contact</a>
-                    </div>
-                    <p class="text-light/60 text-sm">&copy; 2025 Nexus Coding Club. All rights reserved.</p>
-                </div>
+            <!-- Navigation Links -->
+            <div class="flex flex-wrap justify-center gap-6 mb-6">
+                <a href="#home" class="text-light/70 hover:text-accent transition-colors">Home</a>
+                <a href="#about" class="text-light/70 hover:text-accent transition-colors">About</a>
+                <a href="#workshop" class="text-light/70 hover:text-accent transition-colors">Workshop</a>
+                <a href="#events" class="text-light/70 hover:text-accent transition-colors">Events</a>
+                <a href="#team" class="text-light/70 hover:text-accent transition-colors">Team</a>
+                <a href="#contact" class="text-light/70 hover:text-accent transition-colors">Contact</a>
             </div>
+
+            <!-- Copyright -->
+            <p class="text-center text-light/60 text-sm mb-4">&copy; 2025 SCET - N.E.X.U.S Coding Club. All rights
+                reserved.</p>
+
+            <!-- Built with love -->
+            <p class="text-center text-light/50 text-xs">
+                Built with ❤️ by <span class="text-accent/80">SCET - N.E.X.U.S</span>
+            </p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize AOS (Animate On Scroll)
-        document.addEventListener('DOMContentLoaded', function () {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                mirror: false
-            });
-
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            mobileMenuButton.addEventListener('click', function () {
-                mobileMenu.classList.toggle('hidden');
-            });
-        });
-    </script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>

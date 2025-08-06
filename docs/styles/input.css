@@ -1,5 +1,21 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root{
+:root {
     --colorgreen: #139A43;
+}
+
+@layer base {
+    html {
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+@layer components {
+    /* Add your custom component styles here */
+}
+
+@layer utilities {
+    /* Add your custom utilities here */
 }
