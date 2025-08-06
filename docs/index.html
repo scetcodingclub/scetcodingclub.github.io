@@ -45,17 +45,38 @@
 <body class="bg-dark text-light font-sans min-h-screen">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-dark/90 backdrop-blur-md z-50 shadow-lg border-b border-accent/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <img src="asset/NEXUS Hero nobg.png" height="300" width="180" alt="NEXUS">
+    <style>
+        #mainNav {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform, opacity;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        #mainNav.navbar-hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+    <nav id="mainNav" class="fixed w-full bg-dark/90 backdrop-blur-md z-50 shadow-lg border-b border-accent/20">
+        <div class="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-20">
+                <!-- Logo Container -->
+                <div class="flex-shrink-0 flex items-center space-x-3">
+                    <img src="asset/ShadanFillLogo.png" alt="NEXUS"
+                        class="h-16 w-auto hover:scale-105 transition-transform duration-200">
+                    <img src="asset/NEXUS Hero nobg.png" alt="NEXUS"
+                        class="h-16 w-auto hover:scale-105 transition-transform duration-200">
                 </div>
+
+                <!-- Spacer to push navigation to the right -->
+                <div class="flex-grow"></div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-center space-x-8">
+                    <div class="flex items-center space-x-6">
                         <a href="#home"
                             class="relative px-3 py-2 text-sm font-medium text-light hover:text-accent transition-colors duration-300 group">
                             <span>Home</span>
@@ -92,8 +113,8 @@
                             <span
                                 class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
                         </a>
-                        <a href="#join"
-                            class="ml-4 px-6 py-2 bg-accent text-dark font-medium rounded-full hover:bg-white transition-colors duration-300">
+                        <a href="#contact"
+                            class="ml-4 px-6 py-2.5 text-sm font-semibold text-dark bg-accent rounded-full hover:bg-accent/90 transition-colors duration-300 whitespace-nowrap">
                             Join Us
                         </a>
                     </div>
@@ -150,8 +171,6 @@
 
     <!-- Add padding to account for fixed navbar -->
     <div class="pt-20">
-
-        <img src="/asset/nexusloading.gif" alt="" srcset="">
 
         <!-- Hero Section -->
         <header id="home"
@@ -655,7 +674,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-dark/95 relative overflow-hidden">
+    <section id="contact" class="pt-16 pb-12 bg-dark/95 relative overflow-hidden">
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6">Get In <span class="text-accent">Touch</span></h2>
@@ -730,17 +749,14 @@
 
 
     <!-- Footer -->
-    <footer class="bg-dark/80 pt-16 pb-8 border-t border-border/10">
+    <footer class="bg-dark/90 pt-8 pb-6 border-t border-light/10">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-10 mb-12">
+            <div class="grid md:grid-cols-4 gap-8 items-center">
                 <!-- Logo and Description -->
-                <div class="space-y-5">
-                    <div class="flex items-center">
-                        <img src="asset/NEXUS Hero.png" alt="">
+                <div class="flex justify-center md:justify-start">
+                    <div class="w-64 md:w-72">
+                        <img src="asset/NEXUS Hero nobg.png" alt="NEXUS Coding Club" class="w-full h-auto">
                     </div>
-                    <p class="text-light/60 text-sm leading-relaxed">.</p>
-
-
                 </div>
 
                 <!-- Quick Links -->
@@ -877,14 +893,14 @@
                 </div>
             </div>
 
-            <!-- Copyright -->
-            <p class="text-center text-light/60 text-sm mb-2">&copy; 2025 SCET - N.E.X.U.S Coding Club. All rights
-                reserved.</p>
-
-            <!-- Built with love -->
-            <p class="text-center text-light/50 text-xs">
-                Built with ❤️ by <span class="text-accent/80">SCET - N.E.X.U.S</span>
-            </p>
+            <!-- Copyright and Credits -->
+            <div class="mt-6 pt-6">
+                <p class="text-center text-light/60 text-sm">&copy; 2025 SCET - N.E.X.U.S Coding Club. All rights
+                    reserved.</p>
+                <p class="text-center text-light/50 text-xs mt-1">
+                    Built with ❤️ by <span class="text-accent/80">SCET - N.E.X.U.S</span>
+                </p>
+            </div>
         </div>
     </footer>
 

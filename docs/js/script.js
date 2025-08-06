@@ -1,3 +1,46 @@
+// Navbar smooth fade in/out based on scroll position
+let lastScroll = 0;
+let ticking = false;
+const navbar = document.getElementById('mainNav');
+const whoWeAreSection = document.getElementById('about');
+
+function updateNavbarVisibility() {
+    if (!whoWeAreSection) return;
+
+    const currentScroll = window.scrollY || document.documentElement.scrollTop;
+    const whoWeArePosition = whoWeAreSection.getBoundingClientRect().top + window.scrollY;
+    const windowHeight = window.innerHeight;
+    const triggerPoint = whoWeArePosition - (windowHeight * 0.4); // Trigger slightly before reaching the section
+
+    // Calculate scroll direction
+    const scrollDirection = currentScroll > lastScroll ? 'down' : 'up';
+    lastScroll = currentScroll <= 0 ? 0 : currentScroll; // For mobile or negative scrolling
+
+    // Check if we're in the trigger zone
+    if (currentScroll > triggerPoint) {
+        if (scrollDirection === 'down') {
+            navbar.classList.add('navbar-hidden');
+        } else {
+            navbar.classList.remove('navbar-hidden');
+        }
+    } else {
+        navbar.classList.remove('navbar-hidden');
+    }
+
+    ticking = false;
+}
+
+// Optimized scroll handler with requestAnimationFrame
+function handleScroll() {
+    if (!ticking) {
+        window.requestAnimationFrame(updateNavbarVisibility);
+        ticking = true;
+    }
+}
+
+// Use passive scroll for better performance
+window.addEventListener('scroll', handleScroll, { passive: true });
+
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize AOS
     AOS.init({
@@ -236,6 +279,72 @@ document.addEventListener('DOMContentLoaded', function () {
         counters.forEach(counter => {
             const target = parseInt(counter.getAttribute('data-target'));
             animateValue(counter, 0, target, 2000);
+        });
+    }
+
+    // Toggle roll number field based on user type
+    function toggleRollNumberField() {
+        const userTypeSelect = document.getElementById('userType');
+        const userType = userTypeSelect.value;
+        const rollNumberContainer = document.getElementById('rollNumberContainer');
+        const rollNumberInput = document.getElementById('rollNumber');
+
+        if (userType === 'scet') {
+            rollNumberContainer.classList.remove('hidden');
+            rollNumberInput.required = true;
+            rollNumberInput.setAttribute('aria-required', 'true');
+            rollNumberInput.setAttribute('aria-invalid', 'false');
+        } else {
+            rollNumberContainer.classList.add('hidden');
+            rollNumberInput.required = false;
+            rollNumberInput.removeAttribute('aria-required');
+            rollNumberInput.removeAttribute('aria-invalid');
+            rollNumberInput.value = ''; // Clear the roll number when hiding
+        }
+
+        // Trigger form validation
+        rollNumberInput.reportValidity();
+    }
+
+    // Contact Form Submission Handler
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const userType = document.getElementById('userType').value;
+            const name = document.getElementById('name').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const mobile = document.getElementById('mobile').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const rollNumber = userType === 'scet' ? document.getElementById('rollNumber').value.trim() : '';
+
+            // Create email body with proper line breaks
+            let body = `Hello NEXUS Team,%0D%0A%0D%0A` +
+                `I would like to get in touch with you regarding: ${subject}%0D%0A%0D%0A` +
+                `Name: ${name}%0D%0A`;
+
+            // Add roll number only if user is SCET student
+            if (userType === 'scet' && rollNumber) {
+                body += `Roll Number: ${rollNumber}%0D%0A`;
+            }
+
+            // Add contact info and message
+            body += `Mobile Number: ${mobile}%0D%0A` +
+                `User Type: ${userType === 'scet' ? 'SCET Student' : 'General Inquiry'}%0D%0A%0D%0A` +
+                `Message:%0D%0A${message}%0D%0A%0D%0A` +
+                `Looking forward to your response.`;
+
+            // Create mailto link
+            const mailtoLink = `mailto:nexuscodingclub@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+            // Open default email client
+            window.location.href = mailtoLink;
+
+            // Reset form after submission
+            this.reset();
+            document.getElementById('rollNumberContainer').classList.add('hidden');
         });
     }
 
