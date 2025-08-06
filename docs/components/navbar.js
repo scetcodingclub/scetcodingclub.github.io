@@ -2,12 +2,26 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
         response = await fetch("/components/navbar.html");
-        data = await response.text();
-        document.getElementById("mainNav").innerHTML = data;
+        html = await response.text();
+        // document.getElementById("navbar-placeholder").innerHTML = data;
+
+        const placeholder = document.getElementById("navbar-placeholder");
+        // Create a temporary DOM node from the fetched HTML
+        const temp = document.createElement("div");
+        temp.innerHTML = html.trim();
+        const navbarEl = temp.firstElementChild;
+        placeholder.replaceWith(navbarEl);
+
+        // notify other scripts that navbar is ready
+        window.dispatchEvent(new CustomEvent("navbar:loaded", { detail: { navbar: navbarEl } }));
     } catch (error) {
         console.error("Error loading navbar:", error);
     }
+});
 
+window.addEventListener('navbar:loaded', (e) => {
+    // Navbar ready, you can run other code that depends on it
+    // console.log('navbar ready', e.detail.navbar);
 
     // Navbar smooth fade in/out based on scroll position
     let lastScroll = 0;
