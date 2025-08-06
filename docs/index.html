@@ -44,129 +44,7 @@
 
 <body class="bg-dark text-light font-sans min-h-screen">
 
-    <!-- Navigation -->
-    <style>
-        #mainNav {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            will-change: transform, opacity;
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        #mainNav.navbar-hidden {
-            transform: translateY(-100%);
-            opacity: 0;
-            pointer-events: none;
-        }
-    </style>
     <nav id="mainNav" class="fixed w-full bg-dark/90 backdrop-blur-md z-50 shadow-lg border-b border-accent/20">
-        <div class="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center h-20">
-                <!-- Logo Container -->
-                <div class="flex-shrink-0 flex items-center space-x-3">
-                    <img src="asset/ShadanFillLogo.png" alt="NEXUS"
-                        class="h-16 w-auto hover:scale-105 transition-transform duration-200">
-                    <img src="asset/NEXUS Hero nobg.png" alt="NEXUS"
-                        class="h-16 w-auto hover:scale-105 transition-transform duration-200">
-                </div>
-
-                <!-- Spacer to push navigation to the right -->
-                <div class="flex-grow"></div>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden md:block">
-                    <div class="flex items-center space-x-6">
-                        <a href="#home"
-                            class="relative px-3 py-2 text-sm font-medium text-light hover:text-accent transition-colors duration-300 group">
-                            <span>Home</span>
-                            <span
-                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="#about"
-                            class="relative px-3 py-2 text-sm font-medium text-light hover:text-accent transition-colors duration-300 group">
-                            <span>About Us</span>
-                            <span
-                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="#workshop"
-                            class="relative px-3 py-2 text-sm font-medium text-light hover:text-accent transition-colors duration-300 group">
-                            <span>Workshop</span>
-                            <span
-                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="#events"
-                            class="relative px-3 py-2 text-sm font-medium text-light hover:text-accent transition-colors duration-300 group">
-                            <span>Events</span>
-                            <span
-                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="#team"
-                            class="relative px-3 py-2 text-sm font-medium text-light hover:text-accent transition-colors duration-300 group">
-                            <span>Team</span>
-                            <span
-                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="#contact"
-                            class="relative px-3 py-2 text-sm font-medium text-light hover:text-accent transition-colors duration-300 group">
-                            <span>Contact</span>
-                            <span
-                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                        <a href="#contact"
-                            class="ml-4 px-6 py-2.5 text-sm font-semibold text-dark bg-accent rounded-full hover:bg-accent/90 transition-colors duration-300 whitespace-nowrap">
-                            Join Us
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button type="button"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-light hover:text-accent focus:outline-none transition-transform duration-300"
-                        id="mobile-menu-button">
-                        <span class="sr-only">Open main menu</span>
-                        <i class="fas fa-bars text-2xl transition-all duration-300" id="menu-icon"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile menu with animations -->
-        <div class="md:hidden hidden fixed inset-0 z-50" id="mobile-menu">
-            <!-- Overlay for the entire screen -->
-            <div class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0"
-                id="menu-overlay"></div>
-
-            <!-- Menu content -->
-            <div class="fixed right-0 top-0 h-full w-4/5 max-w-sm bg-gradient-to-b from-dark to-card shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50"
-                id="menu-content">
-                <div class="flex justify-end p-4 bg-dark/50">
-                    <button class="p-2 text-light hover:text-accent transition-colors" id="close-menu-button">
-                        <i class="fas fa-times text-2xl"></i>
-                    </button>
-                </div>
-                <div class="px-6 pt-2 pb-8 space-y-4">
-                    <!-- Menu items -->
-                    <a href="#home"
-                        class="block px-4 py-3 rounded-lg text-lg font-medium text-light hover:bg-accent/20 hover:text-accent transition-all duration-200 transform -translate-x-8 opacity-0">Home</a>
-                    <a href="#about"
-                        class="block px-4 py-3 rounded-lg text-lg font-medium text-light hover:bg-accent/20 hover:text-accent transition-all duration-200 transform -translate-x-8 opacity-0">About
-                        Us</a>
-                    <a href="#workshop"
-                        class="block px-4 py-3 rounded-lg text-lg font-medium text-light hover:bg-accent/20 hover:text-accent transition-all duration-200 transform -translate-x-8 opacity-0">Workshop</a>
-                    <a href="#events"
-                        class="block px-4 py-3 rounded-lg text-lg font-medium text-light hover:bg-accent/20 hover:text-accent transition-all duration-200 transform -translate-x-8 opacity-0">Events</a>
-                    <a href="#team"
-                        class="block px-4 py-3 rounded-lg text-lg font-medium text-light hover:bg-accent/20 hover:text-accent transition-all duration-200 transform -translate-x-8 opacity-0">Team</a>
-                    <a href="#contact"
-                        class="block px-4 py-3 rounded-lg text-lg font-medium text-light hover:bg-accent/20 hover:text-accent transition-all duration-200 transform -translate-x-8 opacity-0">Contact</a>
-                    <a href="#join"
-                        class="block px-4 py-3 mt-6 rounded-lg text-center text-lg font-medium bg-accent/90 hover:bg-accent text-dark hover:bg-white transition-colors duration-300 transform -translate-x-8 opacity-0">Join
-                        Us</a>
-                </div>
-            </div>
-        </div>
     </nav>
 
     <!-- Add padding to account for fixed navbar -->
@@ -905,7 +783,8 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/components/navbar.js"></script>
 </body>
 
 </html>
