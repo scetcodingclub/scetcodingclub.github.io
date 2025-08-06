@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     let lastScroll = 0;
     let ticking = false;
     const navbar = document.getElementById('mainNav');
-    const whoWeAreSection = document.getElementById('about');
+    const navbarStartHideSection = document.querySelector('.navbar-start-hide');
 
     function updateNavbarVisibility() {
-        if (!whoWeAreSection) return;
+        if (!navbarStartHideSection) return;
 
         const currentScroll = window.scrollY || document.documentElement.scrollTop;
-        const whoWeArePosition = whoWeAreSection.getBoundingClientRect().top + window.scrollY;
+        const whoWeArePosition = navbarStartHideSection.getBoundingClientRect().top + window.scrollY;
         const windowHeight = window.innerHeight;
         const triggerPoint = whoWeArePosition - (windowHeight * 0.4); // Trigger slightly before reaching the section
 
