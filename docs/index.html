@@ -377,7 +377,7 @@
         </div>
     </section>
 
-    <section class="relative pt-24 bg-black text-white">
+    <section class="relative pt-8 md:pt-24 bg-black text-white">
         <!-- Heading -->
         <div class="text-center mb-24 z-20 relative">
             <h2 class="text-4xl md:text-5xl font-bold mb-6">
@@ -386,26 +386,78 @@
             <div class="w-20 h-1 bg-green-500 mx-auto"></div>
         </div>
     
-        <!-- Timeline vertical line -->
+        <!-- Timeline Vertical Line -->
         <div
-            class="absolute left-1/2 top-[200px] w-[2px] h-[calc(100%-360px)] bg-white -translate-x-1/2 z-0 hidden md:block">
+            class="absolute left-1/2 top-[200px] w-[2px] h-[calc(100%-360px)] bg-white -translate-x-1/2 z-0 hidden xl:block">
         </div>
     
-        <!-- Cards -->
-        <div class="space-y-16 relative z-10 px-4 md:px-16">
+        <!-- Unified Card Layout (for all sizes below xl) -->
+        <div class="xl:hidden relative px-4 py-10 flex flex-col items-center max-w-xl mx-auto">
+            <!-- Continuous Vertical Line -->
+            <div class="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1 bg-white z-0"></div>
     
-            <!-- LEFT CARD -->
-            <div class="relative flex flex-col md:flex-row items-start md:items-center group">
-                <div
-                    class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-green-500 rounded-full z-10 border-4 border-black">
+            <!-- Events -->
+            <div class="relative z-10 flex flex-col items-center mb-24">
+                <div class="w-5 h-5 bg-green-500 rounded-full border-4 border-black z-10"></div>
+                <div class="relative mt-4 bg-neutral-900 rounded-lg shadow-lg p-4 w-full max-w-md border border-green-500">
+                    <img src="asset/We code/fig1.jpg" alt="EXPOSEN"
+                        class="w-full h-60 object-cover object-top rounded-md mb-4">
+                    <h3 class="text-2xl font-bold text-green-500 mb-2 text-center">EXPOGEN 1.0 - PROJECT SHOWCASE</h3>
+                    <p class="mb-4 text-gray-300 text-center">Master the fundamentals of C programming with our intensive
+                        workshop designed for beginners and intermediate learners.</p>
+                    <ul class="text-gray-400 space-y-1 text-sm text-center">
+                        <li><span class="text-green-500">✓</span> 6th May 2025</li>
+                        <li><span class="text-green-500">✓</span> 120+ Project Registered – 110+ Confirmed</li>
+                        <li><span class="text-green-500">✓</span> 200+ Participants – 70+ Visitors</li>
+                    </ul>
                 </div>
+            </div>
     
-                <div class="w-full md:w-1/2 pr-4 md:pr-16 md:text-right z-10">
-                    <div class="bg-neutral-900 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-start gap-4">
+            <div class="relative z-10 flex flex-col items-center mb-24">
+                <div class="w-5 h-5 bg-green-500 rounded-full border-4 border-black z-10"></div>
+                <div class="relative mt-4 bg-neutral-900 rounded-lg shadow-lg p-4 w-full max-w-md border border-green-500">
+                    <img src="asset/We code/fig2.jpg" alt="SPARKQUEST"
+                        class="w-full h-60 object-cover object-top rounded-md mb-4">
+                    <h3 class="text-2xl font-bold text-green-500 mb-2 text-center">SPARKQUEST'25 – IDEA HACKATHON</h3>
+                    <p class="mb-4 text-gray-300 text-center">Master the fundamentals of C programming with our intensive
+                        workshop designed for beginners and intermediate learners.</p>
+                    <ul class="text-gray-400 space-y-1 text-sm text-center">
+                        <li><span class="text-green-500">✓</span> 27th and 28th Feb 2025</li>
+                        <li><span class="text-green-500">✓</span> 20+ Ideas Registered – 15 Approved</li>
+                        <li><span class="text-green-500">✓</span> 25+ Participants – 100+ Visitors</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="relative z-10 flex flex-col items-center">
+                <div class="w-5 h-5 bg-green-500 rounded-full border-4 border-black z-10"></div>
+                <div class="relative mt-4 bg-neutral-900 rounded-lg shadow-lg p-4 w-full max-w-md border border-green-500">
+                    <img src="asset/We code/fig1.jpg" alt="Web Dev Bootcamp"
+                        class="w-full h-60 object-cover object-top rounded-md mb-4">
+                    <h3 class="text-2xl font-bold text-green-500 mb-2 text-center">FRONTEND WEB - DEV BOOTCAMP</h3>
+                    <p class="mb-4 text-gray-300 text-center">Master the fundamentals of C programming with our intensive
+                        workshop designed for beginners and intermediate learners.</p>
+                    <ul class="text-gray-400 space-y-1 text-sm text-center">
+                        <li><span class="text-green-500">✓</span> 10th to 15th Feb 2025</li>
+                        <li><span class="text-green-500">✓</span> 160+ Registration - 90 Members Attended</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Desktop Timeline (XL and above only) -->
+        <div class="space-y-16 relative z-10 px-4 md:px-16 hidden xl:block">
+            <!-- LEFT CARD -->
+            <div class="relative flex flex-col xl:flex-row items-start xl:items-center group">
+                <div
+                    class="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-green-500 rounded-full z-10 border-4 border-black">
+                </div>
+                <div class="w-full xl:w-1/2 pr-4 xl:pr-16 xl:text-right z-10">
+                    <div class="bg-neutral-900 p-6 rounded-lg shadow-lg flex flex-col xl:flex-row items-start gap-4">
                         <img src="asset/We code/fig1.jpg" alt="EXPOSEN"
                             class="w-56 h-60 object-cover object-top rounded-md shrink-0">
                         <div class="text-left">
-                            <h3 class="text-2xl font-bold text-green-500 mb-2">EXPOGEN 1.0 - PROJECT SHOWCASE</h3>
+                            <h3 class="text-2xl font-bold text-green-500 mb-2">EXPOSEN 1.0 – PROJECT SHOWCASE</h3>
                             <p class="mb-4 text-gray-300">Master the fundamentals of C programming with our intensive
                                 workshop designed for beginners and intermediate learners.</p>
                             <ul class="text-gray-400 space-y-1 text-sm">
@@ -416,19 +468,17 @@
                         </div>
                     </div>
                 </div>
-    
-                <div class="hidden md:block w-1/2"></div>
+                <div class="w-1/2"></div>
             </div>
     
             <!-- RIGHT CARD -->
-            <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center group">
+            <div class="relative flex flex-col xl:flex-row-reverse items-start xl:items-center group">
                 <div
-                    class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-green-500 rounded-full z-10 border-4 border-black">
+                    class="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-green-500 rounded-full z-10 border-4 border-black">
                 </div>
-    
-                <div class="w-full md:w-1/2 pl-4 md:pl-16 md:text-left z-10">
+                <div class="w-full xl:w-1/2 pl-4 xl:pl-16 xl:text-left z-10">
                     <div
-                        class="bg-neutral-900 p-6 rounded-lg shadow-lg flex flex-col md:flex-row-reverse items-start gap-4">
+                        class="bg-neutral-900 p-6 rounded-lg shadow-lg flex flex-col xl:flex-row-reverse items-start gap-4">
                         <img src="asset/We code/fig2.jpg" alt="SPARKQUEST"
                             class="w-56 h-60 object-cover object-top rounded-md shrink-0">
                         <div class="text-left">
@@ -443,18 +493,16 @@
                         </div>
                     </div>
                 </div>
-    
-                <div class="hidden md:block w-1/2"></div>
+                <div class="w-1/2"></div>
             </div>
     
-            <!-- LEFT CARD (Third Activity) -->
-            <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+            <!-- LEFT CARD -->
+            <div class="relative flex flex-col xl:flex-row items-start xl:items-center group">
                 <div
-                    class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-green-500 rounded-full z-10 border-4 border-black">
+                    class="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-green-500 rounded-full z-10 border-4 border-black">
                 </div>
-    
-                <div class="w-full md:w-1/2 pr-4 md:pr-16 md:text-right z-10">
-                    <div class="bg-neutral-900 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-start gap-4">
+                <div class="w-full xl:w-1/2 pr-4 xl:pr-16 xl:text-right z-10">
+                    <div class="bg-neutral-900 p-6 rounded-lg shadow-lg flex flex-col xl:flex-row items-start gap-4">
                         <img src="asset/We code/fig1.jpg" alt="Web Dev Bootcamp"
                             class="w-56 h-60 object-cover object-top rounded-md shrink-0">
                         <div class="text-left">
@@ -468,8 +516,7 @@
                         </div>
                     </div>
                 </div>
-    
-                <div class="hidden md:block w-1/2"></div>
+                <div class="w-1/2"></div>
             </div>
         </div>
     
@@ -486,6 +533,7 @@
             </a>
         </div>
     </section>
+
     
     <!-- Contact Section -->
     <section id="contact" class="pt-16 pb-12 bg-dark/95 relative overflow-hidden">
