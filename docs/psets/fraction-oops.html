@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fraction Class — Problem Set | SCET-NEXUS Coding Club</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ffffff',
+            accent: '#139a43',
+            dark: '#000000',
+            light: '#e0e0e0',
+            lighter: '#a0a0a0',
+            card: '#1e1e1e',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-dark text-light font-sans min-h-screen">
+
+  <div id="navbar-placeholder"></div>
+
+  <!-- Header -->
+  <header class="relative py-20 bg-gradient-to-b from-dark to-card/50 text-center pt-20">
+    <div class="max-w-5xl mx-auto px-4 relative z-10">
+      <h1 class="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">
+        Fraction Class — Problem Set
+      </h1>
+      <p class="mt-4 text-lg text-light/80 max-w-2xl mx-auto">
+        Learn OOP in Python step by step
+      </p>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+
+    <!-- Introduction -->
+    <section>
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">👋 Introduction</h2>
+      <p class="mt-3 text-light/80">
+        In this problem, you will implement a <strong class="text-light">Fraction</strong> (rational number) class in
+        Python.
+        Fractions are numbers like <code class="bg-card px-1 rounded">1/2</code>,
+        <code class="bg-card px-1 rounded">-3/4</code>, or <code class="bg-card px-1 rounded">7/1</code>.
+        They can be added, multiplied, compared, and reduced to their simplest form.
+      </p>
+      <p class="mt-3 text-light/70">
+        This project is designed to practice <strong>Object-Oriented Programming (OOP)</strong> in Python.
+        The distribution code contains skeleton methods with clear TODOs. Your job is to fill them in, level by level.
+      </p>
+      <p class="mt-3 text-light/80">
+        <strong class="text-light">NOTE:</strong> Carefully read the entire Problem Set before starting.<br>
+        Also Carefully read the existing code and try to understand it.<br>
+        You don’t have to add any new functions to the Fraction class.<br>
+        Although feel free to test it out by using the class.<br>
+      </p>
+    </section>
+
+    <!-- Goal -->
+    <section class="navbar-start-hide">
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">🎯 Goal</h2>
+      <ul class="list-disc list-inside mt-3 space-y-2 text-light/80">
+        <li>Implement the missing parts of the <code class="bg-card px-1 rounded">Fraction</code> class.</li>
+        <li>Learn operator overloading in Python (<code class="bg-card px-1 rounded">+</code>, <code>*</code>,
+          <code>==</code>, etc.).
+        </li>
+        <li>Practice incremental problem solving level by level.</li>
+        <li>Use <strong>pytest</strong> to verify correctness.</li>
+      </ul>
+    </section>
+
+    <!-- Levels -->
+    <section>
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">🧩 Levels</h2>
+      <div class="mt-4 space-y-3 text-light/80">
+        <div><strong class="text-light">Level 0:</strong> Implement <code class="bg-card px-1 rounded">get_gcd()</code>
+          using recursion.</div>
+        <div><strong class="text-light">Level 1:</strong> Representations and multiplication.</div>
+        <div><strong class="text-light">Level 2:</strong> Add, subtract, divide, abs, negation.</div>
+        <div><strong class="text-light">Level 3:</strong> In-place operations and normalization.</div>
+        <div><strong class="text-light">Level 4:</strong> Read-only properties.</div>
+        <div><strong class="text-light">Level 5:</strong> Comparisons.</div>
+        <div><strong class="text-light">Level 6:</strong> Right/Reverse operations with integers.</div>
+        <div><strong class="text-light">Level 7:</strong> Advanced features (hash, copy).</div>
+        <div>
+          <strong class="text-light">Level 8 (Extra 🚀):</strong> Fraction + int / int + Fraction in all ways (not
+          mandatory).
+          <p class="text-light/80 leading-relaxed">
+            Before this, you implemented
+            <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">Fraction + Fraction</code>,
+            <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">Fraction += Fraction</code>,
+            and
+            <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">int + Fraction</code>.
+            <br><br>
+            Now you’ll implement:
+            <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">Fraction + int</code>,
+            <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">Fraction += int</code>
+            for all four operations:
+            <span class="text-accent font-semibold">+, -, ×, ÷</span>.
+          </p>
+
+          <div class="mt-4">
+            <h4 class="text-light/90 font-medium mb-2">Functions to Update:</h4>
+            <ul class="list-disc list-inside space-y-1 text-light/70">
+              <li><code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">__add__</code>,
+                <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">__mul__</code>,
+                <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">__sub__</code>,
+                <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">__truediv__</code>
+              </li>
+              <li><code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">__iadd__</code>,
+                <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">__imul__</code>,
+                <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">__isub__</code>,
+                <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">__itruediv__</code>
+              </li>
+            </ul>
+          </div>
+
+          <p class="mt-4 text-light/80 leading-relaxed">
+            <strong class="text-light">NOTE: </strong>
+            Use <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">isinstance()</code> to check if
+            <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">other</code> is a
+            <span class="text-accent font-semibold">Fraction</span> or
+            <span class="text-accent font-semibold">int</span>.
+            You can reuse existing code by converting the
+            <span class="text-accent font-semibold">int</span> to a
+            <span class="text-accent font-semibold">Fraction</span> first.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Test -->
+    <section>
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">✅ How to Test</h2>
+      <ol class="list-decimal list-inside mt-3 space-y-2 text-light/80">
+        <li>Install pytest:
+          <pre class="bg-card text-light p-3 rounded mt-2"><code>pip install pytest</code></pre>
+        </li>
+        <li>Run tests for a level:
+          <pre class="bg-card text-light p-3 rounded mt-2"><code>pytest --level=0
+pytest --level=1
+...
+pytest --level=7</code></pre>
+        </li>
+        <li>
+          If you’re confident, try Level 8:
+          <pre class="bg-card text-light p-3 rounded mt-2"><code>pytest --level=8</code></pre>
+        </li>
+        <li>Run all tests:
+          <pre class="bg-card text-light p-3 rounded mt-2"><code>pytest</code></pre>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Download Starter Code -->
+    <section>
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">
+        📥 Download Starter Code
+      </h2>
+      <p class="mt-3 text-light/80">
+        Download the distribution code and extract it:
+      </p>
+
+      <a href="/cdn/psets/fraction-oops.zip"
+        class="mt-4 inline-block bg-accent text-dark font-medium px-6 py-3 rounded-lg shadow hover:bg-white transition">
+        ⬇️ Download fraction-oops.zip
+      </a>
+
+      <p class="mt-4 text-light/80">
+        After downloading:
+      </p>
+      <ol class="list-decimal list-inside mt-2 space-y-1 text-light/70">
+        <li>Unzip the file.</li>
+        <li>Open the folder in <strong class="text-light">Visual Studio Code</strong>.</li>
+        <li>Make sure you read and understand the entire <strong class="text-light">Problem Set</strong> and the <strong
+            class="text-light">Distribution Code</strong> before starting.</li>
+        <li>Start implementing the methods inside
+          <code class="bg-card px-1 rounded">fraction.py</code>.
+        </li>
+      </ol>
+    </section>
+
+    <!-- Tips -->
+    <section class="mt-8 bg-card/60 border border-accent/30 rounded-xl p-6 shadow-lg">
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">
+        💡 Tips
+      </h2>
+      <ul class="list-disc list-inside mt-4 space-y-2 text-light/80 leading-relaxed">
+        <li>Always implement and test one level before moving to the next.</li>
+        <li>If some levels are too hard, that’s okay! You can stop at any point and still have a working class.</li>
+        <li>Carefully read the <span class="font-semibold text-light">docstrings</span> and
+          <span class="font-semibold text-light">TODOs</span> in the distribution code — they are there to guide you.
+        </li>
+        <li>Remember: Think like a <span class="font-semibold text-accent">library author</span>.
+          Other programmers will use your Fraction class, so it must behave consistently and predictably.</li>
+        <li><strong class="text-light">Note: </strong>Carefully read and understand the entire <strong>Problem
+            Set</strong> and the <strong>Distribution Code</strong> before starting.</li>
+      </ul>
+    </section>
+
+    <!-- Type Hinting -->
+    <section class="mt-8 bg-card/60 border border-accent/30 rounded-xl p-6 shadow-lg">
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">
+        💡 Type Hinting
+      </h2>
+      <p class="text-light/80 mt-4 leading-relaxed">
+        In the distribution code, <span class="font-semibold text-light">type hints</span> are used to show
+        what kinds of values a function takes as input and what it returns.
+        They don’t change how the program runs, but they make your code more readable
+        and help tools like <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">pytest</code>
+        or IDEs (like VS Code) catch mistakes earlier.
+      </p>
+
+      <ul class="list-disc list-inside mt-4 space-y-3 text-light/80 leading-relaxed">
+        <li>
+          The general form is:
+          <br>
+          <code class="bg-dark/70 px-2 py-1 rounded text-light block mt-1">
+        def func_name(argument: type) -> return_type
+      </code>
+        </li>
+
+        <li>
+          Example from this problem set:
+          <br>
+          <code class="bg-dark/70 px-2 py-1 rounded text-light block mt-1">
+        def gcd(a: int | float, b: int | float) -> int | float
+      </code>
+          <p class="mt-1">
+            This means:
+          <ul class="list-disc list-inside ml-5 space-y-1">
+            <li><code>a</code> can be an <span class="text-accent">int</span> or a <span
+                class="text-accent">float</span>.</li>
+            <li><code>b</code> can also be an <span class="text-accent">int</span> or a <span
+                class="text-accent">float</span>.</li>
+            <li>The function will return either an <span class="text-accent">int</span> or a <span
+                class="text-accent">float</span>.</li>
+          </ul>
+          </p>
+        </li>
+
+        <li>
+          <span class="font-semibold text-light">NOTE:</span> Type hints are there to help you understand and
+          avoid bugs — the Python interpreter will still run your code even if the hints are wrong.
+          (But don’t ignore them! They’re part of the learning process.)
+        </li>
+      </ul>
+    </section>
+
+    <!-- Need Help -->
+    <section>
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">❓ Need Help?</h2>
+      <p class="mt-3 text-light/80">
+        Stuck on something or want to share your progress? Join our community on Discord:
+      </p>
+      <a href="https://discord.gg/hTEyejkxUH" target="_blank"
+        class="inline-block mt-3 px-4 py-2 bg-accent text-dark font-semibold rounded-lg shadow-md hover:bg-accent/90 transition">
+        💬 Join our Discord
+      </a>
+    </section>
+
+
+    <!-- Closing -->
+    <section>
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">🔚 Closing</h2>
+      <p class="mt-3 text-light/80">
+        This set walks you through OOP concepts in Python.<br>
+        Even if you don’t complete all levels, you’ll practice <strong>operator overloading, encapsulation, and
+          testing</strong>.
+      </p>
+      <p class="mt-3 font-semibold text-accent">
+        Good luck, and happy coding! 🚀
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark/90 pt-8 pb-6 border-t border-light/10">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+        <!-- Logo and Description -->
+        <div class="w-full md:w-2/3 flex items-center justify-center mb-8 md:mb-0 h-full">
+          <div class="w-full max-w-2xl mx-auto h-auto">
+            <img src="/asset/NEXUS Hero nobg.png" alt="NEXUS Coding Club" class="w-full h-auto">
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="pt-1 flex flex-col h-full justify-center">
+          <h3 class="text-lg font-semibold text-light mb-5 relative pb-2 inline-block">Quick Links
+            <span class="absolute bottom-0 left-0 w-8 h-0.5 bg-accent"></span>
+          </h3>
+          <ul class="space-y-3 mt-4">
+            <li><a href="/#home"
+                class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
+                <i
+                  class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
+                <span>Home</span>
+              </a></li>
+            <li><a href="/#about"
+                class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
+                <i
+                  class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
+                <span>About Us</span>
+              </a></li>
+            <li><a href="/#workshop"
+                class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
+                <i
+                  class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
+                <span>Workshops</span>
+              </a></li>
+            <li><a href="/#events"
+                class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
+                <i
+                  class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
+                <span>Events</span>
+              </a></li>
+            <li><a href="/#team"
+                class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
+                <i
+                  class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
+                <span>Our Team</span>
+              </a></li>
+            <li><a href="/#contact"
+                class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
+                <i
+                  class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
+                <span>Contact</span>
+              </a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="pt-1 flex flex-col md:col-span-2">
+          <h3 class="text-lg font-semibold text-light mb-5 relative pb-2 inline-block">Contact Us
+            <span class="absolute bottom-0 left-0 w-8 h-0.5 bg-accent"></span>
+          </h3>
+          <div class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Left Column -->
+              <div class="space-y-4">
+                <!-- Email -->
+                <div class="flex items-start">
+                  <div class="bg-accent/10 p-2 rounded-lg text-accent mr-3 flex-shrink-0">
+                    <i class="fas fa-envelope text-sm"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-light/90 text-sm">Email Us</h4>
+                    <a href="mailto:nexuscodingclub@gmail.com"
+                      class="text-light/60 hover:text-accent transition-colors text-sm break-words">
+                      nexuscodingclub@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="flex items-start">
+                  <div class="bg-accent/10 p-2 rounded-lg text-accent mr-3 flex-shrink-0">
+                    <i class="fas fa-phone-alt text-sm"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-light/90 text-sm">Call Us</h4>
+                    <a href="tel:+919989031529" class="text-light/60 hover:text-accent transition-colors text-sm">
+                      +91 99890 31529
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column -->
+              <div class="space-y-4">
+                <!-- Location -->
+                <div class="flex items-start">
+                  <div class="bg-accent/10 p-2 rounded-lg text-accent mr-3 flex-shrink-0">
+                    <i class="fas fa-map-marker-alt text-sm"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-light/90 text-sm">Location</h4>
+                    <p class="text-light/60 text-sm leading-relaxed">
+                      Shadan College of Engineering & Technology,<br>
+                      Himayat Sagar Rd, Hyderabad,<br>
+                      Telangana 500091
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Hours -->
+                <div class="flex items-start">
+                  <div class="bg-accent/10 p-2 rounded-lg text-accent mr-3 flex-shrink-0">
+                    <i class="fas fa-clock text-sm"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-light/90 text-sm">Club Hours</h4>
+                    <p class="text-light/60 text-sm">
+                      Mon - Sat: 2:00 PM - 5:00 PM
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-2 pt-4 text-center">
+        <div class="mb-2">
+          <h4 class="text-sm font-normal text-light/80 mb-2">Follow Us</h4>
+          <div class="flex justify-center space-x-2">
+            <a href="https://github.com/SCET-CODING-CLUB" target="_blank" rel="noopener noreferrer"
+              class="w-8 h-8 rounded-full bg-card/80 flex items-center justify-center text-light hover:bg-[#2b3137] hover:text-white transition-all duration-300"
+              title="GitHub">
+              <i class="fab fa-github text-sm"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/nexus-coding-club/" target="_blank" rel="noopener noreferrer"
+              class="w-8 h-8 rounded-full bg-card/80 flex items-center justify-center text-light hover:bg-[#0A66C2] hover:text-white transition-all duration-300"
+              title="LinkedIn">
+              <i class="fab fa-linkedin-in text-sm"></i>
+            </a>
+            <a href="https://discord.gg/HSpkhtUXth" target="_blank" rel="noopener noreferrer"
+              class="w-8 h-8 rounded-full bg-card/80 flex items-center justify-center text-light hover:bg-[#5865F2] hover:text-white transition-all duration-300"
+              title="Discord">
+              <i class="fab fa-discord text-sm"></i>
+            </a>
+            <a href="https://whatsapp.com/channel/0029Vapn8RwEquiQfi5Pth45" target="_blank" rel="noopener noreferrer"
+              class="w-8 h-8 rounded-full bg-card/80 flex items-center justify-center text-light hover:bg-[#25D366] hover:text-white transition-all duration-300"
+              title="WhatsApp">
+              <i class="fab fa-whatsapp text-sm"></i>
+            </a>
+            <a href="https://www.instagram.com/nexuscodingclub?igsh=ODhzcGVpbmJkMjR4" target="_blank"
+              rel="noopener noreferrer"
+              class="w-8 h-8 rounded-full bg-card/80 flex items-center justify-center text-light hover:bg-gradient-to-r from-purple-500 to-pink-500 hover:text-white transition-all duration-300"
+              title="Instagram">
+              <i class="fab fa-instagram text-sm"></i>
+            </a>
+          </div>
+        </div>
+        <p class="text-center text-light/50 text-xs mt-1">
+          Built with ❤️ by <span class="text-accent/80">SCET - N.E.X.U.S</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/components/navbar.js"></script>
+
+</body>
+
+</html>

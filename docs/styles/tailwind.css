@@ -29,17 +29,29 @@
 .top-1\/4 {
   top: calc(1/4 * 100%);
 }
+.top-\[200px\] {
+  top: 200px;
+}
 .right-1\/4 {
   right: calc(1/4 * 100%);
 }
 .bottom-1\/4 {
   bottom: calc(1/4 * 100%);
 }
+.left-1\/2 {
+  left: calc(1/2 * 100%);
+}
 .left-1\/4 {
   left: calc(1/4 * 100%);
 }
+.z-0 {
+  z-index: 0;
+}
 .z-10 {
   z-index: 10;
+}
+.z-20 {
+  z-index: 20;
 }
 .z-50 {
   z-index: 50;
@@ -71,6 +83,9 @@
 .aspect-\[4\/3\] {
   aspect-ratio: 4/3;
 }
+.h-\[calc\(100\%-360px\)\] {
+  height: calc(100% - 360px);
+}
 .h-auto {
   height: auto;
 }
@@ -80,11 +95,23 @@
 .min-h-screen {
   min-height: 100vh;
 }
+.w-1\/2 {
+  width: calc(1/2 * 100%);
+}
 .w-4\/5 {
   width: calc(4/5 * 100%);
 }
+.w-\[2px\] {
+  width: 2px;
+}
+.w-auto {
+  width: auto;
+}
 .w-full {
   width: 100%;
+}
+.max-w-\[1800px\] {
+  max-width: 1800px;
 }
 .min-w-full {
   min-width: 100%;
@@ -92,8 +119,18 @@
 .flex-shrink-0 {
   flex-shrink: 0;
 }
+.shrink-0 {
+  flex-shrink: 0;
+}
+.flex-grow {
+  flex-grow: 1;
+}
 .grow {
   flex-grow: 1;
+}
+.-translate-x-1\/2 {
+  --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+  translate: var(--tw-translate-x) var(--tw-translate-y);
 }
 .translate-x-full {
   --tw-translate-x: 100%;
@@ -109,23 +146,32 @@
 .transform {
   transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
 }
+.list-inside {
+  list-style-position: inside;
+}
+.list-decimal {
+  list-style-type: decimal;
+}
+.list-disc {
+  list-style-type: disc;
+}
+.appearance-none {
+  appearance: none;
+}
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
 }
-.flex-wrap {
-  flex-wrap: wrap;
-}
 .items-center {
   align-items: center;
 }
 .items-start {
   align-items: flex-start;
-}
-.justify-between {
-  justify-content: space-between;
 }
 .justify-center {
   justify-content: center;
@@ -147,6 +193,14 @@
   border-style: var(--tw-border-style);
   border-width: 2px;
 }
+.border-4 {
+  border-style: var(--tw-border-style);
+  border-width: 4px;
+}
+.border-t {
+  border-top-style: var(--tw-border-style);
+  border-top-width: 1px;
+}
 .border-b {
   border-bottom-style: var(--tw-border-style);
   border-bottom-width: 1px;
@@ -156,10 +210,6 @@
 }
 .bg-gradient-to-b {
   --tw-gradient-position: to bottom in oklab;
-  background-image: linear-gradient(var(--tw-gradient-stops));
-}
-.bg-gradient-to-br {
-  --tw-gradient-position: to bottom right in oklab;
   background-image: linear-gradient(var(--tw-gradient-stops));
 }
 .bg-gradient-to-r {
@@ -180,11 +230,23 @@
 .object-cover {
   object-fit: cover;
 }
+.object-top {
+  object-position: top;
+}
 .text-center {
   text-align: center;
 }
+.text-left {
+  text-align: left;
+}
 .text-\[10px\] {
   font-size: 10px;
+}
+.break-words {
+  overflow-wrap: break-word;
+}
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 .text-transparent {
   color: transparent;
@@ -268,6 +330,16 @@
     }
   }
 }
+.hover\:scale-105 {
+  &:hover {
+    @media (hover: hover) {
+      --tw-scale-x: 105%;
+      --tw-scale-y: 105%;
+      --tw-scale-z: 105%;
+      scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+}
 .hover\:scale-110 {
   &:hover {
     @media (hover: hover) {
@@ -282,6 +354,13 @@
   &:hover {
     @media (hover: hover) {
       background-color: #0A66C2;
+    }
+  }
+}
+.hover\:bg-\[\#2b3137\] {
+  &:hover {
+    @media (hover: hover) {
+      background-color: #2b3137;
     }
   }
 }
