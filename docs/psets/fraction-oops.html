@@ -34,9 +34,9 @@
   <div id="navbar-placeholder"></div>
 
   <!-- Header -->
-  <header class="relative pt-30 py-20 bg-gradient-to-b from-dark to-card/50 text-center">
+  <header class="relative pt-20 pb-10 bg-gradient-to-b from-dark to-card/50 text-center">
     <div class="max-w-5xl mx-auto px-4 relative z-10">
-      <h1 class="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">
+      <h1 class="pt-10 text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">
         Fraction Class — Problem Set
       </h1>
       <p class="mt-4 text-lg text-light/80 max-w-2xl mx-auto">
@@ -50,7 +50,7 @@
 
     <!-- Introduction -->
     <section>
-      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">👋 Introduction</h2>
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">Introduction</h2>
       <p class="mt-3 text-light/80">
         In this problem, you will implement a <strong class="text-light">Fraction</strong> (rational number) class in
         Python.
@@ -72,11 +72,12 @@
 
     <!-- Goal -->
     <section class="navbar-start-hide">
-      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">🎯 Goal</h2>
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">Goal</h2>
       <ul class="list-disc list-inside mt-3 space-y-2 text-light/80">
         <li>Implement the missing parts of the <code class="bg-card px-1 rounded">Fraction</code> class.</li>
-        <li>Learn operator overloading in Python (<code class="bg-card px-1 rounded">+</code>, <code>*</code>,
-          <code>==</code>, etc.).
+        <li>Learn operator overloading in Python (<code class="bg-card px-1 rounded">+</code>, <code
+            class="bg-card px-1 rounded">*</code>,
+          <code class="bg-card px-1 rounded">==</code>, etc.).
         </li>
         <li>Practice incremental problem solving level by level.</li>
         <li>Use <strong>pytest</strong> to verify correctness.</li>
@@ -85,7 +86,7 @@
 
     <!-- Levels -->
     <section>
-      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">🧩 Levels</h2>
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">Levels</h2>
       <div class="mt-4 space-y-3 text-light/80">
         <div><strong class="text-light">Level 0:</strong> Implement <code class="bg-card px-1 rounded">get_gcd()</code>
           using recursion.</div>
@@ -97,7 +98,7 @@
         <div><strong class="text-light">Level 6:</strong> Right/Reverse operations with integers.</div>
         <div><strong class="text-light">Level 7:</strong> Advanced features (hash, copy).</div>
         <div>
-          <strong class="text-light">Level 8 (Extra 🚀):</strong> Fraction + int / int + Fraction in all ways (not
+          <strong class="text-light">Level 8 (Extra <i class="fa-solid fa-rocket"></i>):</strong> Fraction + int / int + Fraction in all ways (not
           mandatory).
           <p class="text-light/80 leading-relaxed">
             Before this, you implemented
@@ -105,7 +106,7 @@
             <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">Fraction += Fraction</code>,
             and
             <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">int + Fraction</code>.
-            <br><br>
+            <br>
             Now you’ll implement:
             <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">Fraction + int</code>,
             <code class="bg-dark/70 px-1.5 py-0.5 rounded text-light">Fraction += int</code>
@@ -145,7 +146,7 @@
 
     <!-- How to Test -->
     <section>
-      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">✅ How to Test</h2>
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">How to Test</h2>
       <ol class="list-decimal list-inside mt-3 space-y-2 text-light/80">
         <li>Install pytest:
           <pre class="bg-card text-light p-3 rounded mt-2"><code>pip install pytest</code></pre>
@@ -169,7 +170,7 @@ pytest --level=7</code></pre>
     <!-- Download Starter Code -->
     <section>
       <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">
-        📥 Download Starter Code
+        Download Starter Code
       </h2>
       <p class="mt-3 text-light/80">
         Download the distribution code and extract it:
@@ -177,7 +178,7 @@ pytest --level=7</code></pre>
 
       <a href="/cdn/psets/fraction-oops.zip"
         class="mt-4 inline-block bg-accent text-dark font-medium px-6 py-3 rounded-lg shadow hover:bg-white transition">
-        ⬇️ Download fraction-oops.zip
+        <i class="fa-solid fa-download"></i> Download fraction-oops.zip
       </a>
 
       <p class="mt-4 text-light/80">
@@ -197,7 +198,7 @@ pytest --level=7</code></pre>
     <!-- Tips -->
     <section>
       <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">
-        💡 Tips
+        Tips
       </h2>
       <ul class="list-disc list-inside mt-4 space-y-2 text-light/80 leading-relaxed">
         <li>Always implement and test one level before moving to the next.</li>
@@ -215,7 +216,7 @@ pytest --level=7</code></pre>
     <!-- Type Hinting -->
     <section>
       <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">
-        💡 Type Hinting
+        Type Hinting
       </h2>
       <p class="text-light/80 mt-4 leading-relaxed">
         In the distribution code, <span class="font-semibold text-light">type hints</span> are used to show
@@ -263,27 +264,27 @@ pytest --level=7</code></pre>
 
     <!-- Need Help -->
     <section>
-      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">❓ Need Help?</h2>
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">Need Help?</h2>
       <p class="mt-3 text-light/80">
         Stuck on something or want to share your progress? Join our community on Discord:
       </p>
       <a href="https://discord.gg/hTEyejkxUH" target="_blank"
         class="inline-block mt-3 px-4 py-2 bg-accent text-dark font-semibold rounded-lg shadow-md hover:bg-accent/90 transition">
-        💬 Join our Discord
+        <i class="fa-brands fa-discord"></i> Join our Discord
       </a>
     </section>
 
 
     <!-- Closing -->
     <section>
-      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">🔚 Closing</h2>
+      <h2 class="text-2xl font-semibold text-accent border-b border-accent/50 pb-2">Closing</h2>
       <p class="mt-3 text-light/80">
         This set walks you through OOP concepts in Python.<br>
         Even if you don’t complete all levels, you’ll practice <strong>operator overloading, encapsulation, and
           testing</strong>.
       </p>
       <p class="mt-3 font-semibold text-accent">
-        Good luck, and happy coding! 🚀
+        Good luck, and happy coding! <i class="fa-solid fa-rocket"></i>
       </p>
     </section>
   </main>
