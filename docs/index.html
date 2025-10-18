@@ -47,152 +47,151 @@
     <div id="navbar-placeholder"></div>
 
     <!-- Add padding to account for fixed navbar -->
-    <div class="pt-20">
+    <div class="pt-20"></div>
 
-        <!-- Hero Section -->
-        <header id="home"
-            class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-dark to-card/50">
-            <!-- Animated Background Elements -->
-            <div class="absolute inset-0 overflow-hidden opacity-20">
-                <div
-                    class="absolute top-1/4 -left-4 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-xl animate-blob">
-                </div>
-                <div
-                    class="absolute top-1/3 -right-4 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000">
-                </div>
-                <div
-                    class="absolute -bottom-8 left-20 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000">
-                </div>
+    <!-- Hero Section -->
+    <header id="home"
+        class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-dark to-card/50">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden opacity-20">
+            <div
+                class="absolute top-1/4 -left-4 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-xl animate-blob">
+            </div>
+            <div
+                class="absolute top-1/3 -right-4 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000">
+            </div>
+            <div
+                class="absolute -bottom-8 left-20 w-72 h-72 bg-accent/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000">
+            </div>
+        </div>
+
+        <div class="container relative z-10 px-4 mx-auto text-center">
+            <h1
+                class="text-5xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">
+                Welcome to <span class="text-accent">Nexus</span> Coding Club
+            </h1>
+            <p class="text-xl md:text-2xl text-light mb-12 max-w-3xl mx-auto leading-relaxed">
+                Empowering students through technology, innovation, and collaborative learning in a vibrant
+                community of creators and problem-solvers.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#about"
+                    class="px-8 py-4 bg-accent text-dark font-semibold rounded-full hover:bg-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/30">
+                    Explore More
+                </a>
+                <a href="/join.html"
+                    class="px-8 py-4 border-2 border-accent text-accent font-semibold rounded-full hover:bg-accent/10 transition-all duration-300 transform hover:-translate-y-1">
+                    Join Our Community
+                </a>
+            </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="navbar-start-hide py-20 bg-card/30 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-accent/10 blur-3xl"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-accent/5 blur-3xl"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Who Are <span class="text-accent"> we ? </span></h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-8"></div>
             </div>
 
-            <div class="container relative z-10 px-4 mx-auto text-center">
-                <h1
-                    class="text-5xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">
-                    Welcome to <span class="text-accent">Nexus</span> Coding Club
-                </h1>
-                <p class="text-xl md:text-2xl text-light mb-12 max-w-3xl mx-auto leading-relaxed">
-                    Empowering students through technology, innovation, and collaborative learning in a vibrant
-                    community of creators and problem-solvers.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#about"
-                        class="px-8 py-4 bg-accent text-dark font-semibold rounded-full hover:bg-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/30">
-                        Explore More
-                    </a>
-                    <a href="#contact"
-                        class="px-8 py-4 border-2 border-accent text-accent font-semibold rounded-full hover:bg-accent/10 transition-all duration-300 transform hover:-translate-y-1">
-                        Join Our Community
-                    </a>
-                </div>
-        </header>
-
-        <!-- About Section -->
-        <section id="about" class="navbar-start-hide py-20 bg-card/30 relative overflow-hidden">
-            <!-- Decorative elements -->
-            <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-accent/10 blur-3xl"></div>
-            <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-accent/5 blur-3xl"></div>
-
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Who Are <span class="text-accent"> we ? </span></h2>
-                    <div class="w-20 h-1 bg-accent mx-auto mb-8"></div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <!-- Left Column - Image -->
-                    <div class="relative group" data-aos="fade-right">
-                        <div
-                            class="absolute -inset-4 rounded-2xl transform rotate-1 group-hover:rotate-0 transition duration-500">
-                        </div>
-                        <div class="relative bg-card p-1 rounded-2xl">
-                            <img src="/asset/team.jpg" alt="Nexus Coding Club Members" class="w-full h-auto rounded-xl">
-                            <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent rounded-xl"></div>
-                            <div class="absolute bottom-0 left-0 p-3 md:p-6 text-white">
-                                <p
-                                    class="italic text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-base leading-tight md:leading-normal text-center ">
-                                    " To create a vibrant and inclusive community where students grow beyond classrooms
-                                    by learning,
-                                    building, and leading through technology. Nexus envisions becoming the core platform
-                                    in our college that
-                                    empowers students to explore real-world problems, ignite innovation, and nurture
-                                    peer-driven learning in
-                                    an ever-evolving tech landscape. "
-                                </p>
-                            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left Column - Image -->
+                <div class="relative group" data-aos="fade-right">
+                    <div
+                        class="absolute -inset-4 rounded-2xl transform rotate-1 group-hover:rotate-0 transition duration-500">
+                    </div>
+                    <div class="relative bg-card p-1 rounded-2xl">
+                        <img src="/asset/team.jpg" alt="Nexus Coding Club Members" class="w-full h-auto rounded-xl">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent rounded-xl"></div>
+                        <div class="absolute bottom-0 left-0 p-3 md:p-6 text-white">
+                            <p
+                                class="italic text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-base leading-tight md:leading-normal text-center ">
+                                " To create a vibrant and inclusive community where students grow beyond classrooms
+                                by learning,
+                                building, and leading through technology. Nexus envisions becoming the core platform
+                                in our college that
+                                empowers students to explore real-world problems, ignite innovation, and nurture
+                                peer-driven learning in
+                                an ever-evolving tech landscape. "
+                            </p>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Right Column - Content -->
-                    <div class="space-y-8" data-aos="fade-left">
+                <!-- Right Column - Content -->
+                <div class="space-y-8" data-aos="fade-left">
+                    <div
+                        class="bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-[#139a43] transition-all duration-300">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 text-accent text-xl">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Our Story</h3>
+                        <p class="text-light/90 mb-4">Nexus is the official coding club of Shadan College of
+                            Engineering and Technology, driven by students, powered by passion, and built on the
+                            belief that learning happens best when it's shared.</p>
+                        <p class="text-light/90">We are a vibrant community of thinkers, builders, and explorers who
+                            believe in the power of technology to shape the future and create meaningful impact.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Vision -->
                         <div
                             class="bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-[#139a43] transition-all duration-300">
                             <div
-                                class="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 text-accent text-xl">
-                                <i class="fas fa-code"></i>
+                                class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 text-accent group-hover:bg-accent group-hover:text-dark transition-colors">
+                                <i class="fas fa-eye"></i>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4">Our Story</h3>
-                            <p class="text-light/90 mb-4">Nexus is the official coding club of Shadan College of
-                                Engineering and Technology, driven by students, powered by passion, and built on the
-                                belief that learning happens best when it's shared.</p>
-                            <p class="text-light/90">We are a vibrant community of thinkers, builders, and explorers who
-                                believe in the power of technology to shape the future and create meaningful impact.</p>
+                            <h3 class="text-xl font-bold mb-3">Our Vision</h3>
+                            <p class="text-light/80 text-sm">To create a vibrant and inclusive community where
+                                students grow beyond classrooms by learning, building, and leading through
+                                technology.</p>
                         </div>
 
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <!-- Vision -->
+                        <!-- Mission -->
+                        <div
+                            class="bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-[#139a43] transition-all duration-300">
                             <div
-                                class="bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-[#139a43] transition-all duration-300">
-                                <div
-                                    class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 text-accent group-hover:bg-accent group-hover:text-dark transition-colors">
-                                    <i class="fas fa-eye"></i>
-                                </div>
-                                <h3 class="text-xl font-bold mb-3">Our Vision</h3>
-                                <p class="text-light/80 text-sm">To create a vibrant and inclusive community where
-                                    students grow beyond classrooms by learning, building, and leading through
-                                    technology.</p>
+                                class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 text-accent group-hover:bg-accent group-hover:text-dark transition-colors">
+                                <i class="fas fa-bullseye"></i>
                             </div>
-
-                            <!-- Mission -->
-                            <div
-                                class="bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-[#139a43] transition-all duration-300">
-                                <div
-                                    class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 text-accent group-hover:bg-accent group-hover:text-dark transition-colors">
-                                    <i class="fas fa-bullseye"></i>
-                                </div>
-                                <h3 class="text-xl font-bold mb-3">Our Mission</h3>
-                                <p class="text-light/80 text-sm">To become the core platform in our college that
-                                    empowers students to explore real-world problems, ignite innovation, and nurture
-                                    peer-driven learning.</p>
-                            </div>
+                            <h3 class="text-xl font-bold mb-3">Our Mission</h3>
+                            <p class="text-light/80 text-sm">To become the core platform in our college that
+                                empowers students to explore real-world problems, ignite innovation, and nurture
+                                peer-driven learning.</p>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Stats -->
-                <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-accent mb-2"><span class="counter"
-                                data-target="500">0</span>+</div>
-                        <div class="text-sm uppercase tracking-wider text-light">Members Reach</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-accent mb-2"><span class="counter"
-                                data-target="25">0</span>+</div>
-                        <div class="text-sm uppercase tracking-wider text-light">Activities</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-accent mb-2"><span class="counter"
-                                data-target="32">0</span>+</div>
-                        <div class="text-sm uppercase tracking-wider text-light">Projects</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-accent mb-2"><span class="counter"
-                                data-target="31000">0</span>+</div>
-                        <div class="text-sm uppercase tracking-wider text-light">Lines of Code</div>
                     </div>
                 </div>
             </div>
-    </div>
+
+            <!-- Stats -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-accent mb-2"><span class="counter" data-target="500">0</span>+
+                    </div>
+                    <div class="text-sm uppercase tracking-wider text-light">Members Reach</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-accent mb-2"><span class="counter" data-target="25">0</span>+
+                    </div>
+                    <div class="text-sm uppercase tracking-wider text-light">Activities</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-accent mb-2"><span class="counter" data-target="32">0</span>+
+                    </div>
+                    <div class="text-sm uppercase tracking-wider text-light">Projects</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-accent mb-2"><span class="counter" data-target="31000">0</span>+
+                    </div>
+                    <div class="text-sm uppercase tracking-wider text-light">Lines of Code</div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- What We Do Section -->
@@ -219,20 +218,20 @@
                         <div class="carousel-slide-1 flex transition-transform duration-500 ease-in-out w-full h-full">
                             <div class="min-w-full h-full flex-shrink-0 relative">
                                 <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src="asset/We code/fig1.jpg"
-                                        alt="Coding" class="w-full h-full object-cover rounded-lg">
+                                    <img src="asset/We code/fig1.jpg" alt="Coding"
+                                        class="w-full h-full object-cover rounded-lg">
                                 </div>
                             </div>
                             <div class="min-w-full h-full flex-shrink-0 relative">
                                 <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src="asset/We code/fig2.jpg"
-                                        alt="Coding" class="w-full h-full object-cover rounded-lg">
+                                    <img src="asset/We code/fig2.jpg" alt="Coding"
+                                        class="w-full h-full object-cover rounded-lg">
                                 </div>
                             </div>
                             <div class="min-w-full h-full flex-shrink-0 relative">
                                 <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src="asset/We code/fig3.jpg"
-                                        alt="Coding" class="w-full h-full object-cover rounded-lg">
+                                    <img src="asset/We code/fig3.jpg" alt="Coding"
+                                        class="w-full h-full object-cover rounded-lg">
                                 </div>
                             </div>
                         </div>
@@ -273,20 +272,20 @@
                         <div class="carousel-slide-2 flex transition-transform duration-500 ease-in-out w-full h-full">
                             <div class="min-w-full h-full flex-shrink-0 relative">
                                 <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src="asset/We Create/fig1.jpg"
-                                        alt="Creativity" class="w-full h-full object-cover rounded-lg">
+                                    <img src="asset/We Create/fig1.jpg" alt="Creativity"
+                                        class="w-full h-full object-cover rounded-lg">
                                 </div>
                             </div>
                             <div class="min-w-full h-full flex-shrink-0 relative">
                                 <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src="asset/We Create/fig2.jpg"
-                                        alt="Creativity" class="w-full h-full object-cover rounded-lg">
+                                    <img src="asset/We Create/fig2.jpg" alt="Creativity"
+                                        class="w-full h-full object-cover rounded-lg">
                                 </div>
                             </div>
                             <div class="min-w-full h-full flex-shrink-0 relative">
                                 <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src="asset/We Create/fig3.jpg"
-                                        alt="Creativity" class="w-full h-full object-cover rounded-lg">
+                                    <img src="asset/We Create/fig3.jpg" alt="Creativity"
+                                        class="w-full h-full object-cover rounded-lg">
                                 </div>
                             </div>
                         </div>
@@ -327,20 +326,19 @@
                         <div class="carousel-slide-3 flex transition-transform duration-500 ease-in-out w-full h-full">
                             <div class="min-w-full h-full flex-shrink-0 relative">
                                 <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src="asset/We Compete/fig1.jpg"
-                                        alt="Competition" class="w-full h-full object-cover rounded-lg">
+                                    <img src="asset/We Compete/fig1.jpg" alt="Competition"
+                                        class="w-full h-full object-cover rounded-lg">
                                 </div>
                             </div>
                             <div class="min-w-full h-full flex-shrink-0 relative">
                                 <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src="asset/We Compete/fig2.jpg"
-                                        alt="Competition" class="w-full h-full object-cover rounded-lg">
+                                    <img src="asset/We Compete/fig2.jpg" alt="Competition"
+                                        class="w-full h-full object-cover rounded-lg">
                                 </div>
                             </div>
                             <div class="min-w-full h-full flex-shrink-0 relative">
                                 <div class="absolute inset-0 flex items-center justify-center">
-                                    <img src=""
-                                        alt="Competition" class="w-full h-full object-cover rounded-lg">
+                                    <img src="" alt="Competition" class="w-full h-full object-cover rounded-lg">
                                 </div>
                             </div>
                         </div>
@@ -385,25 +383,27 @@
             </h2>
             <div class="w-20 h-1 bg-green-500 mx-auto"></div>
         </div>
-    
+
         <!-- Timeline Vertical Line -->
         <div
             class="absolute left-1/2 top-[200px] w-[2px] h-[calc(100%-360px)] bg-white -translate-x-1/2 z-0 hidden xl:block">
         </div>
-    
+
         <!-- Unified Card Layout (for all sizes below xl) -->
         <div class="xl:hidden relative px-4 py-10 flex flex-col items-center max-w-xl mx-auto">
             <!-- Continuous Vertical Line -->
             <div class="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-1 bg-white z-0"></div>
-    
+
             <!-- Events -->
             <div class="relative z-10 flex flex-col items-center mb-24">
                 <div class="w-5 h-5 bg-green-500 rounded-full border-4 border-black z-10"></div>
-                <div class="relative mt-4 bg-neutral-900 rounded-lg shadow-lg p-4 w-full max-w-md border border-green-500">
+                <div
+                    class="relative mt-4 bg-neutral-900 rounded-lg shadow-lg p-4 w-full max-w-md border border-green-500">
                     <img src="asset/We code/fig1.jpg" alt="EXPOSEN"
                         class="w-full h-60 object-cover object-top rounded-md mb-4">
                     <h3 class="text-2xl font-bold text-green-500 mb-2 text-center">EXPOGEN 1.0 - PROJECT SHOWCASE</h3>
-                    <p class="mb-4 text-gray-300 text-center">Master the fundamentals of C programming with our intensive
+                    <p class="mb-4 text-gray-300 text-center">Master the fundamentals of C programming with our
+                        intensive
                         workshop designed for beginners and intermediate learners.</p>
                     <ul class="text-gray-400 space-y-1 text-sm text-center">
                         <li><span class="text-green-500">✓</span> 6th May 2025</li>
@@ -412,14 +412,16 @@
                     </ul>
                 </div>
             </div>
-    
+
             <div class="relative z-10 flex flex-col items-center mb-24">
                 <div class="w-5 h-5 bg-green-500 rounded-full border-4 border-black z-10"></div>
-                <div class="relative mt-4 bg-neutral-900 rounded-lg shadow-lg p-4 w-full max-w-md border border-green-500">
+                <div
+                    class="relative mt-4 bg-neutral-900 rounded-lg shadow-lg p-4 w-full max-w-md border border-green-500">
                     <img src="asset/We code/fig2.jpg" alt="SPARKQUEST"
                         class="w-full h-60 object-cover object-top rounded-md mb-4">
                     <h3 class="text-2xl font-bold text-green-500 mb-2 text-center">SPARKQUEST'25 – IDEA HACKATHON</h3>
-                    <p class="mb-4 text-gray-300 text-center">Master the fundamentals of C programming with our intensive
+                    <p class="mb-4 text-gray-300 text-center">Master the fundamentals of C programming with our
+                        intensive
                         workshop designed for beginners and intermediate learners.</p>
                     <ul class="text-gray-400 space-y-1 text-sm text-center">
                         <li><span class="text-green-500">✓</span> 27th and 28th Feb 2025</li>
@@ -428,14 +430,16 @@
                     </ul>
                 </div>
             </div>
-    
+
             <div class="relative z-10 flex flex-col items-center">
                 <div class="w-5 h-5 bg-green-500 rounded-full border-4 border-black z-10"></div>
-                <div class="relative mt-4 bg-neutral-900 rounded-lg shadow-lg p-4 w-full max-w-md border border-green-500">
+                <div
+                    class="relative mt-4 bg-neutral-900 rounded-lg shadow-lg p-4 w-full max-w-md border border-green-500">
                     <img src="asset/We code/fig1.jpg" alt="Web Dev Bootcamp"
                         class="w-full h-60 object-cover object-top rounded-md mb-4">
                     <h3 class="text-2xl font-bold text-green-500 mb-2 text-center">FRONTEND WEB - DEV BOOTCAMP</h3>
-                    <p class="mb-4 text-gray-300 text-center">Master the fundamentals of C programming with our intensive
+                    <p class="mb-4 text-gray-300 text-center">Master the fundamentals of C programming with our
+                        intensive
                         workshop designed for beginners and intermediate learners.</p>
                     <ul class="text-gray-400 space-y-1 text-sm text-center">
                         <li><span class="text-green-500">✓</span> 10th to 15th Feb 2025</li>
@@ -444,7 +448,7 @@
                 </div>
             </div>
         </div>
-    
+
         <!-- Desktop Timeline (XL and above only) -->
         <div class="space-y-16 relative z-10 px-4 md:px-16 hidden xl:block">
             <!-- LEFT CARD -->
@@ -470,7 +474,7 @@
                 </div>
                 <div class="w-1/2"></div>
             </div>
-    
+
             <!-- RIGHT CARD -->
             <div class="relative flex flex-col xl:flex-row-reverse items-start xl:items-center group">
                 <div
@@ -495,7 +499,7 @@
                 </div>
                 <div class="w-1/2"></div>
             </div>
-    
+
             <!-- LEFT CARD -->
             <div class="relative flex flex-col xl:flex-row items-start xl:items-center group">
                 <div
@@ -519,7 +523,7 @@
                 <div class="w-1/2"></div>
             </div>
         </div>
-    
+
         <!-- View All Activities Button -->
         <div class="text-center mt-4 md:mt-8 pt-6 pb-4 px-4" data-aos="fade-up">
             <div class="h-6"></div>
@@ -528,13 +532,14 @@
                 View All Activities
                 <svg class="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
                     stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
             </a>
         </div>
     </section>
 
-    
+
     <!-- Contact Section -->
     <section id="contact" class="pt-16 pb-12 bg-dark/95 relative overflow-hidden">
         <div class="container mx-auto px-4 relative z-10">
@@ -611,44 +616,44 @@
                         <img src="asset/NEXUS Hero nobg.png" alt="NEXUS Coding Club" class="w-full h-auto">
                     </div>
                 </div>
-    
+
                 <!-- Quick Links -->
                 <div class="pt-1 flex flex-col h-full justify-center">
                     <h3 class="text-lg font-semibold text-light mb-5 relative pb-2 inline-block">Quick Links
                         <span class="absolute bottom-0 left-0 w-8 h-0.5 bg-accent"></span>
                     </h3>
                     <ul class="space-y-3 mt-4">
-                        <li><a href="#home"
+                        <li><a href="/#home"
                                 class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
                                 <i
                                     class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
                                 <span>Home</span>
                             </a></li>
-                        <li><a href="#about"
+                        <li><a href="/#about"
                                 class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
                                 <i
                                     class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
                                 <span>About Us</span>
                             </a></li>
-                        <li><a href="#workshop"
+                        <li><a href="/#workshop"
                                 class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
                                 <i
                                     class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
                                 <span>Workshops</span>
                             </a></li>
-                        <li><a href="#events"
+                        <li><a href="/#events"
                                 class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
                                 <i
                                     class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
                                 <span>Events</span>
                             </a></li>
-                        <li><a href="#team"
+                        <li><a href="/#team"
                                 class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
                                 <i
                                     class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
                                 <span>Our Team</span>
                             </a></li>
-                        <li><a href="#contact"
+                        <li><a href="/#contact"
                                 class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
                                 <i
                                     class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
@@ -656,7 +661,7 @@
                             </a></li>
                     </ul>
                 </div>
-    
+
                 <!-- Contact Info -->
                 <div class="pt-1 flex flex-col md:col-span-2">
                     <h3 class="text-lg font-semibold text-light mb-5 relative pb-2 inline-block">Contact Us
@@ -679,7 +684,7 @@
                                         </a>
                                     </div>
                                 </div>
-    
+
                                 <!-- Phone -->
                                 <div class="flex items-start">
                                     <div class="bg-accent/10 p-2 rounded-lg text-accent mr-3 flex-shrink-0">
@@ -694,7 +699,7 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                             <!-- Right Column -->
                             <div class="space-y-4">
                                 <!-- Location -->
@@ -711,7 +716,7 @@
                                         </p>
                                     </div>
                                 </div>
-    
+
                                 <!-- Hours -->
                                 <div class="flex items-start">
                                     <div class="bg-accent/10 p-2 rounded-lg text-accent mr-3 flex-shrink-0">
@@ -729,7 +734,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <div class="mt-2 pt-4 text-center">
                 <div class="mb-2">
                     <h4 class="text-sm font-normal text-light/80 mb-2">Follow Us</h4>
