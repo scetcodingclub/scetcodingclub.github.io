@@ -2,229 +2,62 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Coding Club - SCET</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <!-- <link rel="stylesheet" href="/styles/tailwind.css"> -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#ffffff',
-                        accent: '#139a43',
-                        dark: '#000000',
-                        light: '#e0e0e0',
-                        lighter: '#a0a0a0',
-                        card: '#1e1e1e',
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.6s ease forwards',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                    },
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Coding Club - SCET</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="/styles/tailwind.css"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ffffff',
+            accent: '#139a43',
+            dark: '#000000',
+            light: '#e0e0e0',
+            lighter: '#a0a0a0',
+            card: '#1e1e1e',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.6s ease forwards',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
         }
-    </script>
+      }
+    }
+  </script>
 
 </head>
 
 <body class="bg-dark text-light font-sans min-h-screen">
 
-    <div id="navbar-placeholder"></div>
+  <!-- Navigation -->
+  <div id="navbar-placeholder"></div>
 
-    <div class="pt-20"></div>
+  <div class="pt-20"></div>
 
-    <section id="placeholder" class="py-10 flex justify-center items-center" style="height: 300px;">
-        Hi hello how are you doing Abdul Samad...
-    </section>
+  <section id="placeholder" class="py-10 flex justify-center items-center" style="height: 300px;">
+    Hi hello how are you doing Abdul Samad...
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark/90 pt-8 pb-6 border-t border-light/10">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-                <!-- Logo and Description -->
-                <div class="w-full md:w-2/3 flex items-center justify-center mb-8 md:mb-0 h-full">
-                    <div class="w-full max-w-2xl mx-auto h-auto">
-                        <img src="asset/NEXUS Hero nobg.png" alt="NEXUS Coding Club" class="w-full h-auto">
-                    </div>
-                </div>
-    
-                <!-- Quick Links -->
-                <div class="pt-1 flex flex-col h-full justify-center">
-                    <h3 class="text-lg font-semibold text-light mb-5 relative pb-2 inline-block">Quick Links
-                        <span class="absolute bottom-0 left-0 w-8 h-0.5 bg-accent"></span>
-                    </h3>
-                    <ul class="space-y-3 mt-4">
-                        <li><a href="/#home"
-                                class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
-                                <i
-                                    class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
-                                <span>Home</span>
-                            </a></li>
-                        <li><a href="/#about"
-                                class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
-                                <i
-                                    class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
-                                <span>About Us</span>
-                            </a></li>
-                        <li><a href="/#workshop"
-                                class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
-                                <i
-                                    class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
-                                <span>Workshops</span>
-                            </a></li>
-                        <li><a href="/#events"
-                                class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
-                                <i
-                                    class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
-                                <span>Events</span>
-                            </a></li>
-                        <li><a href="/#team"
-                                class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
-                                <i
-                                    class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
-                                <span>Our Team</span>
-                            </a></li>
-                        <li><a href="/#contact"
-                                class="text-light/60 hover:text-accent transition-colors text-sm flex items-center group">
-                                <i
-                                    class="fas fa-chevron-right text-xs text-accent mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300"></i>
-                                <span>Contact</span>
-                            </a></li>
-                    </ul>
-                </div>
-    
-                <!-- Contact Info -->
-                <div class="pt-1 flex flex-col md:col-span-2">
-                    <h3 class="text-lg font-semibold text-light mb-5 relative pb-2 inline-block">Contact Us
-                        <span class="absolute bottom-0 left-0 w-8 h-0.5 bg-accent"></span>
-                    </h3>
-                    <div class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Left Column -->
-                            <div class="space-y-4">
-                                <!-- Email -->
-                                <div class="flex items-start">
-                                    <div class="bg-accent/10 p-2 rounded-lg text-accent mr-3 flex-shrink-0">
-                                        <i class="fas fa-envelope text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-medium text-light/90 text-sm">Email Us</h4>
-                                        <a href="mailto:nexuscodingclub@gmail.com"
-                                            class="text-light/60 hover:text-accent transition-colors text-sm break-words">
-                                            nexuscodingclub@gmail.com
-                                        </a>
-                                    </div>
-                                </div>
-    
-                                <!-- Phone -->
-                                <div class="flex items-start">
-                                    <div class="bg-accent/10 p-2 rounded-lg text-accent mr-3 flex-shrink-0">
-                                        <i class="fas fa-phone-alt text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-medium text-light/90 text-sm">Call Us</h4>
-                                        <a href="tel:+919989031529"
-                                            class="text-light/60 hover:text-accent transition-colors text-sm">
-                                            +91 99890 31529
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <!-- Right Column -->
-                            <div class="space-y-4">
-                                <!-- Location -->
-                                <div class="flex items-start">
-                                    <div class="bg-accent/10 p-2 rounded-lg text-accent mr-3 flex-shrink-0">
-                                        <i class="fas fa-map-marker-alt text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-medium text-light/90 text-sm">Location</h4>
-                                        <p class="text-light/60 text-sm leading-relaxed">
-                                            Shadan College of Engineering & Technology,<br>
-                                            Himayat Sagar Rd, Hyderabad,<br>
-                                            Telangana 500091
-                                        </p>
-                                    </div>
-                                </div>
-    
-                                <!-- Hours -->
-                                <div class="flex items-start">
-                                    <div class="bg-accent/10 p-2 rounded-lg text-accent mr-3 flex-shrink-0">
-                                        <i class="fas fa-clock text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-medium text-light/90 text-sm">Club Hours</h4>
-                                        <p class="text-light/60 text-sm">
-                                            Mon - Sat: 2:00 PM - 5:00 PM
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="mt-2 pt-4 text-center">
-                <div class="mb-2">
-                    <h4 class="text-sm font-normal text-light/80 mb-2">Follow Us</h4>
-                    <div class="flex justify-center space-x-2">
-                        <a href="https://github.com/SCET-CODING-CLUB" target="_blank" rel="noopener noreferrer"
-                            class="w-8 h-8 rounded-full bg-card/80 flex items-center justify-center text-light hover:bg-[#2b3137] hover:text-white transition-all duration-300"
-                            title="GitHub">
-                            <i class="fab fa-github text-sm"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/nexus-coding-club/" target="_blank"
-                            rel="noopener noreferrer"
-                            class="w-8 h-8 rounded-full bg-card/80 flex items-center justify-center text-light hover:bg-[#0A66C2] hover:text-white transition-all duration-300"
-                            title="LinkedIn">
-                            <i class="fab fa-linkedin-in text-sm"></i>
-                        </a>
-                        <a href="https://discord.gg/HSpkhtUXth" target="_blank" rel="noopener noreferrer"
-                            class="w-8 h-8 rounded-full bg-card/80 flex items-center justify-center text-light hover:bg-[#5865F2] hover:text-white transition-all duration-300"
-                            title="Discord">
-                            <i class="fab fa-discord text-sm"></i>
-                        </a>
-                        <a href="https://whatsapp.com/channel/0029Vapn8RwEquiQfi5Pth45" target="_blank"
-                            rel="noopener noreferrer"
-                            class="w-8 h-8 rounded-full bg-card/80 flex items-center justify-center text-light hover:bg-[#25D366] hover:text-white transition-all duration-300"
-                            title="WhatsApp">
-                            <i class="fab fa-whatsapp text-sm"></i>
-                        </a>
-                        <a href="https://www.instagram.com/nexuscodingclub?igsh=ODhzcGVpbmJkMjR4" target="_blank"
-                            rel="noopener noreferrer"
-                            class="w-8 h-8 rounded-full bg-card/80 flex items-center justify-center text-light hover:bg-gradient-to-r from-purple-500 to-pink-500 hover:text-white transition-all duration-300"
-                            title="Instagram">
-                            <i class="fab fa-instagram text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                <p class="text-center text-light/50 text-xs mt-1">
-                    Built with ❤️ by <span class="text-accent/80">SCET - N.E.X.U.S</span>
-                </p>
-            </div>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/components/navbar.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="/components/navbar.js"></script>
+  <script src="/components/footer.js"></script>
 </body>
 
 </html>
