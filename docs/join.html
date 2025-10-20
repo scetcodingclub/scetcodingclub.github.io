@@ -113,9 +113,66 @@
   <section class="relative w-full min-h-screen flex flex-col items-center justify-start pt-24 md:pt-32 bg-gradient-to-b from-dark via-card/70 to-dark">
     <div class="absolute inset-0 pointer-events-none bg-accent/5"></div>
     <div class="relative z-10 px-4">
-      <h2 class="text-4xl md:text-5xl font-bold text-center text-primary">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-primary leading-tight">
         <span id="focus-typer-prefix"></span><span id="focus-typer-highlight" class="text-accent"></span><span class="align-middle inline-block w-1 h-7 md:h-8 bg-accent ml-1 animate-pulse"></span>
       </h2>
+    </div>
+    <!-- NEXUS Paths Grid (merged into this section) -->
+    <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 max-w-8xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 py-16">
+      <!-- Learner's Path -->
+      <div class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-8 md:p-10 lg:p-14 xl:p-16 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer" data-path="learner">
+        <div class="w-20 h-20 mb-6 flex items-center justify-center">
+          <i class="fas fa-graduation-cap text-6xl text-accent"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-white hover:text-green-400">Learner's Path</h3>
+        <div class="text-accent mt-1">NEXUS Learners Circle</div>
+        <!-- Mobile Description -->
+        <div class="nexus-description-mobile hidden md:hidden mt-6 text-center text-light/90 text-sm leading-relaxed">
+          If you're someone who wants to grow every single day — this is for you. In the Learner's Path, you'll focus on improving your coding, exploring new topics, and sharing your learning journey with others. You'll get to join regular challenges, learn through community discussions, and even take short sessions to explain what you've learned. It's not about being perfect — it's about being consistent, curious, and passionate about learning something new each day. Perfection isn't the goal — express yourself freely.
+          <div class="mt-4 flex justify-center">
+            <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=Learner%E2%80%99s+Path', '_blank')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Join the Learners Circle</button>
+          </div>
+        </div>
+      </div>
+      <!-- Contributor's Path -->
+      <div class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-8 md:p-10 lg:p-14 xl:p-16 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer" data-path="contributor">
+        <div class="w-20 h-20 mb-6 flex items-center justify-center">
+          <i class="fas fa-hands-helping text-6xl text-accent"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-white hover:text-green-400">Contributor's Path</h3>
+        <div class="text-accent mt-1">NEXUS Core Contributors</div>
+        <!-- Mobile Description -->
+        <div class="nexus-description-mobile hidden md:hidden mt-6 text-center text-light/90 text-sm leading-relaxed">
+          This is for those who love building, creating, and making things happen. Being a Contributor isn't just about technical work — it's about taking initiative, coming up with ideas, and helping the club grow. You might work on events, designs, content, or community projects, depending on your interest. Along the way, you'll improve your leadership, teamwork, and creative thinking. You'll learn how to turn ideas into reality with the people around you — and that's what makes it exciting.
+          <div class="mt-4 flex justify-center">
+            <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=Contributor%E2%80%99s+Path', '_blank')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Become a Contributor</button>
+          </div>
+        </div>
+      </div>
+      <!-- All-Rounder Path -->
+      <div class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-8 md:p-10 lg:p-14 xl:p-16 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer" data-path="allrounder">
+        <div class="w-20 h-20 mb-6 flex items-center justify-center">
+          <i class="fas fa-star text-6xl text-accent"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-white hover:text-green-400">All-Rounder Path</h3>
+        <div class="text-accent mt-1">Both Learner & Contributor</div>
+        <!-- Mobile Description -->
+        <div class="nexus-description-mobile hidden md:hidden mt-6 text-center text-light/90 text-sm leading-relaxed">
+          If you want to explore both sides — learning and contributing — this path is for you. You'll be part of the daily learning circle while also helping in club activities, projects, or events. It's a balanced way to grow your technical skills while building real-world experience through teamwork and collaboration. You'll learn how to manage your time, share what you know, and make an impact beyond just coding.
+          <div class="mt-4 flex justify-center">
+            <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=All+Rounder+Path', '_blank')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Start Your Journey</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop Description Panel -->
+    <div class="hidden md:block relative z-10 max-w-6xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 mt-4 mb-8">
+      <div id="description-panel" class="bg-card border border-accent/20 rounded-xl p-6 transition-all duration-500 ease-in-out opacity-0 transform translate-y-4 text-center">
+        <div id="accent-line" class="w-16 h-1 bg-accent mb-4 transition-all duration-500 ease-in-out mx-auto"></div>
+        <div id="description-content" class="text-light leading-relaxed mb-6"></div>
+        <div id="action-button" class="mt-4 flex justify-center"></div>
+      </div>
     </div>
   </section>
 
@@ -170,6 +227,104 @@
 
       tick();
     })();
+
+    // NEXUS Paths Description Functionality
+    const descriptions = {
+      learner: "If you're someone who wants to grow every single day — this is for you. In the Learner's Path, you'll focus on improving your coding, exploring new topics, and sharing your learning journey with others. You'll get to join regular challenges, learn through community discussions, and even take short sessions to explain what you've learned. It's not about being perfect — it's about being consistent, curious, and passionate about learning something new each day. Perfection isn't the goal — express yourself freely.",
+      contributor: "This is for those who love building, creating, and making things happen. Being a Contributor isn't just about technical work — it's about taking initiative, coming up with ideas, and helping the club grow. You might work on events, designs, content, or community projects, depending on your interest. Along the way, you'll improve your leadership, teamwork, and creative thinking. You'll learn how to turn ideas into reality with the people around you — and that's what makes it exciting.",
+      allrounder: "If you want to explore both sides — learning and contributing — this path is for you. You'll be part of the daily learning circle while also helping in club activities, projects, or events. It's a balanced way to grow your technical skills while building real-world experience through teamwork and collaboration. You'll learn how to manage your time, share what you know, and make an impact beyond just coding."
+    };
+
+    const actionButtons = {
+      learner: '<button onclick="window.open(\'https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=Learner%E2%80%99s+Path\', \'_blank\')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Join the Learners Circle</button>',
+      contributor: '<button onclick="window.open(\'https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=Contributor%E2%80%99s+Path\', \'_blank\')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Become a Contributor</button>',
+      allrounder: '<button onclick="window.open(\'https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=All+Rounder+Path\', \'_blank\')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Start Your Journey</button>'
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.nexus-card');
+      const descriptionPanel = document.getElementById('description-panel');
+      const descriptionContent = document.getElementById('description-content');
+      const actionButton = document.getElementById('action-button');
+      const accentLine = document.getElementById('accent-line');
+
+      function isMobile() {
+        return window.innerWidth < 768; // md breakpoint
+      }
+
+      function resetAllCards() {
+        cards.forEach(card => {
+          const mobileDescription = card.querySelector('.nexus-description-mobile');
+          mobileDescription.classList.add('hidden');
+          card.classList.remove('expanded');
+        });
+        if (descriptionPanel) {
+          descriptionPanel.classList.add('opacity-0', 'translate-y-4');
+          descriptionPanel.classList.remove('opacity-100', 'translate-y-0');
+        }
+      }
+
+      function updateAccentLinePosition(cardIndex) {
+        if (!isMobile()) {
+          // Remove all position classes
+          accentLine.classList.remove('left-0', 'left-1/2', 'right-0', 'transform', '-translate-x-1/2', 'ml-0', 'ml-1/2', 'ml-auto', 'mx-auto');
+          
+          // Position the line within the panel based on card index
+          if (cardIndex === 0) {
+            // First card - left side of panel
+            accentLine.classList.add('ml-0');
+          } else if (cardIndex === 1) {
+            // Second card - center of panel
+            accentLine.classList.add('mx-auto');
+          } else if (cardIndex === 2) {
+            // Third card - right side of panel
+            accentLine.classList.add('ml-auto');
+          }
+        }
+      }
+
+      cards.forEach((card, index) => {
+        const path = card.dataset.path;
+        const mobileDescription = card.querySelector('.nexus-description-mobile');
+
+        card.addEventListener('click', () => {
+          if (isMobile()) {
+            // Mobile behavior: expand card on click
+            // Close other cards
+            cards.forEach(otherCard => {
+              if (otherCard !== card) {
+                const otherDescription = otherCard.querySelector('.nexus-description-mobile');
+                otherDescription.classList.add('hidden');
+                otherCard.classList.remove('expanded');
+              }
+            });
+
+            // Toggle current card
+            mobileDescription.classList.toggle('hidden');
+            card.classList.toggle('expanded');
+          } else {
+            // Desktop behavior: show description in panel
+            descriptionContent.textContent = descriptions[path];
+            
+            // Update action button
+            actionButton.innerHTML = actionButtons[path];
+            
+            // Update accent line position
+            updateAccentLinePosition(index);
+            
+            // Show panel with animation
+            descriptionPanel.classList.remove('opacity-0', 'translate-y-4');
+            descriptionPanel.classList.add('opacity-100', 'translate-y-0');
+          }
+        });
+      });
+
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        resetAllCards();
+      });
+    });
+
   </script>
 </body>
 
