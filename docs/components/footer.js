@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const footerEl = temp.firstElementChild;
         placeholder.replaceWith(footerEl);
 
-        // notify other scripts that navbar is ready
-        window.dispatchEvent(new CustomEvent("footer:loaded", { detail: { navbar: navbarEl } }));
+        // notify other scripts that footer is ready
+        window.dispatchEvent(new CustomEvent("footer:loaded", { detail: { footer: footerEl } }));
     } catch (error) {
         console.error("Error loading footer:", error);
     }

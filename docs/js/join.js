@@ -1,4 +1,18 @@
-// Smooth typing/erasing loop for: “What’s your ” + green “focus?”
+function scrollDivBottomIntoView(selector) {
+  const el = document.querySelector(selector);
+  if (!el) return;
+
+  const rect = el.getBoundingClientRect();
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+  const targetScroll = rect.top + scrollTop + el.offsetHeight - window.innerHeight;
+
+  window.scrollTo({
+    top: targetScroll,
+    behavior: "smooth",
+  });
+}
+
 (function () {
     const prefix = "What’s your ";
     const highlight = "focus?";
@@ -51,9 +65,9 @@ const descriptions = {
 };
 
 const actionButtons = {
-    learner: '<button onclick="window.open(\'https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=Learner%E2%80%99s+Path\', \'_blank\')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Join the Learners Circle</button>',
-    contributor: '<button onclick="window.open(\'https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=Contributor%E2%80%99s+Path\', \'_blank\')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Become a Contributor</button>',
-    allrounder: '<button onclick="window.open(\'https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=All+Rounder+Path\', \'_blank\')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Start Your Journey</button>'
+    learner: '<a href="/join-form.html" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Join the Learners Circle</button>',
+    contributor: '<a href="/join-form.html" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Become a Contributor</button>',
+    allrounder: '<a href="/join-form.html" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Start Your Journey</button>'
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -101,8 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
     cards.forEach((card, index) => {
         const path = card.dataset.path;
         const mobileDescription = card.querySelector('.nexus-description-mobile');
-
+        
         card.addEventListener('click', () => {
+            localStorage.setItem("path-type", path);
+            console.log(localStorage.getItem("path-type"))
             if (isMobile()) {
                 // Mobile behavior: expand card on click
                 // Close other cards
@@ -118,6 +134,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileDescription.classList.toggle('hidden');
                 card.classList.toggle('expanded');
             } else {
+
+                // set scroll to the join panel
+                scrollDivBottomIntoView("#join-panel");
+                // const el = document.getElementById("join-panel");
+                // window.scrollTo({
+                //     top: el.offsetTop + el.offsetHeight - window.innerHeight,
+                //     behavior: "smooth",
+                // });
+
+
                 // Desktop behavior: show description in panel
                 descriptionContent.textContent = descriptions[path];
 
@@ -139,3 +165,4 @@ document.addEventListener('DOMContentLoaded', () => {
         resetAllCards();
     });
 });
+

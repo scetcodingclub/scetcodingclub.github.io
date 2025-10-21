@@ -47,15 +47,13 @@
   <div id="navbar-placeholder"></div>
 
   <div class="pt-20"></div>
+  <div class="pt-5"></div>
 
   <!-- Hero Section -->
   <section class="relative h-screen flex items-center justify-center">
     <!-- Enhanced Background Design -->
     <div class="absolute inset-0 bg-gradient-to-br from-dark via-card to-dark"></div>
     <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-accent/5 to-transparent"></div>
-    
-    <!-- Animated Background Pattern -->
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23139a43" fill-opacity="0.1"%3E%3Ccircle cx="40" cy="40" r="1.5"/%3E%3Ccircle cx="20" cy="20" r="1"/%3E%3Ccircle cx="60" cy="60" r="1"/%3E%3Ccircle cx="20" cy="60" r="1"/%3E%3Ccircle cx="60" cy="20" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40 animate-pulse"></div>
     
     <!-- Content -->
     <div class="container relative z-10 px-4 sm:px-6 lg:px-8 mx-auto text-center">
@@ -206,59 +204,81 @@
     <!-- NEXUS Paths Grid (merged into this section) -->
     <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 py-16">
+
       <!-- Learner's Path -->
-      <div class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-4 md:p-6 lg:p-8 xl:p-10 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer" data-path="learner">
-        <div class="w-20 h-20 mb-6 flex items-center justify-center">
-          <i class="fas fa-graduation-cap text-6xl text-accent"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-white hover:text-green-400">Learner's Path</h3>
-        <div class="text-accent mt-1">NEXUS Learners Circle</div>
-        <!-- Mobile Description -->
-        <div class="nexus-description-mobile hidden md:hidden mt-6 text-center text-light/90 text-sm leading-relaxed">
-          If you're eager to grow a little every day, this is for you. Here, you'll improve your coding, explore new ideas and share what you learn with others through small sessions and discussions. It's all about being consistent, curious and passionate not perfect. 
-          <div class="mt-4 flex justify-center">
-            <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=Learner%E2%80%99s+Path', '_blank')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Join the Learners Circle</button>
+      <div>
+        <input type="radio" name="path-type" id="learner_box" class="hidden peer">
+        <label for="learner_box"
+          class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99]\
+                  peer-checked:border-green-400 peer-checked:bg-green-400/10 peer-checked:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-4 md:p-6 lg:p-8 xl:p-10 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 peer-checked:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer"
+            data-path="learner">
+          <div class="w-20 h-20 mb-6 flex items-center justify-center">
+            <i class="fas fa-graduation-cap text-6xl text-accent"></i>
           </div>
-        </div>
+          <h3 class="text-xl font-semibold text-white hover:text-green-400">Learner's Path</h3>
+          <div class="text-accent mt-1">NEXUS Learners Circle</div>
+          <!-- Mobile Description -->
+          <div class="nexus-description-mobile hidden md:hidden mt-6 text-center text-light/90 text-sm leading-relaxed">
+            If you're eager to grow a little every day, this is for you. Here, you'll improve your coding, explore new ideas and share what you learn with others through small sessions and discussions. It's all about being consistent, curious and passionate not perfect. 
+            <div class="mt-4 flex justify-center">
+              <a href="/join-form.html" onclick='localStorage.setItem("path-type", "learner");' class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Join the Learners Circle</a>
+            </div>
+          </div>
+        </label>
       </div>
+
       <!-- Contributor's Path -->
-      <div class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-4 md:p-6 lg:p-8 xl:p-10 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer" data-path="contributor">
-        <div class="w-20 h-20 mb-6 flex items-center justify-center">
-          <i class="fas fa-hands-helping text-6xl text-accent"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-white hover:text-green-400">Contributor's Path</h3>
-        <div class="text-accent mt-1">NEXUS Core Contributors</div>
-        <!-- Mobile Description -->
-        <div class="nexus-description-mobile hidden md:hidden mt-6 text-center text-light/90 text-sm leading-relaxed">
-          For those who love to build, create and take initiative. You'll help organise events, design content, or work on club projects turning ideas into reality while learning teamwork and leadership along the way.  
-          <div class="mt-4 flex justify-center">
-            <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=Contributor%E2%80%99s+Path', '_blank')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Become a Contributor</button>
+      <div>
+        <input type="radio" name="path-type" id="contributer_box" class="hidden peer">
+        <label for="contributer_box"
+          class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99]\
+                  peer-checked:border-green-400 peer-checked:bg-green-400/10 peer-checked:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-4 md:p-6 lg:p-8 xl:p-10 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 peer-checked:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer"
+          data-path="contributor">
+          <div class="w-20 h-20 mb-6 flex items-center justify-center">
+            <i class="fas fa-hands-helping text-6xl text-accent"></i>
           </div>
-        </div>
+          <h3 class="text-xl font-semibold text-white hover:text-green-400">Contributor's Path</h3>
+          <div class="text-accent mt-1">NEXUS Core Contributors</div>
+          <!-- Mobile Description -->
+          <div class="nexus-description-mobile hidden md:hidden mt-6 text-center text-light/90 text-sm leading-relaxed">
+            For those who love to build, create and take initiative. You'll help organise events, design content, or work on club projects turning ideas into reality while learning teamwork and leadership along the way.  
+            <div class="mt-4 flex justify-center">
+              <a href="/join-form.html" onclick='localStorage.setItem("path-type", "contributor");' class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Become a Contributor</a>
+            </div>
+          </div>
+        </label>
       </div>
+
       <!-- All-Rounder Path -->
-      <div class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-4 md:p-6 lg:p-8 xl:p-10 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer" data-path="allrounder">
-        <div class="w-20 h-20 mb-6 flex items-center justify-center">
-          <i class="fas fa-star text-6xl text-accent"></i>
-        </div>
-        <h3 class="text-xl font-semibold text-white hover:text-green-400">All-Rounder Path</h3>
-        <div class="text-accent mt-1">Both Learner & Contributor</div>
-        <!-- Mobile Description -->
-        <div class="nexus-description-mobile hidden md:hidden mt-6 text-center text-light/90 text-sm leading-relaxed">
-          For those who want the best of both worlds, learning and contributing. You'll grow your skills through coding and collaboration while helping in projects and events that make a real impact.  
-          <div class="mt-4 flex justify-center">
-            <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=All+Rounder+Path', '_blank')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Start Your Journey</button>
+      <div>
+        <input type="radio" name="path-type" id="all_rounder_box" class="hidden peer">
+        <label for="all_rounder_box"
+          class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99]\
+                  peer-checked:border-green-400 peer-checked:bg-green-400/10 peer-checked:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-4 md:p-6 lg:p-8 xl:p-10 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 peer-checked:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer"
+          data-path="allrounder">
+          <div class="w-20 h-20 mb-6 flex items-center justify-center">
+            <i class="fas fa-star text-6xl text-accent"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-white hover:text-green-400">All-Rounder Path</h3>
+          <div class="text-accent mt-1">Both Learner & Contributor</div>
+          <!-- Mobile Description -->
+          <div class="nexus-description-mobile hidden md:hidden mt-6 text-center text-light/90 text-sm leading-relaxed">
+            For those who want the best of both worlds, learning and contributing. You'll grow your skills through coding and collaboration while helping in projects and events that make a real impact.  
+            <div class="mt-4 flex justify-center">
+              <a href="/join-form.html" onclick='localStorage.setItem("path-type", "allrounder");' class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Start Your Journey</a>
+            </div>
           </div>
         </div>
-      </div>
+      </label>
+
     </div>
 
     <!-- Desktop Description Panel -->
-    <div class="hidden md:block relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-4 mb-8">
+    <div id="join-panel" class="hidden md:block relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-4 mb-8">
       <div id="description-panel" class="bg-card border border-accent/20 rounded-xl p-6 transition-all duration-500 ease-in-out opacity-0 transform translate-y-4 text-center">
         <div id="accent-line" class="w-16 h-1 bg-accent mb-4 transition-all duration-500 ease-in-out mx-auto"></div>
         <div id="description-content" class="text-light leading-relaxed mb-6"></div>
-        <div id="action-button" class="mt-4 flex justify-center"></div>
+        <a id="action-button" href="/join-form.html" class="mt-4 flex justify-center"></a>
       </div>
     </div>
   </section>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Coding Club - SCET</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="/styles/tailwind.css"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ffffff',
+            accent: '#139a43',
+            dark: '#000000',
+            light: '#e0e0e0',
+            lighter: '#a0a0a0',
+            card: '#1e1e1e',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.6s ease forwards',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body class="bg-dark text-light font-sans min-h-screen">
+
+  <!-- Navigation -->
+  <div id="navbar-placeholder"></div>
+
+  <div class="pt-20"></div>
+
+  <section class="flex justify-center navbar-start-hide">
+    <iframe
+      id="form-iframe"
+      frameborder="0" marginheight="0" marginwidth="0" class="w-full h-screen border-0" allowfullscreen loading="lazy">
+      Loading…
+    </iframe>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="/components/navbar.js"></script>
+  <script src="/components/footer.js"></script>
+
+  <script>
+    const pathSelector = {
+      learner: "Learner%E2%80%99s+Path",
+      contributor: "Contributor%E2%80%99s+Path",
+      allrounder: "All+Rounder+Path",
+    };
+    const iframe = document.getElementById("form-iframe")
+    iframe.src = `https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?embedded=true&usp=pp_url&entry.448225574=${pathSelector[localStorage.getItem("path-type")]}`
+    console.log(localStorage.getItem("path-type"))
+    console.log(pathSelector[localStorage.getItem("path-type")])
+    // localStorage.removeItem("path-type");
+  </script>
+</body>
+
+</html>
