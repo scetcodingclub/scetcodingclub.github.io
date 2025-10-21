@@ -83,13 +83,6 @@
     iframe.src = `https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?embedded=true&usp=pp_url&entry.448225574=${pathSelector[localStorage.getItem("path-type")]}`
     // localStorage.removeItem("path-type");
 
-    window.addEventListener("navbar:loaded", (e) => {
-      e.detail.navbar.querySelectorAll("#mobile-menu .text-light").forEach((el) => {
-        if (el.id === "close-menu-button") { return; }
-        el.classList.remove("text-light");
-        el.classList.add("text-dark");
-      });
-    });
   </script>
 </body>
 
