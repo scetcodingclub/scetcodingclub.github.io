@@ -48,13 +48,7 @@
 
   <div class="pt-20"></div>
 
-  <div class="relative z-10 px-4 sm:px-6 lg:px-8 mx-auto text-center navbar-start-hide py-8">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-1 leading-tight animate-fade-in-up">
-      Apply Now!!!
-    </h1>
-  </div>
-
-  <section class="flex justify-center w-full min-h-screen overflow-hidden">
+  <section class="flex justify-center w-full min-h-screen overflow-hidden navbar-start-hide">
     <iframe
       src="https://docs.google.com/forms/d/e/asdasdasda/viewform?embedded=true"
       id="form-iframe" frameborder="0"
@@ -88,6 +82,14 @@
     const iframe = document.getElementById("form-iframe")
     iframe.src = `https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?embedded=true&usp=pp_url&entry.448225574=${pathSelector[localStorage.getItem("path-type")]}`
     // localStorage.removeItem("path-type");
+
+    window.addEventListener("navbar:loaded", (e) => {
+      e.detail.navbar.querySelectorAll("#mobile-menu .text-light").forEach((el) => {
+        if (el.id === "close-menu-button") { return; }
+        el.classList.remove("text-light");
+        el.classList.add("text-dark");
+      });
+    });
   </script>
 </body>
 
