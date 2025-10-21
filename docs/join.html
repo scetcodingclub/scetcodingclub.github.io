@@ -68,10 +68,10 @@
       
       <!-- Action Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 animate-fade-in-up" style="animation-delay: 0.4s;">
-        <button class="bg-accent hover:bg-accent/90 text-primary font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-accent/25 min-w-[200px]">
+        <button onclick="document.getElementById('focus-section').scrollIntoView({behavior: 'smooth'})" class="bg-accent hover:bg-accent/90 text-primary font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-accent/25 min-w-[200px]">
           Join Now
         </button>
-        <button class="border-2 border-accent text-accent hover:bg-accent hover:text-primary font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]">
+        <button onclick="document.getElementById('video-section').scrollIntoView({behavior: 'smooth'})" class="border-2 border-accent text-accent hover:bg-accent hover:text-primary font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]">
           Learn More
         </button>
       </div>
@@ -109,8 +109,37 @@
     
   </section>
 
+  <!-- YouTube Video Section -->
+  <section id="video-section" class="relative w-full py-16 md:py-24 bg-gradient-to-b from-dark to-card/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8 md:mb-12">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-4">Begin Your NEXUS Journey</h2>
+        <p class="text-light/80 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">Watch how we started and see where you fit in.</p>
+      </div>
+      
+      <!-- Responsive YouTube Video -->
+      <div class="relative w-full" style="padding-bottom: 56.25%;">
+        <iframe 
+          class="absolute top-0 left-0 w-full h-full rounded-xl shadow-2xl border border-accent/20"
+          src="https://www.youtube.com/embed/WYx3TXXTEyM"
+          title="NEXUS Coding Club Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      
+      <!-- Video Decorative Elements -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute -top-4 -left-4 w-8 h-8 bg-accent/20 rounded-full animate-pulse"></div>
+        <div class="absolute -bottom-4 -right-4 w-6 h-6 bg-accent/30 rounded-full animate-ping" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 -right-8 w-4 h-4 bg-accent/25 rounded-full animate-bounce" style="animation-delay: 2s;"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Focus Typing Section -->
-  <section class="relative w-full min-h-screen flex flex-col items-center justify-start pt-24 md:pt-32 bg-gradient-to-b from-dark via-card/70 to-dark">
+  <section id="focus-section" class="relative w-full min-h-screen flex flex-col items-center justify-start pt-24 md:pt-32 bg-gradient-to-b from-dark via-card/70 to-dark">
     <div class="absolute inset-0 pointer-events-none bg-accent/5"></div>
     <div class="relative z-10 px-4">
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-primary leading-tight">
@@ -128,7 +157,7 @@
         <div class="text-accent mt-1">NEXUS Learners Circle</div>
         <!-- Mobile Description -->
         <div class="nexus-description-mobile hidden md:hidden mt-6 text-center text-light/90 text-sm leading-relaxed">
-          If you're someone who wants to grow every single day — this is for you. In the Learner's Path, you'll focus on improving your coding, exploring new topics, and sharing your learning journey with others. You'll get to join regular challenges, learn through community discussions, and even take short sessions to explain what you've learned. It's not about being perfect — it's about being consistent, curious, and passionate about learning something new each day. Perfection isn't the goal — express yourself freely.
+          If you're eager to grow a little every day, this is for you. Here, you'll improve your coding, explore new ideas and share what you learn with others through small sessions and discussions. It's all about being consistent, curious and passionate not perfect. 
           <div class="mt-4 flex justify-center">
             <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=Learner%E2%80%99s+Path', '_blank')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Join the Learners Circle</button>
           </div>
@@ -143,7 +172,7 @@
         <div class="text-accent mt-1">NEXUS Core Contributors</div>
         <!-- Mobile Description -->
         <div class="nexus-description-mobile hidden md:hidden mt-6 text-center text-light/90 text-sm leading-relaxed">
-          This is for those who love building, creating, and making things happen. Being a Contributor isn't just about technical work — it's about taking initiative, coming up with ideas, and helping the club grow. You might work on events, designs, content, or community projects, depending on your interest. Along the way, you'll improve your leadership, teamwork, and creative thinking. You'll learn how to turn ideas into reality with the people around you — and that's what makes it exciting.
+          For those who love to build, create and take initiative. You'll help organise events, design content, or work on club projects turning ideas into reality while learning teamwork and leadership along the way.  
           <div class="mt-4 flex justify-center">
             <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=Contributor%E2%80%99s+Path', '_blank')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Become a Contributor</button>
           </div>
@@ -158,7 +187,7 @@
         <div class="text-accent mt-1">Both Learner & Contributor</div>
         <!-- Mobile Description -->
         <div class="nexus-description-mobile hidden md:hidden mt-6 text-center text-light/90 text-sm leading-relaxed">
-          If you want to explore both sides — learning and contributing — this path is for you. You'll be part of the daily learning circle while also helping in club activities, projects, or events. It's a balanced way to grow your technical skills while building real-world experience through teamwork and collaboration. You'll learn how to manage your time, share what you know, and make an impact beyond just coding.
+          For those who want the best of both worlds, learning and contributing. You'll grow your skills through coding and collaboration while helping in projects and events that make a real impact.  
           <div class="mt-4 flex justify-center">
             <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?usp=pp_url&entry.448225574=All+Rounder+Path', '_blank')" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Start Your Journey</button>
           </div>
@@ -230,9 +259,9 @@
 
     // NEXUS Paths Description Functionality
     const descriptions = {
-      learner: "If you're someone who wants to grow every single day — this is for you. In the Learner's Path, you'll focus on improving your coding, exploring new topics, and sharing your learning journey with others. You'll get to join regular challenges, learn through community discussions, and even take short sessions to explain what you've learned. It's not about being perfect — it's about being consistent, curious, and passionate about learning something new each day. Perfection isn't the goal — express yourself freely.",
-      contributor: "This is for those who love building, creating, and making things happen. Being a Contributor isn't just about technical work — it's about taking initiative, coming up with ideas, and helping the club grow. You might work on events, designs, content, or community projects, depending on your interest. Along the way, you'll improve your leadership, teamwork, and creative thinking. You'll learn how to turn ideas into reality with the people around you — and that's what makes it exciting.",
-      allrounder: "If you want to explore both sides — learning and contributing — this path is for you. You'll be part of the daily learning circle while also helping in club activities, projects, or events. It's a balanced way to grow your technical skills while building real-world experience through teamwork and collaboration. You'll learn how to manage your time, share what you know, and make an impact beyond just coding."
+      learner: "If you're eager to grow a little every day, this is for you. Here, you'll improve your coding, explore new ideas and share what you learn with others through small sessions and discussions. It's all about being consistent, curious and passionate not perfect.",
+      contributor: "For those who love to build, create and take initiative. You'll help organise events, design content, or work on club projects turning ideas into reality while learning teamwork and leadership along the way.",
+      allrounder: "For those who want the best of both worlds, learning and contributing. You'll grow your skills through coding and collaboration while helping in projects and events that make a real impact."
     };
 
     const actionButtons = {
