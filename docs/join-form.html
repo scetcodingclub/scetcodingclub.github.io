@@ -41,20 +41,36 @@
 
 </head>
 
-<body class="bg-dark text-light font-sans min-h-screen">
+<body class="bg-dark text-light font-sans">
 
   <!-- Navigation -->
   <div id="navbar-placeholder"></div>
 
   <div class="pt-20"></div>
 
-  <section class="flex justify-center navbar-start-hide">
+  <div class="relative z-10 px-4 sm:px-6 lg:px-8 mx-auto text-center navbar-start-hide py-8">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-1 leading-tight animate-fade-in-up">
+      Apply Now!!!
+    </h1>
+  </div>
+
+  <section class="flex justify-center w-full min-h-screen overflow-hidden">
     <iframe
-      id="form-iframe"
-      frameborder="0" marginheight="0" marginwidth="0" class="w-full h-screen border-0" allowfullscreen loading="lazy">
+      src="https://docs.google.com/forms/d/e/asdasdasda/viewform?embedded=true"
+      id="form-iframe" frameborder="0"
+      marginheight="0" marginwidth="0"
+      class="w-[700px] h-screen border-0" allowfullscreen>
       Loading…
     </iframe>
   </section>
+  <!-- <section class="navbar-start-hide flex justify-center w-full">
+    <iframe
+      id="form-iframe"
+      style="min-height: 100vh; height: 100dvh;"
+      allowfullscreen
+    ></iframe>
+  </section> -->
+
 
   <!-- Footer -->
   <div id="footer-placeholder"></div>
@@ -71,8 +87,6 @@
     };
     const iframe = document.getElementById("form-iframe")
     iframe.src = `https://docs.google.com/forms/d/e/1FAIpQLSfb_l8Qz6q3tAz1TKlM7cy1TH9fwwuo-mMlJ0WRvnsb9BxSNw/viewform?embedded=true&usp=pp_url&entry.448225574=${pathSelector[localStorage.getItem("path-type")]}`
-    console.log(localStorage.getItem("path-type"))
-    console.log(pathSelector[localStorage.getItem("path-type")])
     // localStorage.removeItem("path-type");
   </script>
 </body>

@@ -118,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         card.addEventListener('click', () => {
             localStorage.setItem("path-type", path);
-            console.log(localStorage.getItem("path-type"))
             if (isMobile()) {
                 // Mobile behavior: expand card on click
                 // Close other cards
