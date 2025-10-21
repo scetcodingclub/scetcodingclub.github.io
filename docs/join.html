@@ -41,7 +41,7 @@
 
 </head>
 
-<body class="bg-dark text-light font-sans min-h-screen">
+<body class="bg-dark text-light font-sans min-h-screen max-w-full overflow-x-hidden">
 
   <!-- Navigation -->
   <div id="navbar-placeholder"></div>
@@ -49,7 +49,7 @@
   <div class="pt-20"></div>
 
   <!-- Hero Section -->
-  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+  <section class="relative h-screen flex items-center justify-center overflow-hidden w-full">
     <!-- Enhanced Background Design -->
     <div class="absolute inset-0 bg-gradient-to-br from-dark via-card to-dark"></div>
     <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-accent/5 to-transparent"></div>
@@ -58,7 +58,7 @@
     <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23139a43" fill-opacity="0.1"%3E%3Ccircle cx="40" cy="40" r="1.5"/%3E%3Ccircle cx="20" cy="20" r="1"/%3E%3Ccircle cx="60" cy="60" r="1"/%3E%3Ccircle cx="20" cy="60" r="1"/%3E%3Ccircle cx="60" cy="20" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40 animate-pulse"></div>
     
     <!-- Content -->
-    <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto flex flex-col justify-center items-center h-full">
+    <div class="container relative z-10 px-4 sm:px-6 lg:px-8 mx-auto text-center">
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 leading-tight animate-fade-in-up">
         Let's Build What Others Dream
       </h1>
@@ -68,10 +68,10 @@
       
       <!-- Action Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 animate-fade-in-up" style="animation-delay: 0.4s;">
-        <button onclick="document.getElementById('focus-section').scrollIntoView({behavior: 'smooth'})" class="bg-accent hover:bg-accent/90 text-primary font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-accent/25 min-w-[200px]">
+        <button onclick="document.getElementById('focus-section').scrollIntoView({behavior: 'smooth'})" class="bg-accent hover:bg-accent/90 text-primary font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-accent/25">
           Join Now
         </button>
-        <button onclick="document.getElementById('video-section').scrollIntoView({behavior: 'smooth'})" class="border-2 border-accent text-accent hover:bg-accent hover:text-primary font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 min-w-[200px]">
+        <button onclick="document.getElementById('video-section').scrollIntoView({behavior: 'smooth'})" class="border-2 border-accent text-accent hover:bg-accent hover:text-primary font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
           Learn More
         </button>
       </div>
@@ -111,7 +111,7 @@
 
   <!-- YouTube Video Section -->
   <section id="video-section" class="relative w-full py-16 md:py-24 bg-gradient-to-b from-dark to-card/50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-8 md:mb-12">
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-4">Begin Your NEXUS Journey</h2>
         <p class="text-light/80 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">Watch how we started and see where you fit in.</p>
@@ -140,7 +140,7 @@
 
   <!-- How You'll Join the Journey Section -->
   <section class="relative w-full bg-black py-16 md:py-24">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-12 md:mb-16">
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4">How You'll Join the Journey</h2>
@@ -148,7 +148,7 @@
       </div>
 
       <!-- Journey Cards Grid -->
-      <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto py-16 px-4 text-center">
+      <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 py-16 text-center">
         <!-- Timeline Line -->
         <div class="hidden md:block absolute top-1/2 left-1/8 right-1/8 h-0.5 bg-gradient-to-r from-accent via-accent/60 to-accent transform -translate-y-1/2 z-0"></div>
         <!-- Card 1: Choose Your Path -->
@@ -213,15 +213,16 @@
   <!-- Focus Typing Section -->
   <section id="focus-section" class="relative w-full min-h-screen flex flex-col items-center justify-start pt-24 md:pt-32 bg-gradient-to-b from-dark via-card/70 to-dark">
     <div class="absolute inset-0 pointer-events-none bg-accent/5"></div>
-    <div class="relative z-10 px-4">
+    <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-primary leading-tight">
         <span id="focus-typer-prefix"></span><span id="focus-typer-highlight" class="text-accent"></span><span class="align-middle inline-block w-1 h-7 md:h-8 bg-accent ml-1 animate-pulse"></span>
       </h2>
     </div>
     <!-- NEXUS Paths Grid (merged into this section) -->
-    <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 max-w-8xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 py-16">
+    <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 py-16">
       <!-- Learner's Path -->
-      <div class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-8 md:p-10 lg:p-14 xl:p-16 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer" data-path="learner">
+      <div class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-4 md:p-6 lg:p-8 xl:p-10 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer" data-path="learner">
         <div class="w-20 h-20 mb-6 flex items-center justify-center">
           <i class="fas fa-graduation-cap text-6xl text-accent"></i>
         </div>
@@ -236,7 +237,7 @@
         </div>
       </div>
       <!-- Contributor's Path -->
-      <div class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-8 md:p-10 lg:p-14 xl:p-16 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer" data-path="contributor">
+      <div class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-4 md:p-6 lg:p-8 xl:p-10 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer" data-path="contributor">
         <div class="w-20 h-20 mb-6 flex items-center justify-center">
           <i class="fas fa-hands-helping text-6xl text-accent"></i>
         </div>
@@ -251,7 +252,7 @@
         </div>
       </div>
       <!-- All-Rounder Path -->
-      <div class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-8 md:p-10 lg:p-14 xl:p-16 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer" data-path="allrounder">
+      <div class="nexus-card bg-black border border-gray-700 hover:border-green-400 active:border-green-400 active:bg-green-400/10 active:shadow-[0_0_30px_#00ff99] rounded-2xl flex flex-col items-center justify-center text-center p-4 md:p-6 lg:p-8 xl:p-10 lg:min-h-80 xl:min-h-96 transform hover:scale-105 active:scale-105 transition-all duration-500 ease-in-out hover:shadow-[0_0_20px_#00ff99] cursor-pointer" data-path="allrounder">
         <div class="w-20 h-20 mb-6 flex items-center justify-center">
           <i class="fas fa-star text-6xl text-accent"></i>
         </div>
@@ -268,7 +269,7 @@
     </div>
 
     <!-- Desktop Description Panel -->
-    <div class="hidden md:block relative z-10 max-w-6xl mx-auto px-8 sm:px-12 lg:px-16 xl:px-20 mt-4 mb-8">
+    <div class="hidden md:block relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-4 mb-8">
       <div id="description-panel" class="bg-card border border-accent/20 rounded-xl p-6 transition-all duration-500 ease-in-out opacity-0 transform translate-y-4 text-center">
         <div id="accent-line" class="w-16 h-1 bg-accent mb-4 transition-all duration-500 ease-in-out mx-auto"></div>
         <div id="description-content" class="text-light leading-relaxed mb-6"></div>
@@ -283,6 +284,48 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="/components/navbar.js"></script>
   <script src="/components/footer.js"></script>
+  
+  <!-- Navbar Auto-Hide Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navbar = document.getElementById('mainNav');
+      const heroButtons = document.querySelector('.flex.flex-col.sm\\:flex-row.gap-4.sm\\:gap-6.justify-center.items-center.mb-12');
+      let lastScrollY = window.scrollY;
+      let isNavbarHidden = false;
+      
+      function handleScroll() {
+        const currentScrollY = window.scrollY;
+        const heroButtonsRect = heroButtons ? heroButtons.getBoundingClientRect() : null;
+        const heroButtonsTop = heroButtonsRect ? heroButtonsRect.top + window.scrollY : 0;
+        
+        // Hide navbar when scrolling down past hero buttons (works on all screen sizes)
+        if (currentScrollY > heroButtonsTop && currentScrollY > lastScrollY && !isNavbarHidden) {
+          navbar.classList.add('navbar-hidden');
+          isNavbarHidden = true;
+        }
+        // Show navbar when scrolling up or when at the top
+        else if (currentScrollY < lastScrollY || currentScrollY < 100) {
+          navbar.classList.remove('navbar-hidden');
+          isNavbarHidden = false;
+        }
+        
+        lastScrollY = currentScrollY;
+      }
+      
+      // Throttle scroll events for better performance
+      let ticking = false;
+      function requestTick() {
+        if (!ticking) {
+          requestAnimationFrame(handleScroll);
+          ticking = true;
+          setTimeout(() => ticking = false, 100);
+        }
+      }
+      
+      // Add scroll listener for all screen sizes (mobile, tablet, desktop, laptop)
+      window.addEventListener('scroll', requestTick);
+    });
+  </script>
   <script>
     // Smooth typing/erasing loop for: “What’s your ” + green “focus?”
     (function () {
