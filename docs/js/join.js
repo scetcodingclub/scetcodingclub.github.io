@@ -165,3 +165,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+window.addEventListener("navbar:loaded", (e) => {
+  // ... your navbar scroll/hide and mobile menu logic ...
+
+  // === Announcement bar ===
+  const announcement = document.getElementById("announcement-bar");
+  const clone = announcement.cloneNode(true)
+  clone.hidden = false;
+//   e.detail.navbar.insertAdjacentElement("afterend", clone);
+  e.detail.navbar.appendChild(clone);
+});

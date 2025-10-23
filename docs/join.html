@@ -27,11 +27,21 @@
           },
           animation: {
             'fade-in-up': 'fadeInUp 0.6s ease forwards',
+            scroll: 'scroll 7s linear infinite',
+            scrollFast: 'scrollFast 7s linear infinite',
           },
           keyframes: {
             fadeInUp: {
               '0%': { opacity: '0', transform: 'translateY(20px)' },
               '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            scroll: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(calc(-532px - 40px))' },
+            },
+            scrollFast: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(calc(-532px - 40px))' },
             },
           },
         }
@@ -47,7 +57,30 @@
   <div id="navbar-placeholder"></div>
 
   <div class="pt-20"></div>
-  <div class="pt-5"></div>
+  
+  <div id="announcement-bar"
+      class="sticky top-0 z-[40] bg-gradient-to-r from-neutral-900 to-neutral-800 border-b border-white/10 overflow-hidden text-white">
+    <div class="flex gap-10 animate-scrollFast md:animate-scroll whitespace-nowrap py-2">
+      <span>
+        <i class="fa-solid fa-triangle-exclamation text-yellow-400"></i> Registration closes on <strong class="text-red-600">October 31st.</strong> Don’t miss this opportunity!
+      </span>
+      <span aria-hidden="true">
+        <i class="fa-solid fa-triangle-exclamation text-yellow-400"></i> Registration closes on <strong class="text-red-600">October 31st.</strong> Don’t miss this opportunity!
+      </span>
+      <span aria-hidden="true">
+        <i class="fa-solid fa-triangle-exclamation text-yellow-400"></i> Registration closes on <strong class="text-red-600">October 31st.</strong> Don’t miss this opportunity!
+      </span>
+      <span aria-hidden="true">
+        <i class="fa-solid fa-triangle-exclamation text-yellow-400"></i> Registration closes on <strong class="text-red-600">October 31st.</strong> Don’t miss this opportunity!
+      </span>
+      <span aria-hidden="true">
+        <i class="fa-solid fa-triangle-exclamation text-yellow-400"></i> Registration closes on <strong class="text-red-600">October 31st.</strong> Don’t miss this opportunity!
+      </span>
+      <span aria-hidden="true">
+        <i class="fa-solid fa-triangle-exclamation text-yellow-400"></i> Registration closes on <strong>October 31st</strong> — don’t wait, register today!
+      </span>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section class="relative h-screen flex items-center justify-center">
