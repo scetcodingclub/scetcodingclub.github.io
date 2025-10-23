@@ -29,7 +29,6 @@
           animation: {
             'fade-in-up': 'fadeInUp 0.6s ease forwards',
             scroll: 'scroll 7s linear infinite',
-            scrollFast: 'scrollFast 7s linear infinite',
           },
           keyframes: {
             fadeInUp: {
@@ -38,11 +37,7 @@
             },
             scroll: {
               '0%': { transform: 'translateX(0)' },
-              '100%': { transform: 'translateX(calc(-532px - 40px))' },
-            },
-            scrollFast: {
-              '0%': { transform: 'translateX(0)' },
-              '100%': { transform: 'translateX(calc(-532px - 40px))' },
+              '100%': { transform: 'translateX(calc(-595px - 40px))' },
             },
           },
         }
@@ -61,7 +56,7 @@
   
   <div id="announcement-bar"
       class="sticky top-0 z-[40] bg-gradient-to-r from-neutral-900 to-neutral-800 border-b border-white/10 overflow-hidden text-white">
-    <div class="flex gap-10 animate-scrollFast md:animate-scroll whitespace-nowrap py-2">
+    <div class="flex gap-10 animate-scroll whitespace-nowrap py-2">
       <span>
         <i class="fa-solid fa-triangle-exclamation text-yellow-400"></i> Registration closes on <strong class="text-red-600">31st October 11:59 PM.</strong> Don’t miss this opportunity!
       </span>
