@@ -65,9 +65,9 @@ const descriptions = {
 };
 
 const actionButtons = {
-    learner: '<a href="/join-form.html" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Join the Learners Circle</button>',
-    contributor: '<a href="/join-form.html" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Become a Contributor</button>',
-    allrounder: '<a href="/join-form.html" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Start Your Journey</button>'
+    learner: '<a href="/form/join-form.html" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Join the Learners Circle</button>',
+    contributor: '<a href="/form/join-form.html" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Become a Contributor</button>',
+    allrounder: '<a href="/form/join-form.html" class="bg-accent hover:bg-accent/90 text-dark font-semibold px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm">Start Your Journey</button>'
 };
 
 document.addEventListener('DOMContentLoaded', () => {
