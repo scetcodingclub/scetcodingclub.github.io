@@ -19,10 +19,14 @@
     <div class="flex items-center h-20">
       <!-- Logo Container -->
       <div class="flex-shrink-0 flex items-center space-x-3">
-        <img src="/asset/ShadanFillLogo.png" alt="NEXUS"
+        <a href="http://scet.in/">
+          <img src="/asset/ShadanFillLogo.png" alt="NEXUS"
           class="h-16 w-auto hover:scale-105 transition-transform duration-200">
-        <img src="/asset/NEXUS Hero nobg.webp" alt="NEXUS"
+        </a>
+        <a href="/">
+          <img src="/asset/NEXUS Hero nobg.webp" alt="NEXUS"
           class="h-16 w-auto hover:scale-105 transition-transform duration-200">
+        </a>
       </div>
 
       <!-- Spacer to push navigation to the right -->
@@ -89,14 +93,14 @@
   <!-- Mobile menu with animations -->
   <div class="md:hidden hidden fixed inset-0 z-50" id="mobile-menu">
     <!-- Overlay for the entire screen -->
-    <div class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="menu-overlay">
+    <div class="fixed inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="menu-overlay">
     </div>
 
     <!-- Menu content -->
     <div
-      class="mobile-menu fixed right-0 top-0 h-full w-4/5 max-w-sm bg-gradient-to-b from-dark to-card shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50"
+      class="mobile-menu fixed right-0 top-0 h-full w-full max-w-sm transform translate-x-full transition-transform duration-300 ease-in-out z-50"
       id="menu-content">
-      <div class="flex justify-end p-4 bg-dark/50">
+      <div class="flex justify-end p-4">
         <button class="p-2 text-light hover:text-accent transition-colors" id="close-menu-button">
           <i class="fas fa-times text-2xl"></i>
         </button>
