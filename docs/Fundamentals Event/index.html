@@ -4,147 +4,213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programming Fundamentals Workshop | NEXUS Coding Club</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
     
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <h1 class="hero-title animate-fade-in">Fundamentals of Programming &amp; Logic Building with C</h1>
-            <p class="hero-subtitle animate-fade-in delay-1">Master the Art of Thinking Like a Programmer</p>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-bg': '#0B0B0B',
+                        'secondary-bg': '#1a1a1a',
+                        'card-bg': '#1a1a1a',
+                        'primary-green': '#9333EA', // Named 'green' in CSS, but is purple
+                        'dark-green': '#7E22CE',   // Named 'dark-green' in CSS, but is purple
+                        'text-white': '#FFFFFF',
+                        'text-gray': '#B3B3B3',
+                        'glow-border': '#070508',
+                    },
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-green': 'linear-gradient(135deg, #9333EA 0%, #C084FC 100%)',
+                    },
+                    boxShadow: {
+                        'lg': '0 8px 32px rgba(192, 132, 252, 0.2)',
+                        'glow': '0 0 20px rgba(192, 132, 252, 0.3)',
+                        'glow-md': '0 0 25px rgba(192, 132, 252, 0.5)',
+                        'glow-lg': '0 0 30px rgba(192, 132, 252, 0.5)',
+                        'glow-xl': '0 0 35px rgba(192, 132, 252, 0.6)',
+                    },
+                    transitionTimingFunction: {
+                       'custom': 'cubic-bezier(0.4, 0, 0.2, 1)',
+                    },
+                    animation: {
+                       'fade-in': 'fadeIn 0.8s ease-out forwards',
+                       'bounce-slow': 'customBounce 2s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            'to': { opacity: '1' },
+                        },
+                        customBounce: {
+                            '0%, 100%': { transform: 'translateX(-50%) translateY(0)' },
+                            '50%': { transform: 'translateX(-50%) translateY(10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        .animate-fade-in { opacity: 0; }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1s; }
+    </style>
+</head>
+<body class="font-sans bg-primary-bg text-text-white leading-relaxed overflow-x-hidden">
+    
+    <section class="min-h-screen flex items-center justify-center relative bg-primary-bg pt-24 pb-16 px-4 sm:px-8 overflow-hidden" id="hero">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(147,51,234,0.1)_0%,transparent_50%),radial-gradient(circle_at_80%_80%,rgba(192,132,252,0.1)_0%,transparent_50%)] pointer-events-none"></div>
+
+        <div class="max-w-7xl text-center z-10">
+            <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight mb-6 text-text-white animate-fade-in">Fundamentals of Programming &amp; Logic Building with C</h1>
+            <p class="text-[clamp(1.1rem,3vw,1.5rem)] text-text-gray mb-10 font-normal animate-fade-in delay-1">Master the Art of Thinking Like a Programmer</p>
             
-            <div class="hero-info-bar animate-fade-in delay-2">
-                <div class="info-item">
-                    <i class="fas fa-calendar-alt"></i>
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mb-12 p-4 sm:p-6 bg-white/5 rounded-xl backdrop-blur-lg animate-fade-in delay-2">
+                <div class="flex items-center gap-2 text-sm sm:text-base">
+                    <i class="fas fa-calendar-alt text-primary-green text-lg"></i>
                     <span>Nov 4, 6, 7, 2025</span>
                 </div>
-                <div class="info-item">
-                    <i class="fas fa-clock"></i>
+                <div class="flex items-center gap-2 text-sm sm:text-base">
+                    <i class="fas fa-clock text-primary-green text-lg"></i>
                     <span>11 AM - 4 PM</span>
                 </div>
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
+                <div class="flex items-center gap-2 text-sm sm:text-base">
+                    <i class="fas fa-map-marker-alt text-primary-green text-lg"></i>
                     <span>Room 315</span>
                 </div>
-                <div class="info-item">
-                    <i class="fas fa-tag"></i>
+                <div class="flex items-center gap-2 text-sm sm:text-base">
+                    <i class="fas fa-tag text-primary-green text-lg"></i>
                     <span>FREE</span>
                 </div>
             </div>
 
-            <a href="#register" class="cta-button animate-fade-in delay-3">
+            <a href="#register" class="bg-primary-green text-text-white border-2 border-glow-border py-5 px-8 sm:px-12 text-base sm:text-lg font-bold rounded-xl cursor-pointer transition-all duration-300 ease-custom inline-flex items-center gap-3 mb-8 shadow-glow no-underline hover:-translate-y-1 hover:shadow-glow-lg hover:bg-dark-green animate-fade-in delay-3 w-full sm:w-auto justify-center">
                 <span>Register Now - It's Free!</span>
                 <i class="fas fa-arrow-right"></i>
             </a>
 
-            <p class="hero-urgency animate-fade-in delay-4">
+            <p class="text-yellow-400 text-lg font-semibold mb-8 flex items-center justify-center gap-2 animate-fade-in delay-4">
                 <i class="fas fa-exclamation-circle"></i>
                 Limited Seats | Register by November 2
             </p>
 
-            <div class="hero-checks animate-fade-in delay-5">
-                <div class="check-item">
-                    <i class="fas fa-check-circle"></i>
+            <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 mt-8 animate-fade-in delay-5">
+                <div class="flex items-center gap-2 text-base justify-center">
+                    <i class="fas fa-check-circle text-purple-400 text-xl"></i>
                     <span>No Experience Required</span>
                 </div>
-                <div class="check-item">
-                    <i class="fas fa-check-circle"></i>
+                <div class="flex items-center gap-2 text-base justify-center">
+                    <i class="fas fa-check-circle text-purple-400 text-xl"></i>
                     <span>Study Materials Included</span>
                 </div>
-                <div class="check-item">
-                    <i class="fas fa-check-circle"></i>
+                <div class="flex items-center gap-2 text-base justify-center">
+                    <i class="fas fa-check-circle text-purple-400 text-xl"></i>
                     <span>Competition at End</span>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-slow">
+            <i class="fas fa-chevron-down text-3xl text-primary-green"></i>
         </div>
     </section>
 
-    <section class="section why-section" id="why">
-        <div class="container">
-            <h2 class="section-title">Why This Workshop?</h2>
-            <div class="three-col-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
+    <section class="py-20 px-4 sm:px-8 relative bg-secondary-bg" id="why">
+        <div class="max-w-[1400px] mx-auto">
+            <h2 class="text-center text-[clamp(2rem,4vw,3rem)] font-bold mb-12 text-text-white">Why This Workshop?</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+                <div class="bg-card-bg p-6 sm:p-8 rounded-2xl border border-transparent transition-all duration-300 ease-custom hover:-translate-y-1.5 hover:shadow-glow hover:border-glow-border">
+                    <div class="w-[60px] h-[60px] bg-gradient-green rounded-xl flex items-center justify-center mb-6 text-2xl shadow-[0_0_15px_rgba(192,132,252,0.3)]">
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
-                    <h3>The Challenge</h3>
-                    <p>Programming seems difficult for beginners. Learning syntax without understanding core concepts can be overwhelming.</p>
-                    <p>You need structured guidance to start your coding journey on the right path.</p>
+                    <h3 class="text-2xl mb-4 text-primary-green">The Challenge</h3>
+                    <p class="text-text-gray leading-loose mb-4">Programming seems difficult for beginners. Learning syntax without understanding core concepts can be overwhelming.</p>
+                    <p class="text-text-gray leading-loose mb-4">You need structured guidance to start your coding journey on the right path.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="bg-card-bg p-6 sm:p-8 rounded-2xl border border-transparent transition-all duration-300 ease-custom hover:-translate-y-1.5 hover:shadow-glow hover:border-glow-border">
+                    <div class="w-[60px] h-[60px] bg-gradient-green rounded-xl flex items-center justify-center mb-6 text-2xl shadow-[0_0_15px_rgba(192,132,252,0.3)]">
                         <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3>Our Solution</h3>
-                    <p><strong>3-day beginner-friendly workshop</strong> designed for students from all branches. We focus on logic first, then coding.</p>
-                    <p><strong>Hands-on practice</strong> with simple examples and step-by-step guidance.</p>
+                    <h3 class="text-2xl mb-4 text-primary-green">Our Solution</h3>
+                    <p class="text-text-gray leading-loose mb-4"><strong>3-day beginner-friendly workshop</strong> designed for students from all branches. We focus on logic first, then coding.</p>
+                    <p class="text-text-gray leading-loose mb-4"><strong>Hands-on practice</strong> with simple examples and step-by-step guidance.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="bg-card-bg p-6 sm:p-8 rounded-2xl border border-transparent transition-all duration-300 ease-custom hover:-translate-y-1.5 hover:shadow-glow hover:border-glow-border">
+                    <div class="w-[60px] h-[60px] bg-gradient-green rounded-xl flex items-center justify-center mb-6 text-2xl shadow-[0_0_15px_rgba(192,132,252,0.3)]">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <h3>Your Outcome</h3>
-                    <p>Understand programming fundamentals and write basic C programs independently.</p>
-                    <p>Build confidence to continue your learning journey beyond the workshop.</p>
+                    <h3 class="text-2xl mb-4 text-primary-green">Your Outcome</h3>
+                    <p class="text-text-gray leading-loose mb-4">Understand programming fundamentals and write basic C programs independently.</p>
+                    <p class="text-text-gray leading-loose mb-4">Build confidence to continue your learning journey beyond the workshop.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section who-section">
-        <div class="container">
-            <h2 class="section-title">Who Should Attend?</h2>
-            <div class="who-grid">
-                <div class="who-card">
-                    <i class="fas fa-check-circle"></i>
-                    <h4>CSE/IT Students</h4>
-                    <p>Strengthen your foundation</p>
+    <section class="py-20 px-4 sm:px-8 relative">
+        <div class="max-w-[1400px] mx-auto">
+            <h2 class="text-center text-[clamp(2rem,4vw,3rem)] font-bold mb-12 text-text-white">Who Should Attend?</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6 mb-12">
+                <div class="bg-card-bg p-6 rounded-xl border border-transparent text-center transition-all duration-300 ease-custom hover:-translate-y-1.5 hover:border-glow-border hover:shadow-glow">
+                    <i class="fas fa-check-circle text-3xl text-primary-green mb-4"></i>
+                    <h4 class="text-lg mb-2 text-white font-semibold">CSE/IT Students</h4>
+                    <p class="text-text-gray text-base">Strengthen your foundation</p>
                 </div>
-                <div class="who-card">
-                    <i class="fas fa-check-circle"></i>
-                    <h4>Non-CSE Engineers</h4>
-                    <p>Mech, Civil, ECE, EEE - All welcome!</p>
+                <div class="bg-card-bg p-6 rounded-xl border border-transparent text-center transition-all duration-300 ease-custom hover:-translate-y-1.5 hover:border-glow-border hover:shadow-glow">
+                    <i class="fas fa-check-circle text-3xl text-primary-green mb-4"></i>
+                    <h4 class="text-lg mb-2 text-white font-semibold">Non-CSE Engineers</h4>
+                    <p class="text-text-gray text-base">Mech, Civil, ECE, EEE - All welcome!</p>
                 </div>
-                <div class="who-card">
-                    <i class="fas fa-check-circle"></i>
-                    <h4>Complete Beginners</h4>
-                    <p>Never written code? Perfect!</p>
+                <div class="bg-card-bg p-6 rounded-xl border border-transparent text-center transition-all duration-300 ease-custom hover:-translate-y-1.5 hover:border-glow-border hover:shadow-glow">
+                    <i class="fas fa-check-circle text-3xl text-primary-green mb-4"></i>
+                    <h4 class="text-lg mb-2 text-white font-semibold">Complete Beginners</h4>
+                    <p class="text-text-gray text-base">Never written code? Perfect!</p>
                 </div>
-                <div class="who-card">
-                    <i class="fas fa-check-circle"></i>
-                    <h4>First-Time Coders</h4>
-                    <p>Perfect starting point for you</p>
+                <div class="bg-card-bg p-6 rounded-xl border border-transparent text-center transition-all duration-300 ease-custom hover:-translate-y-1.5 hover:border-glow-border hover:shadow-glow">
+                    <i class="fas fa-check-circle text-3xl text-primary-green mb-4"></i>
+                    <h4 class="text-lg mb-2 text-white font-semibold">First-Time Coders</h4>
+                    <p class="text-text-gray text-base">Perfect starting point for you</p>
                 </div>
 
             </div>
-            <div class="big-text">
-                <i class="fas fa-graduation-cap"></i>
+            <div class="text-center text-xl sm:text-2xl font-semibold p-6 sm:p-8 bg-gradient-green rounded-xl flex flex-col sm:flex-row items-center justify-center gap-4 shadow-glow">
+                <i class="fas fa-graduation-cap text-3xl"></i>
                 All branches welcome! No prior coding experience required.
             </div>
         </div>
     </section>
 
-    <section class="section focus-section" id="focus">
-        <div class="container">
-            <h2 class="section-title">Workshop Focus</h2>
-            <div class="focus-grid">
-                <div class="focus-card">
-                    <div class="focus-icon">
+    <section class="py-20 px-4 sm:px-8 relative bg-secondary-bg" id="focus">
+        <div class="max-w-[1400px] mx-auto">
+            <h2 class="text-center text-[clamp(2rem,4vw,3rem)] font-bold mb-12 text-text-white">Workshop Focus</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-8 max-w-4xl mx-auto">
+                <div class="bg-card-bg py-12 px-6 sm:px-8 rounded-2xl border border-transparent text-center transition-all duration-300 ease-custom hover:-translate-y-2 hover:shadow-glow hover:border-glow-border">
+                    <div class="w-20 h-20 bg-gradient-green rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-[0_0_20px_rgba(192,132,252,0.4)]">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <h3>Problem Solving</h3>
-                    <p>Build strong logical thinking and computational problem-solving skills from scratch</p>
+                    <h3 class="text-2xl sm:text-3xl mb-4 text-primary-green">Problem Solving</h3>
+                    <p class="text-text-gray leading-loose text-base sm:text-lg">Build strong logical thinking and computational problem-solving skills from scratch</p>
                 </div>
-                <div class="focus-card">
-                    <div class="focus-icon">
+                <div class="bg-card-bg py-12 px-6 sm:px-8 rounded-2xl border border-transparent text-center transition-all duration-300 ease-custom hover:-translate-y-2 hover:shadow-glow hover:border-glow-border">
+                    <div class="focus-icon w-20 h-20 bg-gradient-green rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-[0_0_20px_rgba(192,132,252,0.4)]">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>C Fundamentals</h3>
-                    <p>Master C programming with hands-on practice and real-world implementation</p>
+                    <h3 class="text-2xl sm:text-3xl mb-4 text-primary-green">C Fundamentals</h3>
+                    <p class="text-text-gray leading-loose text-base sm:text-lg">Master C programming with hands-on practice and real-world implementation</p>
                 </div>
             </div>
         </div>
@@ -152,62 +218,62 @@
 
 
 
-    <section class="section laptop-section">
-        <div class="container">
-            <div class="laptop-card">
-                <div class="laptop-icon">
+    <section class="py-20 px-4 sm:px-8 relative bg-secondary-bg">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="max-w-2xl mx-auto bg-card-bg py-12 px-6 sm:px-10 rounded-[20px] border border-transparent text-center transition-all duration-300 ease-custom hover:border-glow-border hover:shadow-glow hover:-translate-y-1.5">
+                <div class="w-24 h-24 bg-gradient-green rounded-full flex items-center justify-center mx-auto mb-8 text-5xl shadow-glow-md">
                     <i class="fas fa-laptop-code"></i>
                 </div>
-                <h2>Bring Your Laptop <span class="recommended">(Recommended)</span></h2>
-                <p class="laptop-subtitle">Get the most out of this hands-on workshop</p>
-                <div class="laptop-points">
-                    <div class="laptop-point">
-                        <i class="fas fa-check"></i>
-                        <span>Code along during demonstrations</span>
+                <h2 class="text-3xl mb-2 text-text-white">Bring Your Laptop <span class="text-primary-green text-2xl">(Recommended)</span></h2>
+                <p class="text-lg text-text-gray mb-8">Get the most out of this hands-on workshop</p>
+                <div class="text-left max-w-2xl mx-auto px-0 sm:px-2">
+                    <div class="flex items-center gap-4 p-4 mb-4 bg-purple-500/5 rounded-lg border border-purple-500/20 transition-all duration-300 ease-custom hover:bg-purple-500/10 hover:border-glow-border hover:translate-x-1">
+                        <i class="fas fa-check text-primary-green text-2xl flex-shrink-0"></i>
+                        <span class="text-text-white text-base leading-relaxed">Code along during demonstrations</span>
                     </div>
-                    <div class="laptop-point">
-                        <i class="fas fa-check"></i>
-                        <span>Practice on your own machine</span>
+                    <div class="flex items-center gap-4 p-4 mb-4 bg-purple-500/5 rounded-lg border border-purple-500/20 transition-all duration-300 ease-custom hover:bg-purple-500/10 hover:border-glow-border hover:translate-x-1">
+                        <i class="fas fa-check text-primary-green text-2xl flex-shrink-0"></i>
+                        <span class="text-text-white text-base leading-relaxed">Practice on your own machine</span>
                     </div>
-                    <div class="laptop-point">
-                        <i class="fas fa-check"></i>
-                        <span>Take solved examples home</span>
+                    <div class="flex items-center gap-4 p-4 mb-4 bg-purple-500/5 rounded-lg border border-purple-500/20 transition-all duration-300 ease-custom hover:bg-purple-500/10 hover:border-glow-border hover:translate-x-1">
+                        <i class="fas fa-check text-primary-green text-2xl flex-shrink-0"></i>
+                        <span class="text-text-white text-base leading-relaxed">Take solved examples home</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section benefits-section">
-        <div class="container">
-            <h2 class="section-title">What You'll Get</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <i class="fas fa-hands-helping"></i>
+    <section class="py-20 px-4 sm:px-8 relative bg-primary-bg">
+        <div class="max-w-[1400px] mx-auto">
+            <h2 class="text-center text-[clamp(2rem,4vw,3rem)] font-bold mb-12 text-text-white">What You'll Get</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+                <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6 bg-card-bg p-6 rounded-xl border border-transparent transition-all duration-300 ease-custom hover:-translate-y-1 hover:border-glow-border hover:shadow-glow">
+                    <i class="fas fa-hands-helping text-3xl text-primary-green flex-shrink-0 mb-2 md:mb-0"></i>
                     <div>
-                        <h4>Hands-on Practice on C Programming</h4>
-                        <p>Real coding exercises and practical implementation throughout the workshop</p>
+                        <h4 class="text-lg mb-2 text-text-white">Hands-on Practice on C Programming</h4>
+                        <p class="text-text-gray text-base">Real coding exercises and practical implementation throughout the workshop</p>
                     </div>
                 </div>
-                <div class="benefit-item">
-                    <i class="fas fa-lightbulb"></i>
+                <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6 bg-card-bg p-6 rounded-xl border border-transparent transition-all duration-300 ease-custom hover:-translate-y-1 hover:border-glow-border hover:shadow-glow">
+                    <i class="fas fa-lightbulb text-3xl text-primary-green flex-shrink-0 mb-2 md:mb-0"></i>
                     <div>
-                        <h4>Understand Complex Concepts in Simple Ways</h4>
-                        <p>Breaking down difficult programming topics into easy-to-grasp explanations</p>
+                        <h4 class="text-lg mb-2 text-text-white">Understand Complex Concepts in Simple Ways</h4>
+                        <p class="text-text-gray text-base">Breaking down difficult programming topics into easy-to-grasp explanations</p>
                     </div>
                 </div>
-                <div class="benefit-item">
-                    <i class="fas fa-project-diagram"></i>
+                <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6 bg-card-bg p-6 rounded-xl border border-transparent transition-all duration-300 ease-custom hover:-translate-y-1 hover:border-glow-border hover:shadow-glow">
+                    <i class="fas fa-project-diagram text-3xl text-primary-green flex-shrink-0 mb-2 md:mb-0"></i>
                     <div>
-                        <h4>Learn to Implement Programming in Real-World Problems</h4>
-                        <p>Apply coding skills to solve practical, everyday challenges</p>
+                        <h4 class="text-lg mb-2 text-text-white">Learn to Implement Programming in Real-World Problems</h4>
+                        <p class="text-text-gray text-base">Apply coding skills to solve practical, everyday challenges</p>
                     </div>
                 </div>
-                <div class="benefit-item">
-                    <i class="fas fa-chart-line"></i>
+                <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6 bg-card-bg p-6 rounded-xl border border-transparent transition-all duration-300 ease-custom hover:-translate-y-1 hover:border-glow-border hover:shadow-glow">
+                    <i class="fas fa-chart-line text-3xl text-primary-green flex-shrink-0 mb-2 md:mb-0"></i>
                     <div>
-                        <h4>Sharpen Your Coding Skills</h4>
-                        <p>Improve your programming proficiency through intensive practice sessions</p>
+                        <h4 class="text-lg mb-2 text-text-white">Sharpen Your Coding Skills</h4>
+                        <p class="text-text-gray text-base">Improve your programming proficiency through intensive practice sessions</p>
                     </div>
                 </div>
 
@@ -217,58 +283,60 @@
 
 
 
-    <section class="section competition-section">
-        <div class="container">
-            <div class="competition-card">
-                <div class="competition-icon">
+    <section class="py-16 px-4 sm:px-8 relative bg-primary-bg">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="max-w-3xl mx-auto bg-card-bg py-12 px-6 sm:px-8 rounded-2xl border border-transparent text-center transition-all duration-300 ease-custom hover:border-glow-border hover:shadow-glow hover:-translate-y-1.5">
+                <div class="w-20 h-20 bg-gradient-green rounded-full flex items-center justify-center mx-auto mb-6 text-4xl shadow-[0_0_20px_rgba(192,132,252,0.4)]">
                     <i class="fas fa-trophy"></i>
                 </div>
-                <h2>Exciting Competition</h2>
-                <p>Test your skills in a friendly coding competition at the end of the workshop!</p>
+                <h2 class="text-3xl mb-4 text-primary-green">Exciting Competition</h2>
+                <p class="text-text-gray text-lg leading-loose">Test your skills in a friendly coding competition at the end of the workshop!</p>
             </div>
         </div>
     </section>
 
-    <section class="section how-to-register-hero" id="how-to-register">
-        <div class="container">
-            <div class="register-card">
-                <h2>How to Register</h2>
-                <div class="register-steps-simple">
-                    <div class="simple-step">
-                        <i class="fas fa-mouse-pointer"></i>
-                        <p>Click the Register Now button</p>
+    <section class="py-12 px-4 sm:px-8 relative bg-secondary-bg" id="how-to-register">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="max-w-4xl mx-auto bg-card-bg py-10 px-6 sm:px-8 rounded-2xl border border-purple-500/20 text-center">
+                <h2 class="text-3xl mb-8 text-text-white">How to Register</h2>
+                <div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6">
+                    <div class="py-6 px-4 bg-purple-500/5 rounded-xl border border-purple-500/10 transition-all duration-300 ease-custom hover:bg-purple-500/10 hover:border-glow-border hover:-translate-y-1">
+                        <i class="fas fa-mouse-pointer text-3xl text-primary-green mb-4 block"></i>
+                        <p class="text-text-white text-base leading-snug m-0">Click the Register Now button</p>
                     </div>
-                    <div class="simple-step">
-                        <i class="fas fa-edit"></i>
-                        <p>Fill out the registration form</p>
+                    <div class="py-6 px-4 bg-purple-500/5 rounded-xl border border-purple-500/10 transition-all duration-300 ease-custom hover:bg-purple-500/10 hover:border-glow-border hover:-translate-y-1">
+                        <i class="fas fa-edit text-3xl text-primary-green mb-4 block"></i>
+                        <p class="text-text-white text-base leading-snug m-0">Fill out the registration form</p>
                     </div>
-                    <div class="simple-step">
-                        <i class="fas fa-envelope"></i>
-                        <p>Check your email for next steps</p>
+                    <div class="py-6 px-4 bg-purple-500/5 rounded-xl border border-purple-500/10 transition-all duration-300 ease-custom hover:bg-purple-500/10 hover:border-glow-border hover:-translate-y-1">
+                        <i class="fas fa-envelope text-3xl text-primary-green mb-4 block"></i>
+                        <p class="text-text-white text-base leading-snug m-0">Check your email for next steps</p>
                     </div>
-                    <div class="simple-step">
-                        <i class="fas fa-check-square"></i>
-                        <p>Complete a simple task to confirm your seat</p>
+                    <div class="py-6 px-4 bg-purple-500/5 rounded-xl border border-purple-500/10 transition-all duration-300 ease-custom hover:bg-purple-500/10 hover:border-glow-border hover:-translate-y-1">
+                        <i class="fas fa-check-square text-3xl text-primary-green mb-4 block"></i>
+                        <p class="text-text-white text-base leading-snug m-0">Complete a simple task to confirm your seat</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section registration-cta" id="register">
-        <div class="container">
-            <div class="cta-box">
-                <h2 class="cta-green-heading">Secure Your Spot Today</h2>
+    <section class="py-20 px-4 sm:px-8 relative bg-[linear-gradient(135deg,#1f0a27_0%,#2a1d3f_100%)]" id="register">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(192,132,252,0.1)_0%,transparent_70%)] pointer-events-none"></div>
+
+        <div class="max-w-[1400px] mx-auto">
+            <div class="bg-card-bg py-16 px-6 sm:px-12 rounded-3xl text-center border border-transparent relative z-10 transition-all duration-300 ease-custom hover:border-glow-border hover:shadow-glow">
+                <h2 class="text-primary-green text-[clamp(1.8rem,4vw,2.5rem)] mb-6">Secure Your Spot Today</h2>
                 
-                <div class="deadline-box">
-                    <i class="fas fa-calendar-times"></i>
+                <div class="bg-yellow-400/10 border-2 border-yellow-400 rounded-xl p-6 my-8 max-w-2xl mx-auto flex flex-col md:flex-row items-center text-center md:text-left gap-4">
+                    <i class="fas fa-calendar-times text-4xl text-yellow-400"></i>
                     <div>
-                        <h3>Register by November 2, 2025</h3>
-                        <p>Limited seats available</p>
+                        <h3 class="text-xl text-yellow-400 mb-1">Register by November 2, 2025</h3>
+                        <p class="text-text-gray text-base">Limited seats available</p>
                     </div>
                 </div>
 
-                <a href="YOUR_REGISTRATION_LINK" target="_blank" class="cta-button large">
+                <a href="YOUR_REGISTRATION_LINK" target="_blank" class="bg-primary-green text-text-white border-2 border-glow-border py-6 px-14 text-lg font-bold rounded-xl cursor-pointer transition-all duration-300 ease-custom inline-flex items-center justify-center gap-3 shadow-glow no-underline hover:-translate-y-1 hover:shadow-glow-lg hover:bg-dark-green w-full sm:w-auto">
                     <span>Register Now - It's Free!</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -277,7 +345,7 @@
     </section>
 
   
-    <a href="YOUR_REGISTRATION_LINK" target="_blank" class="floating-cta" id="floatingCta">
+    <a href="YOUR_REGISTRATION_LINK" target="_blank" class="fixed bottom-4 right-4 md:bottom-8 md:right-8 bg-primary-green text-text-white border-2 border-glow-border py-3 px-4 md:py-4 md:px-6 rounded-full font-semibold cursor-pointer flex items-center gap-2 shadow-glow z-[999] transition-all duration-300 ease-custom no-underline hover:-translate-y-1 hover:scale-105 hover:shadow-glow-xl hover:bg-dark-green text-sm md:text-base" id="floatingCta">
         <i class="fas fa-rocket"></i>
         <span>Join Workshop</span>
     </a>
