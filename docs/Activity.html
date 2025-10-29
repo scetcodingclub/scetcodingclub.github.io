@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nexus Coding Club - Activities</title>
+	<link rel="icon" href="/asset/NEXUS Icon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						primary: '#ffffff',
+						accent: '#139a43',
+						dark: '#000000',
+						light: '#e0e0e0',
+						lighter: '#a0a0a0',
+						card: '#1e1e1e',
+					},
+					fontFamily: {
+						sans: ['Poppins', 'sans-serif'],
+					},
+				}
+			}
+		}
+	</script>
+</head>
+
+<body class="bg-dark text-light font-sans min-h-screen">
+
+	<div id="navbar-placeholder"></div>
+
+	<div class="pt-20"></div>
+
+	<!-- Activities Hero -->
+	<header class="relative min-h-[40vh] flex items-center overflow-hidden bg-gradient-to-b from-dark to-card/50">
+		<div class="container mx-auto px-4 text-center z-10">
+			<h1 class="text-4xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Our <span class="text-accent">Activities</span></h1>
+			<p class="max-w-2xl mx-auto text-light/80">Explore what we build, compete in, and host — workshops, hackathons, showcases and more. Everything uses the same design system as the homepage for consistency.</p>
+			<div class="mt-6 flex justify-center gap-4">
+				<a href="/docs/index.html" class="px-6 py-3 bg-accent text-dark rounded-full font-semibold hover:bg-white transition">Back to Home</a>
+				<a href="/join.html" class="px-6 py-3 border-2 border-accent text-accent rounded-full hover:bg-accent/10 transition">Join</a>
+			</div>
+		</div>
+	</header>
+
+	<!-- Activities list -->
+	<main class="py-16">
+		<div class="container mx-auto px-4">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold">Featured <span class="text-accent">Events</span></h2>
+				<div class="w-20 h-1 bg-accent mx-auto my-4"></div>
+				<p class="text-light/80 max-w-3xl mx-auto">Hand-picked highlights from our recent workshops, bootcamps and competitions. Mobile friendly and consistent with Nexus visual language.</p>
+			</div>
+
+			<div class="grid md:grid-cols-3 gap-8">
+				<!-- Card 1 -->
+				<article class="bg-card/50 p-6 rounded-2xl border border-[#139a43]" data-aos="fade-up">
+					<img src="/asset/We code/fig1.webp" alt="Frontend Bootcamp" class="w-full h-48 object-cover rounded-lg mb-4">
+					<h3 class="text-xl font-bold text-accent mb-2">FRONTEND WEB - DEV BOOTCAMP</h3>
+					<p class="text-light/80 mb-4">6-day hands-on workshop covering HTML, CSS, Tailwind and basic JS. Focused on practical projects and portfolio-ready builds.</p>
+					<ul class="text-sm text-light/70 space-y-1">
+						<li><i class="fas fa-calendar-check text-accent mr-2"></i>10th - 15th Feb 2025</li>
+						<li><i class="fas fa-users text-accent mr-2"></i>160+ registrations</li>
+						<li><i class="fas fa-award text-accent mr-2"></i>Certificates for attendees</li>
+					</ul>
+				</article>
+
+				<!-- Card 2 -->
+				<article class="bg-card/50 p-6 rounded-2xl border border-[#139a43]" data-aos="fade-up" data-aos-delay="100">
+					<img src="/asset/We code/fig2.webp" alt="Hackathon" class="w-full h-48 object-cover rounded-lg mb-4">
+					<h3 class="text-xl font-bold text-accent mb-2">SPARKQUEST'25 – IDEA HACKATHON</h3>
+					<p class="text-light/80 mb-4">A 2-day idea hackathon where teams pitched solutions and built quick prototypes judged by faculty and industry mentors.</p>
+					<ul class="text-sm text-light/70 space-y-1">
+						<li><i class="fas fa-calendar-check text-accent mr-2"></i>27th - 28th Feb 2025</li>
+						<li><i class="fas fa-lightbulb text-accent mr-2"></i>20+ ideas registered</li>
+						<li><i class="fas fa-trophy text-accent mr-2"></i>Prizes & mentorship</li>
+					</ul>
+				</article>
+
+				<!-- Card 3 -->
+				<article class="bg-card/50 p-6 rounded-2xl border border-[#139a43]" data-aos="fade-up" data-aos-delay="200">
+					<img src="/asset/expogen_thumbnail.jpg" alt="Project Showcase" class="w-full h-48 object-cover rounded-lg mb-4">
+					<h3 class="text-xl font-bold text-accent mb-2">EXPOGEN - PROJECT SHOWCASE</h3>
+					<p class="text-light/80 mb-4">Our annual project showcase where members present capstone projects, prototypes, and open-source contributions.</p>
+					<ul class="text-sm text-light/70 space-y-1">
+						<li><i class="fas fa-calendar-check text-accent mr-2"></i>6th May 2025</li>
+						<li><i class="fas fa-project-diagram text-accent mr-2"></i>120+ projects registered</li>
+						<li><i class="fas fa-users text-accent mr-2"></i>200+ attendees</li>
+					</ul>
+				</article>
+			</div>
+
+							<!-- Timeline / Left-anchored — improved alignment -->
+							<section class="mt-16">
+								<div class="text-center mb-8">
+									<h3 class="text-2xl font-bold">Timeline</h3>
+									<p class="text-light/80">Recent and upcoming activities — left-anchored timeline with date labels and right-offset cards.</p>
+								</div>
+
+								<div class="relative px-4">
+									<!-- vertical guide line -->
+									<div class="absolute left-12 top-6 bottom-6 w-1 bg-accent/30 rounded"></div>
+
+									  <div class="max-w-5xl mx-auto space-y-12">
+										<!-- Event row (grid: date | card) -->
+													<div class="grid grid-cols-[5rem_1fr] gap-6 items-start" data-aos="fade-up">
+														<div class="relative h-full flex items-start">
+															<div class="w-full text-right pr-4">
+																<div class="text-sm text-light/80">Oct 2025</div>
+															</div>
+															<span class="absolute right-0 top-4 w-3 h-3 bg-accent rounded-full border-4 border-dark"></span>
+														</div>
+											<div>
+												<div class="bg-neutral-900 p-6 rounded-lg border border-[#139a43] shadow-md">
+													<div class="md:flex md:items-start md:gap-6">
+														<img loading="lazy" src="/asset/We code/fig1.webp" alt="Git workshop" class="w-full md:w-64 h-44 object-cover rounded-md mb-4 md:mb-0">
+														<div>
+															<h4 class="text-2xl font-extrabold text-accent mb-2">GIT & GITHUB – WORKSHOP</h4>
+															<p class="text-gray-300 mb-3">Beginner to intermediate Git workflows, branching, PRs and collaboration best practices. Hands-on labs and real examples.</p>
+															<ul class="text-gray-400 text-sm space-y-1">
+																<li><span class="text-green-500">✓</span> 3rd March 2025</li>
+																<li><span class="text-green-500">✓</span> Labs & exercises</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+													<div class="grid grid-cols-[5rem_1fr] gap-6 items-start" data-aos="fade-up">
+														<div class="relative h-full flex items-start">
+															<div class="w-full text-right pr-4">
+																<div class="text-sm text-light/80">May 2025</div>
+															</div>
+															<span class="absolute right-0 top-4 w-3 h-3 bg-accent rounded-full border-4 border-dark"></span>
+														</div>
+											<div>
+												<div class="bg-neutral-900 p-6 rounded-lg border border-[#139a43] shadow-md">
+													<div class="md:flex md:items-start md:gap-6">
+														<img loading="lazy" src="/asset/expogen_thumbnail.jpg" alt="Expogen" class="w-full md:w-64 h-44 object-cover rounded-md mb-4 md:mb-0">
+														<div>
+															<h4 class="text-2xl font-extrabold text-accent mb-2">EXPOGEN 1.0 – PROJECT SHOWCASE</h4>
+															<p class="text-gray-300 mb-3">Student projects across web, AI and embedded systems presented to peers and judges. Panels, demos and networking.</p>
+															<ul class="text-gray-400 text-sm space-y-1">
+																<li><span class="text-green-500">✓</span> 6th May 2025</li>
+																<li><span class="text-green-500">✓</span> 120+ projects</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+													<div class="grid grid-cols-[5rem_1fr] gap-6 items-start" data-aos="fade-up">
+														<div class="relative h-full flex items-start">
+															<div class="w-full text-right pr-4">
+																<div class="text-sm text-light/80">Feb 2025</div>
+															</div>
+															<span class="absolute right-0 top-4 w-3 h-3 bg-accent rounded-full border-4 border-dark"></span>
+														</div>
+											<div>
+												<div class="bg-neutral-900 p-6 rounded-lg border border-[#139a43] shadow-md">
+													<div class="md:flex md:items-start md:gap-6">
+														<img loading="lazy" src="/asset/We code/fig2.webp" alt="Sparkquest" class="w-full md:w-64 h-44 object-cover rounded-md mb-4 md:mb-0">
+														<div>
+															<h4 class="text-2xl font-extrabold text-accent mb-2">SPARKQUEST'25 – IDEA HACKATHON</h4>
+															<p class="text-gray-300 mb-3">Teams pitched ideas and built quick prototypes judged by faculty and mentors. Focus on early-stage innovation.</p>
+															<ul class="text-gray-400 text-sm space-y-1">
+																<li><span class="text-green-500">✓</span> 27th - 28th Feb 2025</li>
+																<li><span class="text-green-500">✓</span> Prizes & mentorship</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+
+			<div class="text-center mt-12">
+				<a href="#" class="inline-flex items-center px-5 py-3 bg-accent text-dark rounded-full font-semibold hover:bg-white transition">View All Activities</a>
+			</div>
+		</div>
+	</main>
+
+	<div id="footer-placeholder"></div>
+
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="/js/script.js"></script>
+	<script src="/components/navbar.js"></script>
+	<script src="/components/footer.js"></script>
+	<script>
+		AOS.init({
+			duration: 700,
+			once: true,
+		});
+	</script>
+</body>
+
+</html>
+
