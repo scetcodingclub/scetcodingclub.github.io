@@ -1,3 +1,8 @@
+let sections = [];
+window.addEventListener("footer:loaded", (e) => {
+    sections.push(...document.querySelectorAll('footer'));
+});
+
 document.addEventListener("DOMContentLoaded", async () => {
 
     try {
@@ -76,7 +81,7 @@ window.addEventListener('navbar:loaded', (e) => {
     const menuIcon = document.getElementById('menu-icon');
     // Select all main content sections that should be blurred
     const mainContent = document.querySelector('body > div:not(#mobile-menu)');
-    const sections = document.querySelectorAll('section, header, footer');
+    sections.push(...document.querySelectorAll('section, header'));
 
     menuButton.addEventListener('click', function () {
         // Show menu and overlay
