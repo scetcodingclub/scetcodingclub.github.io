@@ -76,7 +76,7 @@ window.addEventListener('navbar:loaded', (e) => {
     const menuIcon = document.getElementById('menu-icon');
     // Select all main content sections that should be blurred
     const mainContent = document.querySelector('body > div:not(#mobile-menu)');
-    const sections = document.querySelectorAll('section, header');
+    const sections = document.querySelectorAll('section, header, footer');
 
     menuButton.addEventListener('click', function () {
         // Show menu and overlay
