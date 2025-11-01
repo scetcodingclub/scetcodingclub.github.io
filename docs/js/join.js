@@ -14,8 +14,8 @@ function scrollDivBottomIntoView(selector) {
 }
 
 (function () {
-    const prefix = "What’s your ";
-    const highlight = "focus?";
+    const prefix = " ";
+    const highlight = "Paths to choose from.";
     const elPrefix = document.getElementById('focus-typer-prefix');
     const elHighlight = document.getElementById('focus-typer-highlight');
     if (!elPrefix || !elHighlight) return;
@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const mobileDescription = card.querySelector('.nexus-description-mobile');
         
         card.addEventListener('click', () => {
+            return; // disabled
             localStorage.setItem("path-type", path);
             if (isMobile()) {
                 // Mobile behavior: expand card on click
@@ -166,12 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener("navbar:loaded", (e) => {
-  // ... your navbar scroll/hide and mobile menu logic ...
 
   // === Announcement bar ===
   const announcement = document.getElementById("announcement-bar");
   const clone = announcement.cloneNode(true)
   clone.hidden = false;
-//   e.detail.navbar.insertAdjacentElement("afterend", clone);
   e.detail.navbar.appendChild(clone);
 });
