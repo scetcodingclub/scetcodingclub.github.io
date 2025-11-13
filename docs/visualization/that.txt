@@ -1,0 +1,40 @@
+h :: IT
+h :: ai
+h :: app development
+h :: backend development
+h :: c
+h :: c#
+h :: c++
+s :: communication
+s :: community building
+h :: content creation
+s :: critical thinking
+h :: cyber security
+h :: data analysis
+h :: data handling
+h :: data science
+h :: designing
+h :: drawing
+h :: dsa
+h :: editing
+h :: english
+h :: game development
+h :: git
+h :: github
+h :: hacking
+h :: iot
+h :: java
+h :: javascript
+s :: leadership
+h :: llm
+h :: ml
+s :: problem solving
+h :: programming
+s :: public speaking
+h :: python
+h :: robotics
+s :: self reliance
+h :: software development
+s :: teamwork
+s :: time management
+h :: web development

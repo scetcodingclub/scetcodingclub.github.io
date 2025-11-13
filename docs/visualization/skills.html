@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>Skill Bubbles</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #FFF2F0;
+      height: 100%;
+      width: 100%;
+      touch-action: none; /* prevents page panning */
+    }
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      touch-action: none;
+    }
+    #regenBtn {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="vizCanvas">
+  </canvas>
+  <!-- <button id="regenBtn" class="bg-purple-600 text-white px-4 py-2 rounded-full shadow-lg active:scale-95 transition">
+    Regenerate
+  </button> -->
+  <script src="./script.js"></script>
+</body>
+</html>
