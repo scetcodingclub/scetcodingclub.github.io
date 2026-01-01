@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3 Day SQL Workshop - NEXUS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ffffff',
+            accent: '#139a43',
+            dark: '#000000',
+            light: '#e0e0e0',
+            lighter: '#a0a0a0',
+            card: '#1e1e1e',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.6s ease forwards',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    /* ============================================================
+           FONT IMPORTS
+           ============================================================ */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    /* ============================================================
+           GLOBAL STYLES
+           ============================================================ */
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ============================================================
+           COLOR THEME VARIABLES
+           Define all colors once here - easy to change globally
+           ============================================================ */
+    :root {
+      --color-navy: #1a1f3a;
+      --color-magenta: #d946a6;
+      --color-magenta-dark: #8b2c6b;
+      --color-white: #ffffff;
+      --color-gray: #f0f0f0;
+    }
+
+    /* ============================================================
+           BODY BACKGROUND
+           ============================================================ */
+    body {
+      background: linear-gradient(135deg, var(--color-navy) 0%, #0f1629 100%);
+      color: var(--color-white);
+      overflow-x: hidden;
+    }
+
+    /* ============================================================
+           HERO SECTION - GRADIENT BACKGROUND
+           ============================================================ */
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-magenta-dark) 50%, var(--color-magenta) 100%);
+      min-height: 100vh;
+    }
+
+    /* ============================================================
+           FLOATING BLOB ANIMATIONS
+           Creates floating background elements with varying sizes
+           ============================================================ */
+    .floating-blob {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.25;
+      filter: blur(50px);
+      animation: float 8s ease-in-out infinite;
+    }
+
+    /* Large blobs */
+    .blob-1 {
+      width: 400px;
+      height: 400px;
+      background: var(--color-magenta);
+      top: -100px;
+      right: -100px;
+      opacity: 0.2;
+    }
+
+    .blob-2 {
+      width: 300px;
+      height: 300px;
+      background: var(--color-magenta-dark);
+      bottom: -80px;
+      left: -80px;
+      opacity: 0.2;
+    }
+
+    .blob-3 {
+      width: 250px;
+      height: 250px;
+      background: var(--color-magenta);
+      top: 30%;
+      right: 5%;
+      opacity: 0.15;
+      animation: float 10s ease-in-out infinite;
+    }
+
+    /* Medium blobs */
+    .blob-4 {
+      width: 180px;
+      height: 180px;
+      background: var(--color-magenta-dark);
+      top: 50%;
+      left: 10%;
+      opacity: 0.2;
+      animation: float 9s ease-in-out infinite;
+    }
+
+    .blob-5 {
+      width: 150px;
+      height: 150px;
+      background: var(--color-magenta);
+      bottom: 20%;
+      right: 15%;
+      opacity: 0.25;
+      animation: float 7s ease-in-out infinite;
+    }
+
+    /* Small blobs */
+    .blob-6 {
+      width: 100px;
+      height: 100px;
+      background: var(--color-magenta);
+      top: 20%;
+      left: 15%;
+      opacity: 0.3;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .blob-7 {
+      width: 120px;
+      height: 120px;
+      background: var(--color-magenta-dark);
+      bottom: 15%;
+      left: 50%;
+      opacity: 0.2;
+      animation: float 11s ease-in-out infinite;
+    }
+
+    /* ============================================================
+           GEOMETRIC CIRCLE RINGS
+           Rotating rings for visual interest
+           ============================================================ */
+    .circle-ring {
+      position: absolute;
+      border: 2px solid rgba(217, 70, 166, 0.3);
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+
+    .ring-1 {
+      width: 300px;
+      height: 300px;
+      top: 20%;
+      right: 10%;
+      animation: rotate 20s linear infinite;
+    }
+
+    .ring-2 {
+      width: 200px;
+      height: 200px;
+      bottom: 25%;
+      left: 20%;
+      animation: rotate 25s linear infinite reverse;
+    }
+
+    .ring-3 {
+      width: 150px;
+      height: 150px;
+      top: 45%;
+      right: 25%;
+      animation: rotate 30s linear infinite;
+    }
+
+    /* ============================================================
+           DECORATIVE DOTS
+           Small pulsing dots scattered around
+           ============================================================ */
+    .dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: var(--color-magenta);
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .dot-1 {
+      top: 15%;
+      right: 20%;
+      animation-delay: 0s;
+    }
+
+    .dot-2 {
+      bottom: 30%;
+      left: 25%;
+      animation-delay: 0.5s;
+    }
+
+    .dot-3 {
+      top: 40%;
+      right: 35%;
+      animation-delay: 1s;
+    }
+
+    /* ============================================================
+           KEYFRAME ANIMATIONS
+           Define all animations here for easy reference
+           ============================================================ */
+
+    /* Float animation - moves elements up and down */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-30px);
+      }
+    }
+
+    /* Rotate animation - spins elements */
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Pulse animation - creates pulsing effect */
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 0.6;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.3);
+      }
+    }
+
+    /* Border glow animation - glowing border effect */
+    @keyframes border-glow {
+      0% {
+        box-shadow: 0 0 20px rgba(217, 70, 166, 0.3), inset 0 0 20px rgba(217, 70, 166, 0.1);
+        border-color: rgba(217, 70, 166, 0.5);
+      }
+
+      50% {
+        box-shadow: 0 0 40px rgba(217, 70, 166, 0.6), inset 0 0 40px rgba(217, 70, 166, 0.2);
+        border-color: rgba(217, 70, 166, 0.8);
+      }
+
+      100% {
+        box-shadow: 0 0 20px rgba(217, 70, 166, 0.3), inset 0 0 20px rgba(217, 70, 166, 0.1);
+        border-color: rgba(217, 70, 166, 0.5);
+      }
+    }
+
+    /* Shine effect - sweeping light across elements */
+    @keyframes shine {
+      0% {
+        left: -100%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    /* Glow text animation - pulsing text glow */
+    @keyframes text-glow {
+
+      0%,
+      100% {
+        text-shadow: 0 0 20px rgba(217, 70, 166, 0.5);
+      }
+
+      50% {
+        text-shadow: 0 0 30px rgba(217, 70, 166, 0.8);
+      }
+    }
+
+    /* Fade in down - title entrance */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Fade in up - element entrance */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Slide down animation - FAQ answers */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Icon float animation - floating icons */
+    @keyframes icon-float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Icon bounce animation - bouncing on hover */
+    @keyframes icon-bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      25% {
+        transform: translateY(-15px);
+      }
+
+      50% {
+        transform: translateY(0);
+      }
+
+      75% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* Badge pulse animation - pulsing badge effect */
+    @keyframes badge-pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 10px rgba(217, 70, 166, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 20px rgba(217, 70, 166, 0.6);
+      }
+    }
+
+    /* Button shine animation */
+    @keyframes slide-shine {
+      0% {
+        left: -100%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    /* ============================================================
+           CARD STYLING
+           Common card style with glow effect
+           ============================================================ */
+    .card {
+      background: rgba(26, 31, 58, 0.8);
+      border: 2px solid var(--color-magenta);
+      border-radius: 15px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Shine overlay on cards */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(217, 70, 166, 0.2), transparent);
+      animation: shine 3s infinite;
+      pointer-events: none;
+    }
+
+    /* Card hover effect */
+    .card:hover {
+      border-color: #ff69b4;
+      box-shadow: 0 0 30px rgba(217, 70, 166, 0.5), inset 0 0 20px rgba(217, 70, 166, 0.1);
+      transform: translateY(-5px);
+      animation: border-glow 1.5s ease-in-out;
+    }
+
+    /* ============================================================
+           BUTTON STYLING
+           Primary button with animations
+           ============================================================ */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-magenta) 0%, #ff69b4 100%);
+      color: white;
+      padding: 12px 30px;
+      border: 2px solid transparent;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(217, 70, 166, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Button shine effect */
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      animation: slide-shine 2s infinite;
+    }
+
+    /* Button hover state */
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(217, 70, 166, 0.8), inset 0 0 20px rgba(217, 70, 166, 0.2);
+      border-color: #ff69b4;
+    }
+
+    /* Button active state */
+    .btn-primary:active {
+      transform: scale(0.95);
+    }
+
+    /* ============================================================
+           TEXT STYLING
+           Headings and text effects
+           ============================================================ */
+
+    /* Glowing text for headings */
+    .glow-text {
+      color: var(--color-magenta);
+      text-shadow: 0 0 20px rgba(217, 70, 166, 0.5);
+      animation: text-glow 2s ease-in-out infinite;
+    }
+
+    /* Main title styling */
+    .main-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--color-white);
+      text-shadow: 0 0 30px rgba(217, 70, 166, 0.3);
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    /* ============================================================
+           ICON STYLING - UNIFORM ACROSS ALL SECTIONS
+           All icons have the same magenta color (#d946a6)
+           ============================================================ */
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, rgba(217, 70, 166, 0.3), rgba(217, 70, 166, 0.1));
+      border: 2px solid var(--color-magenta);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-magenta);
+      font-size: 2rem;
+      margin-bottom: 15px;
+      animation: icon-float 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 10px rgba(217, 70, 166, 0.5));
+    }
+
+    /* Icon hover effect */
+    .feature-icon:hover {
+      animation: icon-bounce 0.6s ease-in-out;
+      box-shadow: 0 0 30px rgba(217, 70, 166, 0.6), inset 0 0 10px rgba(217, 70, 166, 0.3);
+    }
+
+    /* ============================================================
+           TESTIMONIAL STYLING
+           ============================================================ */
+    .testimonial {
+      background: rgba(139, 44, 107, 0.2);
+      border-left: 4px solid var(--color-magenta);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 15px 0;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(217, 70, 166, 0.3);
+    }
+
+    .testimonial:hover {
+      border: 2px solid var(--color-magenta);
+      box-shadow: 0 0 20px rgba(217, 70, 166, 0.4);
+      transform: translateX(5px);
+    }
+
+    /* ============================================================
+           FAQ STYLING
+           ============================================================ */
+    .faq-item {
+      background: rgba(26, 31, 58, 0.9);
+      border: 2px solid rgba(217, 70, 166, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 15px 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    /* FAQ bottom bar animation */
+    .faq-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, var(--color-magenta), #ff69b4);
+      transition: width 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: var(--color-magenta);
+      box-shadow: 0 0 15px rgba(217, 70, 166, 0.3);
+    }
+
+    .faq-item:hover::after {
+      width: 100%;
+    }
+
+    .faq-item.active {
+      border-color: var(--color-magenta);
+      background: rgba(217, 70, 166, 0.1);
+      box-shadow: 0 0 20px rgba(217, 70, 166, 0.4);
+    }
+
+    /* FAQ icon styling */
+    .faq-icon {
+      color: var(--color-magenta);
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* ============================================================
+           BADGE STYLING
+           ============================================================ */
+    .badge {
+      background: rgba(217, 70, 166, 0.2);
+      color: var(--color-magenta);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      border: 1px solid var(--color-magenta);
+      animation: badge-pulse 2s ease-in-out infinite;
+    }
+
+    /* ============================================================
+           SCROLL PROGRESS BAR
+           ============================================================ */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-magenta) 0%, #ff69b4 100%);
+      z-index: 1000;
+      box-shadow: 0 0 20px rgba(217, 70, 166, 0.8);
+    }
+
+    /* ============================================================
+           LAYOUT UTILITIES
+           ============================================================ */
+
+    /* Stagger animation for items entering viewport */
+    .stagger-item {
+      animation: fadeInUp 0.6s ease-out backwards;
+    }
+
+    .stagger-item:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .stagger-item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .stagger-item:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .stagger-item:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    /* Section padding */
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ============================================================
+           RESPONSIVE DESIGN
+           ============================================================ */
+    @media (max-width: 768px) {
+      .main-title {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 40px 20px;
+      }
+
+      .blob-1,
+      .blob-2,
+      .blob-3,
+      .blob-4,
+      .blob-5 {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <!-- Add padding to account for fixed navbar -->
+  <div class="pt-20"></div>
+  <!-- ============================================================
+         SCROLL PROGRESS BAR
+         Shows reading progress at top of page
+         ============================================================ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============================================================
+         HERO SECTION
+         Main landing section with floating blobs and text
+         ============================================================ -->
+  <section class="navbar-start-hide hero-section flex items-center justify-center relative">
+    <!-- Floating Blob Elements (decorative background) -->
+    <div class="blob-1 floating-blob"></div>
+    <div class="blob-2 floating-blob"></div>
+    <div class="blob-3 floating-blob"></div>
+    <div class="blob-4 floating-blob"></div>
+    <div class="blob-5 floating-blob"></div>
+    <div class="blob-6 floating-blob"></div>
+    <div class="blob-7 floating-blob"></div>
+
+    <!-- Rotating Circle Rings -->
+    <div class="circle-ring ring-1"></div>
+    <div class="circle-ring ring-2"></div>
+    <div class="circle-ring ring-3"></div>
+
+    <!-- Decorative Pulsing Dots -->
+    <div class="dot dot-1"></div>
+    <div class="dot dot-2"></div>
+    <div class="dot dot-3"></div>
+
+    <!-- Main Content -->
+    <div class="container text-center relative z-10">
+      <h1 class="main-title mb-6">SQL Workshop</h1>
+      <p class="text-xl mb-8 text-gray-300 animate-fade-in"> Your First Step into Databases • Absolute beginner? No
+        problem • 100% Hands-on</p>
+
+      <!-- Workshop Details Box -->
+      <div
+        class="bg-slate-900/50 border-2 border-magenta-500/40 rounded-3xl p-8 mb-8 max-w-2xl mx-auto backdrop-blur-sm hover:border-magenta-500/80 transition-all duration-300 hover:shadow-lg hover:shadow-magenta-500/30">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm md:text-base">
+          <div class="flex items-center justify-center animate-pulse">
+            <span class="text-magenta-400 mr-2">📅</span>
+            <span>Jan 6, 7 & 8, 2026</span>
+          </div>
+          <div class="flex items-center justify-center animate-pulse">
+            <span class="text-magenta-400 mr-2">⏰</span>
+            <span>11:00 AM – 4:00 PM</span>
+          </div>
+          <div class="flex items-center justify-center animate-pulse">
+            <span class="text-magenta-400 mr-2">📍</span>
+            <span>Room 315, IT Lab</span>
+          </div>
+          <div class="flex items-center justify-center animate-pulse">
+            <span class="text-magenta-400 mr-2">💚</span>
+            <span>100% FREE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <a href="#registration" type="button" class="btn-primary mb-8 text-lg px-8 py-3 relative z-20 inline-block">
+        Secure Your Spot Now!
+      </a>
+
+      <p class="text-lg text-red-500 mb-6 animate-bounce">⚡ Limited Seats • Register by Jan 4, 2026</p>
+
+      <!-- Key Features -->
+      <div class="flex justify-center gap-4 flex-wrap text-sm stagger-item">
+        <span class="flex items-center animate-bounce" style="animation-delay: 0s;">✓ No SQL Experience Required</span>
+        <span class="flex items-center animate-bounce" style="animation-delay: 0.2s;">✓ Hands-On SQL Queries</span>
+        <span class="flex items-center animate-bounce" style="animation-delay: 0.4s;">✓ Build & Understand Databases
+          with Ease</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+         WHY YOU SHOULD JOIN SECTION
+         Three key reasons to attend
+         ============================================================ -->
+  <section class="bg-slate-950 py-20">
+    <div class="container">
+
+      <h2 class="text-4xl font-bold mb-12 text-center glow-text">Why You Should Join</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1: Career Boost -->
+        <div class="card stagger-item">
+          <div class="feature-icon">🚀</div>
+          <h3 class="text-xl font-bold mb-4">Boost Your Career</h3>
+          <p class="text-gray-300">SQL is required in 70% of tech job descriptions. Master a skill that directly impacts
+            your employability.</p>
+        </div>
+
+        <!-- Card 2: Hands-on Learning -->
+        <div class="card stagger-item">
+          <div class="feature-icon">💻</div>
+          <h3 class="text-xl font-bold mb-4">Perfect for Beginners</h3>
+          <p class="text-gray-300">Never written SQL before? No problem! We start from absolute basics and build up
+            step-by-step.</p>
+        </div>
+
+        <!-- Card 3: Free Workshop -->
+        <div class="card stagger-item">
+          <div class="feature-icon">🎁</div>
+          <h3 class="text-xl font-bold mb-4">Real Database Skills</h3>
+          <p class="text-gray-300">Learn MySQL from installation to optimization. Hands-on with VS Code setup &
+            real-world project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+         LEARNING OUTCOMES SECTION
+         What students will learn
+         ============================================================ -->
+  <section class="bg-slate-900 py-20">
+    <div class="container">
+      <h2 class="text-4xl font-bold mb-12 text-center glow-text">Learning Outcomes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Outcome 1: Databases -->
+        <div class="card stagger-item">
+          <div class="feature-icon">🗄️</div>
+          <h3 class="text-2xl font-bold mb-4 glow-text">Design & Create Databases</h3>
+          <p class="text-gray-300">Create your own databases with CREATE TABLE, INSERT data.</p>
+          <p class="text-gray-300 mt-3">Understand what databases are and how they work. Learn to design tables with
+            proper relationships.</p>
+        </div>
+
+        <!-- Outcome 2: MySQL -->
+        <div class="card stagger-item">
+          <div class="feature-icon">💾</div>
+          <h3 class="text-2xl font-bold mb-4 glow-text">Hands-on MySQL</h3>
+          <p class="text-gray-300">Write production-ready SQL queries using MySQL with real-world examples.</p>
+          <p class="text-gray-300 mt-3">Learn JOINs, aggregations, transactions, and optimization techniques.</p>
+        </div>
+
+        <!-- Outcome 3: Real-World -->
+        <div class="card stagger-item">
+          <div class="feature-icon">🚀</div>
+          <h3 class="text-2xl font-bold mb-4 glow-text">SQL Cheat Sheet</h3>
+          <p class="text-gray-300">Take home a comprehensive <strong>SQL Cheat Sheet</strong> with all commands &
+            syntax.</p>
+          <p class="text-gray-300 mt-3">Apply SQL knowledge to real-world projects with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+         BRING YOUR LAPTOP SECTION
+         New section with checklist items
+         ============================================================ -->
+  <section class="bg-slate-950 py-20">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <div class="card text-center stagger-item">
+          <!-- Icon at top -->
+          <div class="flex justify-center">
+            <div class="feature-icon">💻</div>
+          </div>
+
+          <!-- Title -->
+          <h2 class="text-4xl font-bold mb-4 glow-text">Bring Your Laptop</h2>
+          <p class="text-2xl text-gray-300 mb-2">(Highly Recommended)</p>
+          <p class="text-gray-300 mb-8">Get hands-on with real SQL databases</p>
+
+          <!-- Checklist items -->
+          <div class="space-y-4">
+            <!-- Item 1 -->
+            <div
+              class="bg-slate-900/50 border-2 border-magenta-500/30 rounded-lg p-4 hover:border-magenta-500/80 transition-all duration-300">
+              <p class="text-gray-300 flex items-center justify-center">
+                <span class="text-magenta-400 mr-3 text-xl">✓</span>
+                <span>Execute SQL queries on your machine</span>
+              </p>
+            </div>
+
+            <!-- Item 2 -->
+            <div
+              class="bg-slate-900/50 border-2 border-magenta-500/30 rounded-lg p-4 hover:border-magenta-500/80 transition-all duration-300">
+              <p class="text-gray-300 flex items-center justify-center">
+                <span class="text-magenta-400 mr-3 text-xl">✓</span>
+                <span><strong>Permanent setup:</strong> MySQL installed on your machine</span>
+              </p>
+            </div>
+
+            <!-- Item 3 -->
+            <div
+              class="bg-slate-900/50 border-2 border-magenta-500/30 rounded-lg p-4 hover:border-magenta-500/80 transition-all duration-300">
+              <p class="text-gray-300 flex items-center justify-center">
+                <span class="text-magenta-400 mr-3 text-xl">✓</span>
+                <span>Take database scripts home with you</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+         HOW TO REGISTER SECTION
+         Step-by-step registration process
+         ============================================================ -->
+  <section class="bg-slate-900 py-20">
+    <div class="container">
+      <h2 class="text-4xl font-bold mb-12 text-center glow-text">How to Register</h2>
+
+      <!-- Registration steps with border -->
+      <div class="max-w-4xl mx-auto card mb-12 stagger-item">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Step 1: Fill Form -->
+          <div class="text-center">
+            <!-- Icon -->
+            <div class="flex justify-center mb-4">
+              <div class="feature-icon">✏️</div>
+            </div>
+            <!-- Title -->
+            <h3 class="text-lg font-bold mb-2">Click the Register Here button</h3>
+            <!-- Description -->
+            <p class="text-gray-300 text-sm">Fill in all the details that are provided in the form. Make sure to give
+              the correct email address.</p>
+          </div>
+
+          <!-- Step 2: Check Email -->
+          <div class="text-center">
+            <!-- Icon -->
+            <div class="flex justify-center mb-4">
+              <div class="feature-icon">📧</div>
+            </div>
+            <!-- Title -->
+            <h3 class="text-lg font-bold mb-2">Complete the task sent to your email</h3>
+            <!-- Description -->
+            <p class="text-gray-300 text-sm">Complete the task that is given in your email to secure your spot in the
+              workshop.</p>
+          </div>
+
+          <!-- Step 3: Join Workshop -->
+          <div class="text-center">
+            <!-- Icon -->
+            <div class="flex justify-center mb-4">
+              <div class="feature-icon">✅</div>
+            </div>
+            <!-- Title -->
+            <h3 class="text-lg font-bold mb-2">Join the workshop & learn</h3>
+            <!-- Description -->
+            <p class="text-gray-300 text-sm">Start your SQL journey by submitting the task and get the PASS for the
+              workshop.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+         SETUP GUIDES & RESOURCES SECTION
+         Tools and guides for setup
+         ============================================================ -->
+  <section class="bg-slate-950 py-20">
+    <div class="container">
+      <h2 class="text-4xl font-bold mb-12 text-center glow-text">BOOK MYSEAT GUIDE</h2>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        <!-- Guide 1: SQL Setup - Windows laptop students -->
+        <div class="card stagger-item">
+          <a href="https://www.youtube.com/watch?v=_pnRZ8dn4uo">
+            <div class="flex items-center">
+              <div class="feature-icon mr-4">🖥️</div>
+              <div>
+                <h3 class="text-lg font-bold glow-text">LAPTOP STUDENTS</h3>
+                <p class="text-gray-300 text-sm">Step-by-step guide to complete the TASK on Laptop and install MySQL on
+                  Windows </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Guide 2: non laptop students  -->
+        <div class="card stagger-item">
+          <a href="https://www.youtube.com/watch?v=ZdNgq2_vzvc">
+            <div class="flex items-center">
+              <div class="feature-icon mr-4">📱</div>
+              <div>
+                <h3 class="text-lg font-bold glow-text">NON-LAPTOP STUDENTS</h3>
+                <p class="text-gray-300 text-sm">Watch the video and complete the TASK. </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+         PERFECT FOR SECTION
+         Target audience breakdown
+         ============================================================ -->
+  <section class="bg-slate-900 py-20">
+    <div class="container">
+      <h2 class="text-4xl font-bold mb-12 text-center glow-text">Perfect For</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <!-- Audience 1: 1st & 2nd Year -->
+        <div class="card text-center stagger-item hover:scale-105 transition-transform">
+          <div class="feature-icon mx-auto">1</div>
+          <h3 class="font-bold">1st & 2nd Year Students</h3>
+          <p class="text-gray-300 text-sm">Build a strong foundation at the beginning of your career.</p>
+        </div>
+
+        <!-- Audience 2: CSE/IT -->
+        <div class="card text-center stagger-item hover:scale-105 transition-transform">
+          <div class="feature-icon mx-auto">2</div>
+          <h3 class="font-bold">CSE/IT/Data Science</h3>
+          <p class="text-gray-300 text-sm">Unlock your potential! Acquire the core skills needed to thrive in these
+            high-demand fields.</p>
+        </div>
+
+        <!-- Audience 3: All Branches -->
+        <div class="card text-center stagger-item hover:scale-105 transition-transform">
+          <div class="feature-icon mx-auto">3</div>
+          <h3 class="font-bold">All Engineering Branches</h3>
+          <p class="text-gray-300 text-sm">Data is everywhere! Enhance your engineering knowledge with essential data
+            skills.</p>
+        </div>
+
+        <!-- Audience 4: Beginners -->
+        <div class="card text-center stagger-item hover:scale-105 transition-transform">
+          <div class="feature-icon mx-auto">4</div>
+          <h3 class="font-bold">Complete Beginners</h3>
+          <p class="text-gray-300 text-sm">Start from scratch! Learn the basics of SQL and build confidence in your
+            abilities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+         TESTIMONIALS SECTION
+         Student feedback
+         ============================================================ -->
+  <section class="bg-slate-950 py-20">
+    <div class="container">
+      <h2 class="text-4xl font-bold mb-12 text-center glow-text">What Students Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="testimonial stagger-item">
+          <p class="mb-4 italic">"I was completely new to version control when I joined the Git & GitHub workshop. The
+            mentors at SCET Nexus made everything so simple and approachable. They was always ready to help with our
+            doubts"</p>
+          <p class="font-bold glow-text">- Nabiya Ahmed</p>
+          <p class="text-sm text-gray-400">CSE Student</p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial stagger-item">
+          <p class="mb-4 italic">"Coming from ECE background, I never thought I could learn programming so quickly. The
+            C Programming workshop at SCET Nexus was perfectly paced. Speakers broke down every concept step by step -
+            the best part was the mentor support throughout!"</p>
+          <p class="font-bold glow-text">- Zaid khan</p>
+          <p class="text-sm text-gray-400">ECE, 2nd year</p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial stagger-item">
+          <p class="mb-4 italic">"What I love about SCET Nexus workshops is that you always learn new things, no matter
+            your skill level. The Fundamentals of Programming workshop gave me a solid foundation, and the friendly
+            mentors made asking questions so easy!"</p>
+          <p class="font-bold glow-text">- Mirza </p>
+          <p class="text-sm text-gray-400">IT , 3rd year</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+         FAQ SECTION
+         Frequently asked questions
+         ============================================================ -->
+  <section class="bg-slate-900 py-20">
+    <div class="container">
+      <h2 class="text-4xl font-bold mb-12 text-center glow-text">Frequently Asked Questions</h2>
+      <div class="max-w-3xl mx-auto" id="faqContainer"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+         CTA SECTION
+         Final call-to-action
+         ============================================================ -->
+  <section class="bg-slate-950 py-20 text-center relative overflow-hidden" id="registration">
+    <div class="container relative z-10">
+      <h2 class="text-4xl font-bold mb-6 glow-text">Secure Your Spot Today</h2>
+      <div
+        class="bg-red-900/30 border-2 border-red-500/50 rounded-2xl p-6 mb-8 max-w-2xl mx-auto hover:border-red-500 transition-all duration-300">
+        <p class="text-lg font-bold animate-pulse">📋 Register by Jan 4, 2026</p>
+        <p class="text-sm mt-2">Only limited seats • Seats fill fast!</p>
+      </div>
+      <!-- TODO Add registration LINK -->
+      <a href="" class="btn-primary text-lg px-8 py-3 inline-block">Register Here!</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+         FOOTER
+         Page footer
+         ============================================================ -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ============================================================
+         SCRIPT LOADING
+         Load animation and interaction scripts
+         ============================================================ -->
+  <script src="/js/sql-workshop-animation.js"></script>
+  <script src="/js/sql-workshop-script.js"></script>
+  <script src="/components/navbar.js"></script>
+  <script src="/components/footer.js"></script>
+</body>
+
+</html>
