@@ -437,7 +437,7 @@
       width: 100%;
       height: 100%;
       background: linear-gradient(90deg, transparent, rgba(217, 70, 166, 0.2), transparent);
-      animation: shine 3s infinite;
+      animation: shine 5s infinite;
       pointer-events: none;
     }
 
@@ -525,7 +525,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--color-magenta);
+      color: var(--color-white);
       font-size: 2rem;
       margin-bottom: 15px;
       animation: icon-float 3s ease-in-out infinite;
@@ -741,19 +741,19 @@
         class="bg-slate-900/50 border-2 border-magenta-500/40 rounded-3xl p-8 mb-8 max-w-2xl mx-auto backdrop-blur-sm hover:border-magenta-500/80 transition-all duration-300 hover:shadow-lg hover:shadow-magenta-500/30">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm md:text-base">
           <div class="flex items-center justify-center animate-pulse">
-            <span class="text-magenta-400 mr-2">📅</span>
+            <span class="text-magenta-400 mr-2"><i class="fa-solid fa-calendar"></i></span> <!--icons-->
             <span>Jan 6, 7 & 8, 2026</span>
           </div>
           <div class="flex items-center justify-center animate-pulse">
-            <span class="text-magenta-400 mr-2">⏰</span>
+            <span class="text-magenta-400 mr-2"><i class="fa-regular fa-clock"></i></span><!--icons-->
             <span>11:00 AM – 4:00 PM</span>
           </div>
           <div class="flex items-center justify-center animate-pulse">
-            <span class="text-magenta-400 mr-2">📍</span>
+            <span class="text-magenta-400 mr-2"><i class="fa-solid fa-location-crosshairs"></i></span><!--icons-->
             <span>Room 315, IT Lab</span>
           </div>
           <div class="flex items-center justify-center animate-pulse">
-            <span class="text-magenta-400 mr-2">💚</span>
+            <span class="text-magenta-400 mr-2"><i class="fa-solid fa-heart"></i></span><!--icons-->
             <span>100% FREE</span>
           </div>
         </div>
@@ -764,7 +764,7 @@
         Secure Your Spot Now!
       </a>
 
-      <p class="text-lg text-red-500 mb-6 animate-bounce">⚡ Limited Seats • Register by Jan 4, 2026</p>
+      <p class="text-lg text-red-500 mb-6 animate-bounce" style="color: red; font-weight: bold;"><i class="fa-solid fa-person-dots-from-line"></i> Limited Seats • Register by Jan 4, 2026</p>
 
       <!-- Key Features -->
       <div class="flex justify-center gap-4 flex-wrap text-sm stagger-item">
@@ -787,7 +787,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Card 1: Career Boost -->
         <div class="card stagger-item">
-          <div class="feature-icon">🚀</div>
+          <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
           <h3 class="text-xl font-bold mb-4">Boost Your Career</h3>
           <p class="text-gray-300">SQL is required in 70% of tech job descriptions. Master a skill that directly impacts
             your employability.</p>
@@ -795,7 +795,7 @@
 
         <!-- Card 2: Hands-on Learning -->
         <div class="card stagger-item">
-          <div class="feature-icon">💻</div>
+          <div class="feature-icon"><i class="fa-solid fa-code"></i></div>
           <h3 class="text-xl font-bold mb-4">Perfect for Beginners</h3>
           <p class="text-gray-300">Never written SQL before? No problem! We start from absolute basics and build up
             step-by-step.</p>
@@ -803,7 +803,7 @@
 
         <!-- Card 3: Free Workshop -->
         <div class="card stagger-item">
-          <div class="feature-icon">🎁</div>
+          <div class="feature-icon"><i class="fa-solid fa-address-book"></i></div>
           <h3 class="text-xl font-bold mb-4">Real Database Skills</h3>
           <p class="text-gray-300">Learn MySQL from installation to optimization. Hands-on with VS Code setup &
             real-world project.</p>
@@ -822,7 +822,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Outcome 1: Databases -->
         <div class="card stagger-item">
-          <div class="feature-icon">🗄️</div>
+          <div class="feature-icon"><i class="fa-solid fa-layer-group"></i></div>
           <h3 class="text-2xl font-bold mb-4 glow-text">Design & Create Databases</h3>
           <p class="text-gray-300">Create your own databases with CREATE TABLE, INSERT data.</p>
           <p class="text-gray-300 mt-3">Understand what databases are and how they work. Learn to design tables with
@@ -831,7 +831,7 @@
 
         <!-- Outcome 2: MySQL -->
         <div class="card stagger-item">
-          <div class="feature-icon">💾</div>
+          <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
           <h3 class="text-2xl font-bold mb-4 glow-text">Hands-on MySQL</h3>
           <p class="text-gray-300">Write production-ready SQL queries using MySQL with real-world examples.</p>
           <p class="text-gray-300 mt-3">Learn JOINs, aggregations, transactions, and optimization techniques.</p>
@@ -839,7 +839,7 @@
 
         <!-- Outcome 3: Real-World -->
         <div class="card stagger-item">
-          <div class="feature-icon">🚀</div>
+          <div class="feature-icon"><i class="fa-solid fa-sheet-plastic"></i></div>
           <h3 class="text-2xl font-bold mb-4 glow-text">SQL Cheat Sheet</h3>
           <p class="text-gray-300">Take home a comprehensive <strong>SQL Cheat Sheet</strong> with all commands &
             syntax.</p>
@@ -859,12 +859,12 @@
         <div class="card text-center stagger-item">
           <!-- Icon at top -->
           <div class="flex justify-center">
-            <div class="feature-icon">💻</div>
+            <div class="feature-icon"><i class="fa-solid fa-laptop-code"></i></div>
           </div>
 
           <!-- Title -->
           <h2 class="text-4xl font-bold mb-4 glow-text">Bring Your Laptop</h2>
-          <p class="text-2xl text-gray-300 mb-2">(Highly Recommended)</p>
+          <p class="text-2xl text-gray-300 mb-2" style="color: red; font-weight: bold;">(Highly Recommended)</p>
           <p class="text-gray-300 mb-8">Get hands-on with real SQL databases</p>
 
           <!-- Checklist items -->
@@ -916,7 +916,7 @@
           <div class="text-center">
             <!-- Icon -->
             <div class="flex justify-center mb-4">
-              <div class="feature-icon">✏️</div>
+              <div class="feature-icon"><i class="fa-solid fa-arrow-down"></i></div>
             </div>
             <!-- Title -->
             <h3 class="text-lg font-bold mb-2">Click the Register Here button</h3>
@@ -929,7 +929,7 @@
           <div class="text-center">
             <!-- Icon -->
             <div class="flex justify-center mb-4">
-              <div class="feature-icon">📧</div>
+              <div class="feature-icon"><i class="fa-solid fa-envelope"></i></div>
             </div>
             <!-- Title -->
             <h3 class="text-lg font-bold mb-2">Complete the task sent to your email</h3>
@@ -942,7 +942,7 @@
           <div class="text-center">
             <!-- Icon -->
             <div class="flex justify-center mb-4">
-              <div class="feature-icon">✅</div>
+              <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
             </div>
             <!-- Title -->
             <h3 class="text-lg font-bold mb-2">Join the workshop & learn</h3>
@@ -968,7 +968,7 @@
         <div class="card stagger-item">
           <a href="https://www.youtube.com/watch?v=_pnRZ8dn4uo">
             <div class="flex items-center">
-              <div class="feature-icon mr-4">🖥️</div>
+              <div class="feature-icon mr-4"><i class="fa-solid fa-laptop"></i></div>
               <div>
                 <h3 class="text-lg font-bold glow-text">LAPTOP STUDENTS</h3>
                 <p class="text-gray-300 text-sm">Step-by-step guide to complete the TASK on Laptop and install MySQL on
@@ -982,7 +982,7 @@
         <div class="card stagger-item">
           <a href="https://www.youtube.com/watch?v=ZdNgq2_vzvc">
             <div class="flex items-center">
-              <div class="feature-icon mr-4">📱</div>
+              <div class="feature-icon mr-4"><i class="fa-solid fa-mobile"></i></div>
               <div>
                 <h3 class="text-lg font-bold glow-text">NON-LAPTOP STUDENTS</h3>
                 <p class="text-gray-300 text-sm">Watch the video and complete the TASK. </p>
@@ -1096,7 +1096,7 @@
       <h2 class="text-4xl font-bold mb-6 glow-text">Secure Your Spot Today</h2>
       <div
         class="bg-red-900/30 border-2 border-red-500/50 rounded-2xl p-6 mb-8 max-w-2xl mx-auto hover:border-red-500 transition-all duration-300">
-        <p class="text-lg font-bold animate-pulse">📋 Register by Jan 4, 2026</p>
+        <p class="text-lg font-bold animate-pulse"><i class="fa-regular fa-calendar"></i> Register by Jan 4, 2026</p>
         <p class="text-sm mt-2">Only limited seats • Seats fill fast!</p>
       </div>
       <!-- TODO Add registration LINK -->
