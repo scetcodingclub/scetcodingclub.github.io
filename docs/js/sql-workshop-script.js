@@ -18,11 +18,11 @@ const faqs = [
     },
     {
         question: "Do I Need to Bring a Laptop?",
-        answer: "Highly recommended but not mandatory. Bringing your own laptop gives you several advantages: continue practicing at home, take all resources directly, and have a configured environment for future projects."
+        answer: "Highly recommended, Bringing your own laptop gives you several advantages: continue practicing at home, take all resources directly, and have a configured environment for future projects."
     },
     {
         question: "Get Resources & Code After Workshop?",
-        answer: "You'll receive a helpful cheatsheet to get you started. And if you need further assistance, our Coding Club is always here to help!."
+        answer: "You'll receive a helpful CheatSheet to get you started. And if you need further assistance, our Coding Club is always here to help!."
     },
     {
         question: "What if I Can't Attend All 3 Days?",
