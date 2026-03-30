@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus Coding Club - SCET</title>
+  <link rel="icon" href="/asset/NEXUS Icon.png">
+
+  <link rel="stylesheet" href="../../styles/expogen.css"> 
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome 6.7.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- Google Fonts — Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { poppins: ['Poppins', 'sans-serif'] },
+          colors: {
+            'bg-deep':    '#020617',
+            'bg-mid':     '#0a1f44',
+            'blue-brand': '#3b82f6',
+            'blue-lt':    '#60a5fa',
+            'cyan-brand': '#22d3ee',
+            'accent':     '#f59e0b',
+          },
+        }
+      }
+    }
+  </script>
+
+</head>
+
+<body class="bg-bg-deep text-white font-poppins">
+
+  <div id="navbar-placeholder"></div>
+  <div class="pt-20"></div>
+  <div id="scrollProgress"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+    1. HERO
+  ═══════════════════════════════════════════════════════ -->
+  <section class="bg-grad-hero relative min-h-screen flex items-center overflow-hidden py-24 md:py-32">
+
+    <!-- Rings -->
+    <div class="hero-ring" style="width:500px;height:500px;top:-120px;right:-120px;animation-duration:40s;"></div>
+    <div class="hero-ring" style="width:320px;height:320px;bottom:-80px;left:-80px;animation-duration:30s;animation-direction:reverse;border-color:rgba(34,211,238,0.08);"></div>
+    <div class="hero-ring" style="width:200px;height:200px;top:40%;right:15%;animation-duration:20s;border-color:rgba(245,158,11,0.07);"></div>
+    <!-- Dots -->
+    <div class="hero-dot" style="width:6px;height:6px;background:#60a5fa;top:18%;right:22%;"></div>
+    <div class="hero-dot" style="width:5px;height:5px;background:#22d3ee;bottom:28%;left:18%;animation-delay:.8s;"></div>
+    <div class="hero-dot" style="width:4px;height:4px;background:#f59e0b;top:55%;right:8%;animation-delay:1.5s;"></div>
+
+    <div class="max-w-6xl mx-auto px-5 sm:px-7 lg:px-10 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- LEFT: Text -->
+        <div>
+          <p class="flex items-center gap-2 text-blue-lt text-xs font-bold tracking-widest uppercase mb-4">
+            <span class="block w-7 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 shrink-0"></span>
+            <i class="fa-solid fa-code"></i> SCET — NEXUS Coding Club
+          </p>
+
+          <h1 class="font-black leading-none tracking-tight mb-5" style="font-size:clamp(2.5rem,8vw,4.5rem);">
+            EXPOGEN<br>
+            <span class="text-grad">2.0</span><br>
+            <span class="font-bold text-white" style="font-size:.55em;letter-spacing:.02em;">Project Showcase</span><br>
+            <span class="font-semibold text-slate-400" style="font-size:.42em;">&amp; Discussion</span>
+          </h1>
+
+          <p class="text-slate-300 text-base leading-relaxed mb-7 max-w-lg">
+            A student-driven platform for showcasing innovation, technical skills, and practical problem-solving — organized by SCET NEXUS Coding Club.
+          </p>
+
+          <!-- Detail pills -->
+          <div class="flex flex-wrap gap-2 mb-8">
+            <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.15] rounded-full px-4 py-1.5 text-sm text-slate-200 backdrop-blur-sm hover:border-blue-400 hover:bg-blue-500/10 transition-all cursor-default">
+              <i class="fa-solid fa-calendar-days text-blue-lt text-xs"></i> Apr 6, 2026
+            </div>
+            <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.15] rounded-full px-4 py-1.5 text-sm text-slate-200 backdrop-blur-sm hover:border-blue-400 hover:bg-blue-500/10 transition-all cursor-default">
+              <i class="fa-regular fa-clock text-blue-lt text-xs"></i> 11:00 AM – 4:00 PM
+            </div>
+            <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.15] rounded-full px-4 py-1.5 text-sm text-slate-200 backdrop-blur-sm hover:border-blue-400 hover:bg-blue-500/10 transition-all cursor-default">
+              <i class="fa-solid fa-location-dot text-blue-lt text-xs"></i> SCET Auditorium
+            </div>
+            <div class="flex items-center gap-2 bg-white/[.07] border border-white/[.15] rounded-full px-4 py-1.5 text-sm text-slate-200 backdrop-blur-sm hover:border-blue-400 hover:bg-blue-500/10 transition-all cursor-default">
+              <i class="fa-solid fa-tag text-blue-lt text-xs"></i> 100% FREE
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="flex flex-wrap gap-3 mb-5">
+            <a href="#registration" class="btn btn-primary text-sm px-7 py-3">
+              <i class="fa-solid fa-arrow-right"></i> Register Now
+            </a>
+            <a href="#why-join" class="btn btn-outline text-sm px-6 py-3">
+              <i class="fa-solid fa-circle-info"></i> Learn More
+            </a>
+          </div>
+
+          <!-- Urgency -->
+          <div class="inline-flex items-center gap-2 bg-red-500/[.09] border border-red-500/30 rounded-lg px-4 py-2.5 text-sm font-semibold text-red-300">
+            <i class="fa-solid fa-triangle-exclamation text-red-400"></i>
+            Limited Seats — Today is The Last Day to Register!
+          </div>
+        </div>
+
+        <!-- RIGHT: Image -->
+        <div class="relative">
+          <div class="img-slot rounded-2xl">
+            <!-- Replace with: <img src="your-hero-image.jpg" alt="EXPOGEN 2.0"> -->
+            <div class="img-ph"><i class="fa-solid fa-image"></i><span>Add Hero Image Here</span></div>
+          </div>
+          <!-- Float card -->
+          <div class="absolute -bottom-5 -left-4 bg-bg-mid/90 border border-amber-500/35 rounded-xl px-5 py-3.5 backdrop-blur-xl z-10">
+            <i class="fa-solid fa-bolt text-accent text-xs mb-1 block"></i>
+            <p class="text-2xl font-black text-accent leading-none">1.0</p>
+            <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Previous Edition</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+    2. WHY JOIN
+  ═══════════════════════════════════════════════════════ -->
+  <section class="bg-grad-2 py-16 md:py-20 lg:py-28" id="why-join">
+    <div class="max-w-6xl mx-auto px-5 sm:px-7 lg:px-10">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-start mb-12">
+        <div class="reveal">
+          <span class="section-label"><i class="fa-solid fa-star"></i> Why Join</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white mt-1">
+            Reasons to be part<br>of <span class="text-grad">EXPOGEN 2.0</span>
+          </h2>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed self-center reveal d1">
+          EXPOGEN 2.0 brings together innovators, builders, and thinkers from across every engineering discipline to showcase, collaborate, and grow together.
+        </p>
+      </div>
+
+      <!-- 4 shared-border cards -->
+      <div class="why-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="why-card reveal d1">
+          <div class="feature-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3 class="text-white font-bold text-base mb-2">Showcase Your Skills</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">Present real-world projects to peers, faculty, and observers. Turn your coursework into tangible innovation.</p>
+          <a href="#registration" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-lt hover:gap-3 transition-all">Register <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+        </div>
+        <div class="why-card reveal d2">
+          <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
+          <h3 class="text-white font-bold text-base mb-2">Network &amp; Collaborate</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">Meet innovators from diverse disciplines and build your professional network with students and mentors.</p>
+          <a href="#registration" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-lt hover:gap-3 transition-all">Register <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+        </div>
+        <div class="why-card reveal d3">
+          <div class="feature-icon"><i class="fa-solid fa-comments"></i></div>
+          <h3 class="text-white font-bold text-base mb-2">Expert Feedback</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">Receive constructive critique from experienced faculty judges to sharpen your technical and presentation skills.</p>
+          <a href="#registration" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-lt hover:gap-3 transition-all">Register <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+        </div>
+        <div class="why-card reveal d4">
+          <div class="feature-icon"><i class="fa-solid fa-trophy"></i></div>
+          <h3 class="text-white font-bold text-base mb-2">Win Recognition</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">Top projects are evaluated and awarded at the closing ceremony. Make your mark at SCET.</p>
+          <a href="#registration" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-lt hover:gap-3 transition-all">Register <i class="fa-solid fa-arrow-right fa-xs"></i></a>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 reveal">
+        <a href="#registration" class="btn btn-primary text-sm px-8 py-3">
+          <i class="fa-solid fa-bolt"></i> Secure Your Spot
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+    3. WHO SHOULD JOIN
+  ═══════════════════════════════════════════════════════ -->
+  <section class="bg-grad-3 py-16 md:py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-5 sm:px-7 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <!-- Image — order-2 on mobile, order-1 on desktop -->
+        <div class="relative order-2 lg:order-1 reveal-left">
+          <div class="img-slot rounded-xl">
+            <!-- Replace with: <img src="your-event-image.jpg" alt="EXPOGEN event"> -->
+            <div class="img-ph"><i class="fa-solid fa-image"></i><span>Add Event Image</span></div>
+          </div>
+          <div class="absolute -bottom-4 -right-3 bg-bg-mid/95 border border-amber-500/35 rounded-xl px-5 py-3 backdrop-blur-xl z-10">
+            <i class="fa-solid fa-arrow-trend-up text-accent text-xs mb-1 block"></i>
+            <p class="text-2xl font-black text-accent leading-none">2.0</p>
+            <p class="text-xs text-slate-400 uppercase tracking-wider mt-1">Now Bigger</p>
+          </div>
+        </div>
+
+        <!-- Text — order-1 on mobile, order-2 on desktop -->
+        <div class="order-1 lg:order-2 reveal-right">
+          <span class="section-label"><i class="fa-solid fa-users"></i> About the Event</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white mt-1 mb-4">
+            Innovation is<br>a work of <span class="text-grad">Art.</span>
+          </h2>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            EXPOGEN 2.0 is a student-driven Project Expo organized by the SCET – NEXUS Coding Club, designed to provide a platform for showcasing innovation, technical skills, and practical problem-solving.
+          </p>
+
+          <ul class="mt-5 space-y-0">
+            <li class="flex items-center gap-3 text-sm text-slate-300 py-2.5 border-b border-blue-500/10">
+              <i class="fa-solid fa-check-circle text-blue-lt w-4 text-sm"></i>
+              2nd, 3rd &amp; 4th Year Students from all branches
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-300 py-2.5 border-b border-blue-500/10">
+              <i class="fa-solid fa-check-circle text-blue-lt w-4 text-sm"></i>
+              CSE / IT / Data Science / ECE &amp; All Engineering
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-300 py-2.5 border-b border-blue-500/10">
+              <i class="fa-solid fa-check-circle text-blue-lt w-4 text-sm"></i>
+              Complete Beginners — no experience needed
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-300 py-2.5 border-b border-blue-500/10">
+              <i class="fa-solid fa-check-circle text-blue-lt w-4 text-sm"></i>
+              Tech Enthusiasts, Alumni &amp; Networking Seekers
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-300 py-2.5">
+              <i class="fa-solid fa-check-circle text-blue-lt w-4 text-sm"></i>
+              Open to All — free entry for every attendee
+            </li>
+          </ul>
+
+          <div class="mt-7">
+            <a href="#registration" class="btn btn-primary text-sm px-7 py-3">
+              <i class="fa-solid fa-arrow-right"></i> Register Now
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+    4. STATS BANNER
+  ═══════════════════════════════════════════════════════ -->
+  <div class="bg-stats" id="statsBlock">
+    <div class="max-w-6xl mx-auto px-5 sm:px-7 lg:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-[auto_1fr]">
+
+        <div class="px-8 py-10 bg-black/30 md:border-r border-blue-500/20 flex flex-col justify-center md:min-w-[220px] reveal">
+          <p class="text-xs font-bold tracking-widest uppercase text-blue-lt mb-2">
+            <i class="fa-solid fa-chart-bar mr-1"></i> Some Numbers
+          </p>
+          <h3 class="text-2xl lg:text-3xl font-bold text-white leading-snug">What we<br>achieved so far</h3>
+        </div>
+
+        <div class="grid grid-cols-3">
+          <div class="stat-item reveal d1">
+            <i class="fa-solid fa-diagram-project text-blue-lt text-xl mb-2 block"></i>
+            <p class="text-3xl md:text-4xl lg:text-5xl font-black text-accent leading-none" data-target="50" data-suffix="+">0+</p>
+            <p class="text-xs uppercase tracking-widest text-slate-400 mt-2">Projects Showcased</p>
+          </div>
+          <div class="stat-item reveal d2">
+            <i class="fa-solid fa-people-group text-blue-lt text-xl mb-2 block"></i>
+            <p class="text-3xl md:text-4xl lg:text-5xl font-black text-accent leading-none" data-target="200" data-suffix="+">0+</p>
+            <p class="text-xs uppercase tracking-widest text-slate-400 mt-2">Attendees</p>
+          </div>
+          <div class="stat-item reveal d3">
+            <i class="fa-solid fa-face-smile-beam text-blue-lt text-xl mb-2 block"></i>
+            <p class="text-3xl md:text-4xl lg:text-5xl font-black text-accent leading-none" data-target="100" data-suffix="%">0%</p>
+            <p class="text-xs uppercase tracking-widest text-slate-400 mt-2">Positive Feedback</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+    5. CAROUSEL — ExpoGen 1.0
+  ═══════════════════════════════════════════════════════ -->
+  <section class="bg-grad-2 py-16 md:py-20 lg:py-24">
+    <div class="max-w-6xl mx-auto px-5 sm:px-7 lg:px-10">
+
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-9">
+        <div class="reveal">
+          <span class="section-label"><i class="fa-solid fa-images"></i> ExpoGen 1.0</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-1">
+            A peek at past<br><span class="text-grad">creations</span>
+          </h2>
+        </div>
+        <a href="#registration" class="btn btn-primary text-xs px-5 py-2.5 reveal d1">
+          <i class="fa-solid fa-bolt"></i> Register Now
+        </a>
+      </div>
+
+      <!-- Carousel outer -->
+      <div class="overflow-hidden rounded-xl reveal">
+        <div class="carousel-track" id="carouselTrack">
+
+          <div class="carousel-slide">
+            <div class="slide-inner">
+              <!-- <img src="your-image-1.jpg" alt="Opening Ceremony"> -->
+              <div class="img-ph"><i class="fa-solid fa-image"></i><span>Opening Ceremony</span></div>
+              <div class="slide-overlay"></div>
+              <div class="slide-label"><i class="fa-solid fa-star mr-1"></i>Opening Ceremony</div>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="slide-inner">
+              <!-- <img src="your-image-2.jpg" alt="Project Exhibition"> -->
+              <div class="img-ph"><i class="fa-solid fa-image"></i><span>Project Exhibition</span></div>
+              <div class="slide-overlay"></div>
+              <div class="slide-label"><i class="fa-solid fa-laptop-code mr-1"></i>Project Exhibition</div>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="slide-inner">
+              <!-- <img src="your-image-3.jpg" alt="Networking"> -->
+              <div class="img-ph"><i class="fa-solid fa-image"></i><span>Networking</span></div>
+              <div class="slide-overlay"></div>
+              <div class="slide-label"><i class="fa-solid fa-handshake mr-1"></i>Networking</div>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="slide-inner">
+              <!-- <img src="your-image-4.jpg" alt="Prize Distribution"> -->
+              <div class="img-ph"><i class="fa-solid fa-image"></i><span>Prize Distribution</span></div>
+              <div class="slide-overlay"></div>
+              <div class="slide-label"><i class="fa-solid fa-trophy mr-1"></i>Prize Distribution</div>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="slide-inner">
+              <!-- <img src="your-image-5.jpg" alt="Full House"> -->
+              <div class="img-ph"><i class="fa-solid fa-image"></i><span>Full House</span></div>
+              <div class="slide-overlay"></div>
+              <div class="slide-label"><i class="fa-solid fa-users mr-1"></i>Full House</div>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="slide-inner">
+              <!-- <img src="your-image-6.jpg" alt="Judges Panel"> -->
+              <div class="img-ph"><i class="fa-solid fa-image"></i><span>Judges Panel</span></div>
+              <div class="slide-overlay"></div>
+              <div class="slide-label"><i class="fa-solid fa-gavel mr-1"></i>Judges Panel</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="flex items-center justify-center gap-4 mt-7">
+        <button id="prevBtn" aria-label="Previous"
+          class="w-11 h-11 rounded-full bg-bg-mid/70 border border-blue-500/30 text-blue-lt flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all hover:scale-105 cursor-pointer">
+          <i class="fa-solid fa-chevron-left text-sm"></i>
+        </button>
+        <div class="flex gap-2" id="carouselDots"></div>
+        <button id="nextBtn" aria-label="Next"
+          class="w-11 h-11 rounded-full bg-bg-mid/70 border border-blue-500/30 text-blue-lt flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all hover:scale-105 cursor-pointer">
+          <i class="fa-solid fa-chevron-right text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-14">
+
+        <div class="glass-card p-6 reveal d1">
+          <i class="fa-solid fa-quote-left text-blue-500/30 text-2xl mb-3 block"></i>
+          <div class="text-amber-400 text-xs mb-3 flex gap-0.5">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-slate-300 text-sm italic leading-relaxed mb-4">"ExpoGen 1.0 gave me the confidence to present my AI project in front of a real audience. The feedback from faculty judges was invaluable."</p>
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-blue-500/15 border border-blue-500/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-user text-blue-lt text-xs"></i>
+            </span>
+            <div>
+              <p class="text-blue-lt font-bold text-sm">Arjun K.</p>
+              <p class="text-slate-500 text-xs"><i class="fa-solid fa-graduation-cap mr-1"></i>CSE — 3rd Year</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 reveal d2">
+          <i class="fa-solid fa-quote-left text-blue-500/30 text-2xl mb-3 block"></i>
+          <div class="text-amber-400 text-xs mb-3 flex gap-0.5">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-slate-300 text-sm italic leading-relaxed mb-4">"The networking at ExpoGen 1.0 was incredible. I connected with students from all departments and found my final year project partner right there!"</p>
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-blue-500/15 border border-blue-500/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-user text-blue-lt text-xs"></i>
+            </span>
+            <div>
+              <p class="text-blue-lt font-bold text-sm">Priya S.</p>
+              <p class="text-slate-500 text-xs"><i class="fa-solid fa-graduation-cap mr-1"></i>ECE — 2nd Year</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 reveal d3">
+          <i class="fa-solid fa-quote-left text-blue-500/30 text-2xl mb-3 block"></i>
+          <div class="text-amber-400 text-xs mb-3 flex gap-0.5">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-slate-300 text-sm italic leading-relaxed mb-4">"NEXUS organized everything so professionally — from registration to the prize distribution. Super motivating and very well-managed!"</p>
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-full bg-blue-500/15 border border-blue-500/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-user text-blue-lt text-xs"></i>
+            </span>
+            <div>
+              <p class="text-blue-lt font-bold text-sm">Rahul M.</p>
+              <p class="text-slate-500 text-xs"><i class="fa-solid fa-graduation-cap mr-1"></i>IT — 4th Year</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+    6. HOW TO REGISTER
+  ═══════════════════════════════════════════════════════ -->
+  <section class="bg-grad-3 py-16 md:py-20 lg:py-28" id="registration">
+    <div class="max-w-6xl mx-auto px-5 sm:px-7 lg:px-10">
+
+      <div class="text-center max-w-lg mx-auto mb-12 reveal">
+        <span class="section-label justify-center flex"><i class="fa-solid fa-clipboard-list mr-2"></i> Registration</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-2">
+          How to <span class="text-grad">Register</span>
+        </h2>
+        <p class="text-slate-400 text-sm leading-relaxed mt-3">Three easy steps to secure your spot at EXPOGEN 2.0.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="glass-card p-7 reveal d1">
+          <p class="text-5xl font-black text-blue-500/10 leading-none mb-3">01</p>
+          <div class="w-12 h-12 border border-blue-500/30 rounded-xl flex items-center justify-center text-blue-lt text-xl mb-4">
+            <i class="fa-solid fa-qrcode"></i>
+          </div>
+          <h3 class="text-white font-bold text-base mb-2">Scan the QR Code</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Scan the official EXPOGEN 2.0 poster QR code to open the application portal on your device.</p>
+        </div>
+
+        <div class="glass-card p-7 reveal d2">
+          <p class="text-5xl font-black text-blue-500/10 leading-none mb-3">02</p>
+          <div class="w-12 h-12 border border-blue-500/30 rounded-xl flex items-center justify-center text-blue-lt text-xl mb-4">
+            <i class="fa-solid fa-file-pen"></i>
+          </div>
+          <h3 class="text-white font-bold text-base mb-2">Submit Your Details</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Fill in your project title, team members, domain, and a brief description. Takes under 5 minutes.</p>
+        </div>
+
+        <div class="glass-card p-7 reveal d3">
+          <p class="text-5xl font-black text-blue-500/10 leading-none mb-3">03</p>
+          <div class="w-12 h-12 border border-blue-500/30 rounded-xl flex items-center justify-center text-blue-lt text-xl mb-4">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+          <h3 class="text-white font-bold text-base mb-2">Get Your Entry Pass</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Receive your digital entry pass via email or WhatsApp after review. Present it at the venue on April 6th.</p>
+        </div>
+
+      </div>
+
+      <!-- Contact strip -->
+      <div class="glass-card mt-10 px-6 py-5 flex flex-wrap gap-6 items-center reveal">
+        <div>
+          <p class="text-xs font-bold tracking-widest uppercase text-blue-lt mb-1">
+            <i class="fa-solid fa-user mr-1"></i> Student Coordinator
+          </p>
+          <p class="text-sm font-semibold text-white">
+            Sohail — <span class="text-blue-lt"><i class="fa-solid fa-phone text-xs mr-1"></i>9553081586</span>
+          </p>
+        </div>
+        <div class="hidden sm:block w-px h-8 bg-blue-500/20"></div>
+        <div>
+          <p class="text-xs font-bold tracking-widest uppercase text-blue-lt mb-1">
+            <i class="fa-solid fa-chalkboard-user mr-1"></i> Faculty Coordinator
+          </p>
+          <p class="text-sm font-semibold text-white">
+            Dr. Imtiyaz Khan — <span class="text-cyan-brand"><i class="fa-solid fa-phone text-xs mr-1"></i>9701556064</span>
+          </p>
+        </div>
+        <div class="hidden sm:block w-px h-8 bg-blue-500/20"></div>
+        <div>
+          <p class="text-xs font-bold tracking-widest uppercase text-blue-lt mb-1">
+            <i class="fa-solid fa-envelope mr-1"></i> Email
+          </p>
+          <a href="mailto:nexuscodingclub@gmail.com" class="text-sm font-semibold text-blue-lt hover:text-white transition-colors">
+            nexuscodingclub@gmail.com
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+    7. FAQ
+  ═══════════════════════════════════════════════════════ -->
+  <section class="bg-grad-2 py-16 md:py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-5 sm:px-7 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+        <div class="reveal">
+          <span class="section-label"><i class="fa-solid fa-circle-question"></i> FAQ</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-2 mb-4">
+            Frequently<br>Asked <span class="text-grad">Questions</span>
+          </h2>
+          <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+            Can't find your answer? Reach out to the NEXUS team directly — we're happy to help.
+          </p>
+          <div class="flex flex-wrap gap-3 mt-7">
+            <a href="mailto:nexuscodingclub@gmail.com" class="btn btn-primary text-xs px-5 py-2.5">
+              <i class="fa-solid fa-envelope"></i> Email Us
+            </a>
+            <a href="https://instagram.com/nexuscodingclub" target="_blank" class="btn btn-outline text-xs px-5 py-2.5">
+              <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal d1">
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="flex justify-between items-center gap-3">
+              <span class="font-semibold text-sm text-white"><i class="fa-solid fa-microchip text-blue-lt mr-2 text-xs"></i>What is EXPOGEN 2.0?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">EXPOGEN 2.0 is a student-driven Project Expo organized by the SCET – NEXUS Coding Club. It provides a platform for showcasing innovation, technical skills, and practical problem-solving across software, AI, web development, and emerging technologies.</div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="flex justify-between items-center gap-3">
+              <span class="font-semibold text-sm text-white"><i class="fa-solid fa-users text-blue-lt mr-2 text-xs"></i>Who can participate or attend?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">Anyone! The event is open to all SCET students across all departments and year groups. Tech enthusiasts, alumni, and faculty are also welcome. No prerequisites needed.</div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="flex justify-between items-center gap-3">
+              <span class="font-semibold text-sm text-white"><i class="fa-solid fa-tag text-blue-lt mr-2 text-xs"></i>Is there a registration fee?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">No! EXPOGEN 2.0 is completely free. Just register, get your entry pass, and show up on April 6th at the SCET Auditorium.</div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="flex justify-between items-center gap-3">
+              <span class="font-semibold text-sm text-white"><i class="fa-solid fa-laptop-code text-blue-lt mr-2 text-xs"></i>What kinds of projects can I showcase?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">Any technical project — software, AI/ML, web apps, IoT, mobile apps, hardware, data science — across any domain. If you built it, you can showcase it.</div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="flex justify-between items-center gap-3">
+              <span class="font-semibold text-sm text-white"><i class="fa-solid fa-eye text-blue-lt mr-2 text-xs"></i>Can I attend without a project?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">Absolutely! Attend as an audience member, explore projects, network, and get inspired. No requirement to present in order to attend.</div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="flex justify-between items-center gap-3">
+              <span class="font-semibold text-sm text-white"><i class="fa-solid fa-gavel text-blue-lt mr-2 text-xs"></i>How are projects judged?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">Projects are evaluated by faculty judges on innovation, technical complexity, practical application, and presentation quality. Winners are announced at 3:30 PM closing ceremony.</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+    8. FINAL CTA
+  ═══════════════════════════════════════════════════════ -->
+  <section class="bg-cta py-20 lg:py-28 text-center relative overflow-hidden">
+    <div class="cta-ring" style="width:600px;height:600px;border:1px solid rgba(59,130,246,0.07);animation-duration:50s;"></div>
+    <div class="cta-ring" style="width:380px;height:380px;border:1px solid rgba(34,211,238,0.06);animation-duration:35s;animation-direction:reverse;"></div>
+
+    <div class="max-w-6xl mx-auto px-5 sm:px-7 lg:px-10 relative z-10">
+      <div class="reveal">
+
+        <span class="badge mb-5 inline-flex">
+          <i class="fa-solid fa-calendar-check"></i> April 6th, 2026
+        </span>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
+          Ready to Showcase<br>Your <span class="text-grad">Innovation?</span>
+        </h2>
+
+        <p class="text-slate-400 text-sm leading-relaxed max-w-lg mx-auto mb-7">
+          Don't miss your chance to present, connect, and inspire at EXPOGEN 2.0 — organized by SCET NEXUS Coding Club.
+        </p>
+
+        <div class="inline-flex items-center gap-2 bg-red-500/[.08] border border-red-500/30 rounded-lg px-5 py-3 text-sm font-semibold text-red-300 mb-8 flex-wrap justify-center">
+          <i class="fa-solid fa-triangle-exclamation text-red-400"></i>
+          <strong>Register Now — Today is The Last Day!!</strong>
+          <span class="text-slate-500 hidden sm:inline">·</span>
+          <span class="text-slate-400 font-normal">Limited seats only</span>
+        </div>
+
+        <div class="flex flex-wrap gap-4 justify-center mb-12">
+          <a href="https://studio--asha-b056f.us-central1.hosted.app/events/KEK5F1qK9W4Amtlg4hii/register"
+             class="btn btn-primary text-base px-9 py-3.5">
+            <i class="fa-solid fa-arrow-right"></i> Register Here!
+          </a>
+          <a href="mailto:nexuscodingclub@gmail.com" class="btn btn-outline text-base px-8 py-3.5">
+            <i class="fa-solid fa-envelope"></i> Contact Us
+          </a>
+        </div>
+
+        <div class="glass-card inline-block px-10 py-6">
+          <p class="text-2xl font-black text-blue-lt tracking-wider">NE&gt;&gt;&lt;&lt;US</p>
+          <p class="text-xs uppercase tracking-widest text-slate-400 mt-1">Next Gen Coders United Society</p>
+          <div class="flex items-center justify-center gap-4 mt-4 flex-wrap">
+            <a href="https://instagram.com/nexuscodingclub" target="_blank"
+               class="flex items-center gap-2 text-xs text-slate-400 hover:text-white transition-colors">
+              <i class="fa-brands fa-instagram"></i> @nexuscodingclub
+            </a>
+            <span class="text-slate-600 hidden sm:inline">|</span>
+            <a href="mailto:nexuscodingclub@gmail.com"
+               class="flex items-center gap-2 text-xs text-slate-400 hover:text-white transition-colors">
+              <i class="fa-solid fa-envelope"></i> nexuscodingclub@gmail.com
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <div id="footer-placeholder"></div>
+
+  <!-- External JS — all JavaScript lives here -->
+  <script src="../../js/expogen2.js"></script>
+
+  <!-- Component loaders -->
+  <script src="/components/navbar.js"></script>
+  <script src="/components/footer.js"></script>
+
+</body>
+</html>
