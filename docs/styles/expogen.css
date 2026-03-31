@@ -19,12 +19,32 @@ body  { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
     /* ── Hero section ────────────────────────────────– */
     .bg-image {
       background-image:
-        linear-gradient(to right, rgba(2,6,23,1.0) 0%, rgba(2,6,23,1.0) 25%, rgba(2,6,23,0.75) 45%, rgba(2,6,23,0.35) 70%, rgba(2,6,23,0.00) 100%),
+        linear-gradient(to right, rgba(2,6,23,0.95) 0%, rgba(2,6,23,0.85) 50%, rgba(2,6,23,0.4) 85%, rgba(2,6,23,0.0) 100%),
         url("../asset/Expogen2images/remotecar.jpg");
-        
       background-size: cover;
-      background-position: center;
+      background-position: center right;
       background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    @media (max-width: 767px) {
+      .bg-image {
+        background-image:
+          linear-gradient(to right, rgba(2,6,23,0.95) 0%, rgba(2,6,23,0.8) 30%, rgba(2,6,23,0.4) 70%, transparent 100%),
+          url("../asset/Expogen2images/remotecar.jpg");
+        background-position: right center;
+        background-attachment: scroll;
+        background-size: cover;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .bg-image {
+        background-image:
+          linear-gradient(to right, rgba(2,6,23,0.85) 0%, rgba(2,6,23,0.65) 60%, rgba(2,6,23,0.2) 100%),
+          url("../asset/Expogen2images/remotecar.jpg");
+        background-position: center right;
+      }
     }
 
     /* ── Hero rings ────────────────────────────────– */
@@ -226,14 +246,6 @@ body  { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
     .divider {
       height:1px;
       background: linear-gradient(90deg, transparent, rgba(59,130,246,0.25), transparent);
-    }
-    .bg-image{
-      background-image:
-        linear-gradient(to right, rgba(2,6,23,1.0) 0%, rgba(2,6,23,1.0) 25%, rgba(2,6,23,0.75) 45%, rgba(2,6,23,0.35) 70%, rgba(2,6,23,0.00) 100%),
-        url("../asset/Expogen2images/remotecar.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
     }
     /* ── Gradient backgrounds ───────────────────────── */
     .bg-grad-hero {
