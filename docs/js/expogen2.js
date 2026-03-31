@@ -135,12 +135,17 @@ function toggleFaq(item) {
    • Rebuilds on window resize if breakpoint changes
 ───────────────────────────────────────────────────────────── */
 function initCarousel() {
-  const track   = document.getElementById('carouselTrack');
+    const track   = document.getElementById('carouselTrack');
   const dotsWrap = document.getElementById('carouselDots');
   const prevBtn  = document.getElementById('prevBtn');
   const nextBtn  = document.getElementById('nextBtn');
 
   if (!track || !dotsWrap || !prevBtn || !nextBtn) return;
+
+  if (track.dataset.live === 'true') {
+    initLiveCarousel(track);
+    return;
+  }
 
   const slides = Array.from(track.querySelectorAll('.carousel-slide'));
   const TOTAL_SLIDES  = slides.length;
@@ -245,6 +250,50 @@ function initCarousel() {
   buildDots();
   goTo(0);
   startAuto();
+}
+
+function initLiveCarousel(track) {
+  // Both groups are already in HTML, no cloning needed.
+  const groups = track.querySelectorAll('.group');
+  if (groups.length < 2) return;
+
+  // Calculate the width of one group for step control.
+  let groupWidth = 0;
+  let animationState = 'running';
+
+  // Get initial group width after a brief delay to ensure DOM is ready.
+  setTimeout(() => {
+    const firstGroup = groups[0];
+    groupWidth = firstGroup.offsetWidth;
+  }, 100);
+
+  // Handle seamless loop: when first group finishes scrolling, reset without visible gap.
+  const handleAnimationIteration = () => {
+    // At animation end, instantly reset to 0 to begin the loop again.
+    if (animationState === 'running') {
+      track.style.animation = 'none';
+      track.offsetHeight; // Trigger reflow.
+      track.style.animation = 'scroll-left 40s linear infinite';
+    }
+  };
+
+  // Listen for animation iteration.
+  track.addEventListener('animationiteration', handleAnimationIteration);
+
+  // Pause on hover / interact.
+  const stop = () => {
+    track.style.animationPlayState = 'paused';
+    animationState = 'paused';
+  };
+  const play = () => {
+    track.style.animationPlayState = 'running';
+    animationState = 'running';
+  };
+  
+  track.addEventListener('mouseenter', stop);
+  track.addEventListener('mouseleave', play);
+  track.addEventListener('touchstart', stop, { passive: true });
+  track.addEventListener('touchend', play, { passive: true });
 }
 
 
