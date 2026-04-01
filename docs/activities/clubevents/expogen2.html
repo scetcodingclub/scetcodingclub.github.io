@@ -472,7 +472,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
-        <div class="glass-card p-7 reveal d1">
+        <div class="glass-card p-7 reveal d1 cursor-pointer transition-all hover:border-blue-400/50 hover:bg-white/[.05]" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">
           <p class="text-5xl font-black text-blue-500/10 leading-none mb-3">01</p>
           <div class="w-12 h-12 border border-blue-500/30 rounded-xl flex items-center justify-center text-blue-lt text-xl mb-4">
             <i class="fa-solid fa-hand-pointer"></i>
@@ -481,7 +481,7 @@
           <p class="text-slate-400 text-sm leading-relaxed">Read all the details on this page, then click the Register button. You will be redirected to the registration form to complete your submission.</p>
         </div>
 
-        <div class="glass-card p-7 reveal d2">
+        <div class="glass-card p-7 reveal d2 cursor-pointer transition-all hover:border-blue-400/50 hover:bg-white/[.05]" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">
           <p class="text-5xl font-black text-blue-500/10 leading-none mb-3">02</p>
           <div class="w-12 h-12 border border-blue-500/30 rounded-xl flex items-center justify-center text-blue-lt text-xl mb-4">
             <i class="fa-solid fa-file-pen"></i>
@@ -490,7 +490,7 @@
           <p class="text-slate-400 text-sm leading-relaxed">Fill in your project title, team members, domain, and a brief description. Takes under 5 minutes.</p>
         </div>
 
-        <div class="glass-card p-7 reveal d3">
+        <div class="glass-card p-7 reveal d3 cursor-pointer transition-all hover:border-blue-400/50 hover:bg-white/[.05]" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">
           <p class="text-5xl font-black text-blue-500/10 leading-none mb-3">03</p>
           <div class="w-12 h-12 border border-blue-500/30 rounded-xl flex items-center justify-center text-blue-lt text-xl mb-4">
             <i class="fa-solid fa-id-card"></i>
@@ -623,7 +623,7 @@
   <!-- ═══════════════════════════════════════════════════════
     8. FINAL CTA
   ═══════════════════════════════════════════════════════ -->
-  <section class="bg-cta py-20 lg:py-28 text-center relative overflow-hidden">
+  <section id="cta" class="bg-cta py-20 lg:py-28 text-center relative overflow-hidden">
     <div class="cta-ring" style="width:600px;height:600px;border:1px solid rgba(59,130,246,0.07);animation-duration:50s;"></div>
     <div class="cta-ring" style="width:380px;height:380px;border:1px solid rgba(34,211,238,0.06);animation-duration:35s;animation-direction:reverse;"></div>
 
