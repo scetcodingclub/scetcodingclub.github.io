@@ -1,0 +1,181 @@
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050505;
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+  --primary: #33d45a;
+  --primary-dark: #1fa542;
+
+  --background: #050505;
+  --surface: #0d0d0d;
+  --card: #111111;
+
+  --border: #232323;
+
+  --text: #ffffff;
+  --text-secondary: #b5b5b5;
+
+  --radius: 16px;
+
+  --transition: 0.3s ease;
+
+  --container: 1200px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width: min(90%, var(--container));
+  margin-inline: auto;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section {
+  padding: 4rem 0;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 30px;
+
+  border-radius: 12px;
+
+  transition: var(--transition);
+
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-outline {
+  border: 1px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: rgba(51, 212, 90, 0.1);
+}
+
+/* =========================
+   INFO SECTION
+========================= */
+
+.info-section {
+  display: flex;
+  gap: 2rem;
+}
+
+
+
+/* =========================
+   LEADERBOARD
+========================= */
+
+.leaderboard-banner {
+  margin-top: 2rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  section {
+    padding: 3rem 0;
+  }
+
+  .info-section {
+    flex-direction: column;
+  }
+
+}
