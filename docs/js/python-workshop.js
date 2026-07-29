@@ -109,7 +109,7 @@ const faqs = [
     },
     {
         question: "Do I Need to Bring a Laptop?",
-        answer: "Highly recommended. Bringing your own laptop gives you several advantages: continue practicing at home, take all resources directly, and have a configured environment for future projects."
+        answer: "Highly recommended. Bringing your own laptop. No laptop? We've got you covered! Computers will be provided for participants who don't have a laptop."
     },
     {
         question: "Get Resources & Code After Workshop?",
