@@ -1,0 +1,383 @@
+/* --------------------------------------------------------------------------
+   Base styles
+   -------------------------------------------------------------------------- */
+body {
+    color: #f3f4f6;
+    background-color: #0b0f17;
+    overflow-x: hidden;
+}
+
+/* Keeps the animated background from competing with page content. */
+body::before {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    background: radial-gradient(
+        circle at center,
+        rgba(11, 15, 23, 0.28),
+        rgba(5, 8, 14, 0.68)
+    );
+    box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.8);
+}
+
+#canvas-container {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    filter: brightness(0.62) saturate(0.8);
+}
+
+/* --------------------------------------------------------------------------
+   Reusable components
+   -------------------------------------------------------------------------- */
+.glass-card {
+    background: rgba(18, 24, 38, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card:hover {
+    border-color: rgba(255, 232, 115, 0.3);
+    transform: translateY(-4px);
+    transition: all 0.3s ease;
+}
+
+.glow-text {
+    text-shadow:
+        0 0 20px rgba(48, 105, 152, 0.6),
+        0 0 40px rgba(255, 232, 115, 0.4);
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #306998 0%, #4b8bbe 50%, #ffe873 100%);
+    background-size: 200% auto;
+    transition: all 0.4s ease;
+}
+
+.btn-gradient:hover {
+    background-position: right center;
+    box-shadow: 0 0 25px rgba(255, 232, 115, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   "Limited Seats" animated highlight
+   -------------------------------------------------------------------------- */
+.limited-seats-text {
+    color: #ff3b3b;
+    font-weight: 800;
+    font-size: 1.05em;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    animation: limitedSeatsPulse 2s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes limitedSeatsPulse {
+    0%, 100% {
+        text-shadow:
+            0 0 6px rgba(255, 59, 59, 0.4),
+            0 0 12px rgba(255, 59, 59, 0.2);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow:
+            0 0 14px rgba(255, 59, 59, 0.7),
+            0 0 28px rgba(255, 59, 59, 0.4),
+            0 0 42px rgba(255, 59, 59, 0.15);
+        transform: scale(1.05);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive refinements
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+    nav {
+        gap: 0.75rem;
+        padding: 1rem 1.25rem;
+    }
+
+    nav > div {
+        min-width: 0;
+    }
+
+    nav > div > span {
+        font-size: 0.78rem;
+        line-height: 1.1;
+    }
+
+    nav > a {
+        flex: 0 0 auto;
+        padding: 0.6rem 0.85rem;
+        font-size: 0.72rem;
+        white-space: nowrap;
+    }
+
+    header.max-w-5xl {
+        padding: 2.5rem 1.25rem 3.75rem;
+    }
+
+    header h1 {
+        font-size: clamp(2.25rem, 11vw, 3.25rem);
+        line-height: 1.12;
+    }
+
+    header > p {
+        font-size: 1rem;
+    }
+
+    .glass-card {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    section.max-w-6xl,
+    section#registration {
+        padding: 3.5rem 1.25rem;
+    }
+
+    section h2 {
+        margin-bottom: 2rem;
+        font-size: 1.7rem;
+    }
+
+    #registration .glass-card {
+        padding: 2.25rem 1.25rem;
+    }
+
+    #registration h2 {
+        font-size: 1.8rem;
+    }
+
+    #registration a {
+        width: 100%;
+        padding: 0.95rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 380px) {
+    nav > div > span {
+        display: none;
+    }
+
+    header h1 {
+        font-size: 2.15rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   FAQ Section
+   Styled to match the nexusBlue / nexusYellow dark-glass theme
+   -------------------------------------------------------------------------- */
+
+/* ---- Section wrapper ---- */
+.faq-section {
+    position: relative;
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+}
+
+/* ---- Heading ---- */
+.faq-heading {
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #ffffff;
+}
+
+.faq-heading-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.85rem;
+    background: linear-gradient(135deg, #1a2744, #243554);
+    border: 1px solid rgba(255, 232, 115, 0.3);
+    color: #FFE873;
+    font-size: 1.3rem;
+    margin-right: 0.75rem;
+    vertical-align: middle;
+    box-shadow:
+        0 0 12px rgba(255, 232, 115, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* ---- Container holding all FAQ items ---- */
+.faq-container {
+    max-width: 48rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* ---- Individual FAQ item (glass-card style) ---- */
+.faq-item {
+    background: rgba(18, 24, 38, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.faq-item.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-item:hover {
+    border-color: rgba(255, 232, 115, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(48, 105, 152, 0.2);
+}
+
+.faq-item.active {
+    border-color: rgba(255, 232, 115, 0.4);
+    background: rgba(18, 24, 38, 0.85);
+    box-shadow:
+        0 8px 30px rgba(48, 105, 152, 0.2),
+        0 0 20px rgba(255, 232, 115, 0.06);
+}
+
+/* ---- Question row (flex layout) ---- */
+.faq-question-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.faq-question-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f3f4f6;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ---- Plus / Minus icon ---- */
+.faq-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a2744, #243554);
+    border: 1px solid rgba(255, 232, 115, 0.25);
+    color: #FFE873;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 0;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    user-select: none;
+}
+
+.faq-item:hover .faq-icon {
+    border-color: rgba(255, 232, 115, 0.5);
+    box-shadow: 0 0 10px rgba(255, 232, 115, 0.12);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    background: linear-gradient(135deg, #243554, #1a2744);
+    border-color: rgba(255, 232, 115, 0.5);
+    box-shadow: 0 0 12px rgba(255, 232, 115, 0.2);
+}
+
+/* ---- Answer ---- */
+.faq-answer {
+    color: #9ca3af;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.925rem;
+    line-height: 1.7;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease, padding-top 0.3s ease;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+/* ---- Slide-in animation keyframe ---- */
+@keyframes faqSlideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- FAQ responsive ---- */
+@media (max-width: 640px) {
+    .faq-section {
+        padding: 3rem 1.25rem;
+    }
+
+    .faq-heading {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .faq-heading-icon {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    .faq-item {
+        padding: 1rem 1.15rem;
+        border-radius: 0.85rem;
+    }
+
+    .faq-question-text {
+        font-size: 0.95rem;
+    }
+
+    .faq-answer {
+        font-size: 0.875rem;
+    }
+
+    .faq-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 1.1rem;
+    }
+}
+

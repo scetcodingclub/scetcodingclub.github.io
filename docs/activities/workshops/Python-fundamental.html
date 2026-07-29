@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Workshop | Nexus Coding Club</title>
+  
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/styles/python-workshop.css" />
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace'],
+          },
+          colors: {
+            nexusBlue: '#306998',
+            nexusYellow: '#FFE873',
+            nexusDark: '#0B0F17',
+            nexusCard: 'rgba(18, 24, 38, 0.7)',
+          }
+        }
+      }
+    }
+  </script>
+
+</head>
+<body class="font-sans antialiased relative">
+
+  <!-- 3D Canvas Background -->
+  <div id="canvas-container"></div>
+
+  <!-- Main Content Wrap -->
+  <div class="relative z-10 min-h-screen flex flex-col justify-between">
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <header class="max-w-5xl mx-auto px-6 pt-12 pb-20 text-center" style="margin-top:120px ;">
+      
+
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+        Master <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-nexusYellow to-yellow-200 glow-text">Python Programming</span><br />From Scratch
+      </h1>
+
+      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Kickstart your coding journey with 2 days of intensive, hands-on Python training. Perfect for beginners & engineering students.
+      </p>
+
+      <!-- Key Meta Badges -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12">
+        <div class="glass-card p-4 rounded-2xl text-center">
+          <i class="fa-regular fa-calendar-check text-nexusYellow text-xl mb-1"></i>
+          <p class="text-xs text-gray-400 uppercase font-mono">Dates</p>
+          <p class="font-bold text-white">5th & 6th Aug</p>
+        </div>
+        <div class="glass-card p-4 rounded-2xl text-center">
+          <i class="fa-regular fa-clock text-nexusYellow text-xl mb-1"></i>
+          <p class="text-xs text-gray-400 uppercase font-mono">Timing</p>
+          <p class="font-bold text-white">10:00 AM – 4:00 PM</p>
+        </div>
+        <div class="glass-card p-4 rounded-2xl text-center">
+          <i class="fa-solid fa-location-dot text-nexusYellow text-xl mb-1"></i>
+          <p class="text-xs text-gray-400 uppercase font-mono">Venue</p>
+          <p class="font-bold text-white">315 - IT Lab</p>
+        </div>
+        <div class="glass-card p-4 rounded-2xl text-center">
+          <i class="fa-solid fa-ticket text-nexusYellow text-xl mb-1"></i>
+          <p class="text-xs text-gray-400 uppercase font-mono">Fee</p>
+          <p class="font-bold text-green-400">100% FREE</p>
+        </div>
+      </div>
+
+      <a href="#registration" class="inline-block btn-gradient text-nexusDark font-extrabold text-lg px-10 py-4 rounded-full shadow-2xl hover:scale-105 transition-transform">
+        <i class="fa-solid fa-bolt mr-2"></i> Secure Your Spot Now
+      </a>
+    </header>
+
+    <!-- Schedule Agenda (Aug 5 & 6) -->
+    <section class="max-w-6xl mx-auto px-6 py-16 w-full">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        <span class="text-nexusYellow font-mono">&lt;/&gt;</span> Workshop Schedule
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Day 1 -->
+        <div class="glass-card p-8 rounded-3xl relative overflow-hidden border-t-4 border-nexusBlue">
+          <div class="flex justify-between items-center mb-6">
+            <span class="px-3 py-1 bg-nexusBlue/30 text-blue-300 font-mono text-sm rounded-lg">DAY 1</span>
+            <span class="text-gray-400 text-sm font-mono"><i class="fa-regular fa-calendar mr-1"></i> Aug 5</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-white">Foundations & Logic</h3>
+          <p class="text-gray-400 text-sm mb-6">Mastering core syntax, data types, and logic structures with real code execution.</p>
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li class="flex items-center"><i class="fa-solid fa-check text-nexusYellow mr-3"></i> Introduction to Python </li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-nexusYellow mr-3"></i> Variables, Data Types & Operators</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-nexusYellow mr-3"></i> Control Flow: Loops, If-Else Logic</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-nexusYellow mr-3"></i> Functions</li>
+          </ul>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="glass-card p-8 rounded-3xl relative overflow-hidden border-t-4 border-nexusYellow">
+          <div class="flex justify-between items-center mb-6">
+            <span class="px-3 py-1 bg-nexusYellow/20 text-nexusYellow font-mono text-sm rounded-lg">DAY 2</span>
+            <span class="text-gray-400 text-sm font-mono"><i class="fa-regular fa-calendar mr-1"></i> Aug 6</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-white">Data Structures</h3>
+          <p class="text-gray-400 text-sm mb-6">Diving deep into python by introducing with Data structure.</p>
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li class="flex items-center"><i class="fa-solid fa-check text-nexusYellow mr-3"></i> Lists, Dictionaries, Sets & Tuples</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-nexusYellow mr-3"></i> Modular Programming</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-nexusYellow mr-3"></i> Working with Files & Modules</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-nexusYellow mr-3"></i> Error Handling </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Join / Outcomes -->
+    <section class="max-w-6xl mx-auto px-6 py-16 w-full">
+      <h2 class="text-3xl font-bold text-center mb-12">Why You Should Attend</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl text-left">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-2xl mb-4">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h4 class="text-lg font-bold mb-2">100% Hands-On</h4>
+          <p class="text-gray-400 text-sm">No boring lectures. Write and execute code side-by-side with mentors from day one.</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl text-left">
+          <div class="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center text-nexusYellow text-2xl mb-4">
+            <i class="fa-solid fa-user-graduate"></i>
+          </div>
+          <h4 class="text-lg font-bold mb-2">Beginner Friendly</h4>
+          <p class="text-gray-400 text-sm">Zero previous programming experience required. We guide you step-by-step.</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl text-left">
+          <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400 text-2xl mb-4">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <h4 class="text-lg font-bold mb-2">Certificate & Perks</h4>
+          <p class="text-gray-400 text-sm">Earn a  certificate, free Python cheatsheets, and club mentoring support.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PERFECT FOR SECTION
+         Target audience breakdown
+         ============================================================ -->
+    <section class="max-w-6xl mx-auto px-6 py-16 w-full">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        <span class="text-nexusYellow font-mono">&lt;target&gt;</span> Perfect For
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Audience 1: 2nd, 3rd & 4th Year -->
+        <div class="glass-card p-6 rounded-2xl text-center group hover:scale-105 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-nexusBlue to-nexusYellow flex items-center justify-center font-extrabold text-nexusDark text-xl mx-auto mb-4 shadow-lg group-hover:rotate-6 transition-transform">
+            1
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">2nd, 3rd &amp; 4th Year Students</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Build a strong foundation at the beginning of your career.</p>
+        </div>
+        <!-- Audience 2: CSE/IT/Data Science -->
+        <div class="glass-card p-6 rounded-2xl text-center group hover:scale-105 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-nexusBlue to-nexusYellow flex items-center justify-center font-extrabold text-nexusDark text-xl mx-auto mb-4 shadow-lg group-hover:rotate-6 transition-transform">
+            2
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">CSE / IT / Data Science</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Unlock your potential! Acquire the core skills needed to thrive in these high-demand fields.</p>
+        </div>
+        <!-- Audience 3: All Engineering Branches -->
+        <div class="glass-card p-6 rounded-2xl text-center group hover:scale-105 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-nexusBlue to-nexusYellow flex items-center justify-center font-extrabold text-nexusDark text-xl mx-auto mb-4 shadow-lg group-hover:rotate-6 transition-transform">
+            3
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">All Engineering Branches</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Python is everywhere! Enhance your engineering knowledge with essential coding skills.</p>
+        </div>
+        <!-- Audience 4: Complete Beginners -->
+        <div class="glass-card p-6 rounded-2xl text-center group hover:scale-105 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-nexusBlue to-nexusYellow flex items-center justify-center font-extrabold text-nexusDark text-xl mx-auto mb-4 shadow-lg group-hover:rotate-6 transition-transform">
+            4
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">Complete Beginners</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Start from scratch! Learn the basics of Python and build confidence in your abilities.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FAQ SECTION
+         Frequently asked questions about the Python workshop
+         ============================================================ -->
+    <section id="faq" class="faq-section">
+      <div class="faq-wrapper">
+        <h2 class="faq-heading">
+          <span class="faq-heading-icon"><i class="fa-solid fa-circle-question"></i></span> Frequently Asked Questions
+        </h2>
+        <div class="faq-container" id="faqContainer"></div>
+      </div>
+    </section>
+
+    <!-- Registration CTA Section -->
+    <section id="registration" class="max-w-4xl mx-auto px-6 py-20 text-center w-full">
+      <div class="glass-card p-10 md:p-14 rounded-3xl border border-nexusYellow/30 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-nexusYellow/10 rounded-full blur-3xl pointer-events-none"></div>
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Ready to Code in Python?</h2>
+        <p class="text-gray-300 max-w-lg mx-auto mb-8 text-sm md:text-base" >
+          <span class="limited-seats-text">Limited seats</span> available for Aug 5th &amp; 6th. Register today to reserve your lab seat!
+        </p>
+        <a href="https://nexus-registration-link.com" target="_blank" class="inline-block btn-gradient text-nexusDark font-extrabold text-lg px-12 py-4 rounded-full shadow-2xl hover:scale-105 transition-transform">
+          Register Here <i class="fa-solid fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+  </div>
+
+  <script src="/components/navbar.js"></script>
+  <script src="/components/footer.js"></script>
+  <script src="/js/python-workshop.js"></script>
+</body>
+</html>
